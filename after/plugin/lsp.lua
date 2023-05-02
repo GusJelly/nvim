@@ -1,8 +1,11 @@
 local lsp = require("lsp-zero")
 
+require'lspconfig'.csharp_ls.setup{}
+
 lsp.preset("recommended")
 
 lsp.ensure_installed({
+  'tsserver',
   'rust_analyzer',
 })
 

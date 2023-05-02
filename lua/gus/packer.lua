@@ -14,14 +14,15 @@ return require('packer').startup(function(use)
   }
 
   use({
-      'rose-pine/neovim',
+	  'rose-pine/neovim',
       as = 'rose-pine',
       config = function()
-          --vim.cmd('colorscheme rose-pine')
+--          vim.cmd('colorscheme rose-pine')
       end
   })
-
-  use "savq/melange-nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use { "ellisonleao/gruvbox.nvim" }
+  use 'shaunsingh/solarized.nvim'
 
   use({
       "folke/trouble.nvim",
@@ -83,6 +84,7 @@ return require('packer').startup(function(use)
       'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-nvim-lsp',
   }
+  use "savq/melange-nvim"
 
 end)
 

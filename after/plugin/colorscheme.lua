@@ -74,5 +74,5 @@ require("gruvbox").setup({
 })
 
 vim.cmd("colorscheme melange")
-vim.cmd("set background=light")
+vim.cmd("set background=dark")
 

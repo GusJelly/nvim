@@ -247,6 +247,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Gustavo\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Gustavo\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
+  },
   ["zen-mode.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Gustavo\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\zen-mode.nvim",

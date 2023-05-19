@@ -1,6 +1,6 @@
 require('rose-pine').setup({
 	--- @usage 'auto'|'main'|'moon'|'dawn'
-	variant = 'main',
+	variant = 'dawn',
 	--- @usage 'main'|'moon'|'dawn'
 	dark_variant = 'main',
 	bold_vert_split = false,
@@ -100,6 +100,6 @@ require('vscode').setup({
     }
 })
 
-vim.cmd("colorscheme vscode")
-vim.cmd("set background=dark")
+vim.cmd("colorscheme melange")
+vim.cmd("set background=light")
 

@@ -100,6 +100,6 @@ require('vscode').setup({
     }
 })
 
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme monokai")
 vim.cmd("set background=dark")
 

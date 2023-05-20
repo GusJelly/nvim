@@ -99,7 +99,7 @@ use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = fun
 
 use 'jacoborus/tender.vim'
 use "rebelot/kanagawa.nvim"
-use 'patstockwell/vim-monokai-tasty'
+use 'tanvirtin/monokai.nvim'
 
 use {
   'nvim-lualine/lualine.nvim',

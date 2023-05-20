@@ -1,6 +1,6 @@
 require('rose-pine').setup({
 	--- @usage 'auto'|'main'|'moon'|'dawn'
-	variant = 'dawn',
+	variant = 'main',
 	--- @usage 'main'|'moon'|'dawn'
 	dark_variant = 'main',
 	bold_vert_split = false,
@@ -100,6 +100,6 @@ require('vscode').setup({
     }
 })
 
-vim.cmd("colorscheme vim-monokai-tasty")
+vim.cmd("colorscheme rose-pine")
 vim.cmd("set background=dark")
 

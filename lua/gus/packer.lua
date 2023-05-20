@@ -96,9 +96,15 @@ use({
 })
 
 use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
 use 'jacoborus/tender.vim'
 use "rebelot/kanagawa.nvim"
 use 'patstockwell/vim-monokai-tasty'
+
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
 
 end)
 

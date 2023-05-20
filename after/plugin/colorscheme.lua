@@ -88,9 +88,9 @@ require('vscode').setup({
     disable_nvimtree_bg = true,
 
     -- Override colors (see ./lua/vscode/colors.lua)
-    color_overrides = {
-        vscLineNumber = '#FFFFFF',
-    },
+    -- color_overrides = {
+    --     vscLineNumber = '#FFFFFF',
+    -- },
 
     -- Override highlight groups (see ./lua/vscode/theme.lua)
     group_overrides = {
@@ -100,6 +100,6 @@ require('vscode').setup({
     }
 })
 
-vim.cmd("colorscheme melange")
-vim.cmd("set background=light")
+vim.cmd("colorscheme vim-monokai-tasty")
+vim.cmd("set background=dark")
 

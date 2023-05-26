@@ -6,7 +6,7 @@ require('rose-pine').setup({
 	bold_vert_split = false,
 	dim_nc_background = false,
 	disable_background = true,
-	disable_float_background = false,
+	disable_float_background = true,
 	disable_italics = false,
 
 	--- @usage string hex value or named color from rosepinetheme.com/palette
@@ -107,7 +107,7 @@ require("catppuccin").setup({
         light = "latte",
         dark = "mocha",
     },
-    transparent_background = true,
+    transparent_background = false,
     show_end_of_buffer = false, -- show the '~' characters after the end of buffers
     term_colors = false,
     dim_inactive = {
@@ -146,6 +146,6 @@ require("catppuccin").setup({
 })
 
 
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme rose-pine")
 vim.cmd("set background=dark")
 

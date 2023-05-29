@@ -106,5 +106,7 @@ use {
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 }
 
+use ({ 'projekt0n/github-nvim-theme' })
+
 end)
 

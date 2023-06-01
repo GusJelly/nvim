@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/marmelomaria/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["better-comments.nvim"] = {
+    loaded = true,
+    path = "/home/marmelomaria/.local/share/nvim/site/pack/packer/start/better-comments.nvim",
+    url = "https://github.com/Djancyp/better-comments.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/marmelomaria/.local/share/nvim/site/pack/packer/start/bufferline.nvim",

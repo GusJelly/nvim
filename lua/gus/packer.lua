@@ -109,5 +109,7 @@ use ({ 'projekt0n/github-nvim-theme' })
 use "folke/tokyonight.nvim"
 use 'Mofiqul/dracula.nvim'
 
+use "Djancyp/better-comments.nvim"
+
 end)
 

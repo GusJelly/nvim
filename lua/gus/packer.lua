@@ -111,5 +111,7 @@ use 'Mofiqul/dracula.nvim'
 
 use "Djancyp/better-comments.nvim"
 
+use "nvim-tree/nvim-tree.lua"
+
 end)
 

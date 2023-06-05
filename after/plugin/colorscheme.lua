@@ -301,8 +301,6 @@ monokai.setup {
 }
 
 
---vim.cmd('colorscheme github_dark')
---vim.cmd('colorscheme github_dark_high_contrast')
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme oxocarbon")
 --vim.cmd("set background=dark")
 

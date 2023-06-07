@@ -11,7 +11,7 @@ require('rose-pine').setup({
 
 	--- @usage string hex value or named color from rosepinetheme.com/palette
 	groups = {
-		background = '#0f0f0f',
+		background = '#0A0A0A',
 		background_nc = '_experimental_nc',
 		panel = '#1f1f1f',
 		panel_nc = 'base',

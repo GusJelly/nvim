@@ -114,5 +114,8 @@ use "Djancyp/better-comments.nvim"
 
 use "nvim-tree/nvim-tree.lua"
 
+use('jose-elias-alvarez/null-ls.nvim')
+use('MunifTanjim/prettier.nvim')
+
 end)
 

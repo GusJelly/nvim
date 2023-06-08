@@ -1,8 +1,8 @@
 -- Disable NetRw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+--vim.g.loaded_netrw = 1
+--vim.g.loaded_netrwPlugin = 1
 
-vim.opt.guicursor = ""
+--vim.opt.guicursor = ""
 vim.opt.cursorline = false
 
 vim.opt.nu = true
@@ -15,7 +15,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = true 
+vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false

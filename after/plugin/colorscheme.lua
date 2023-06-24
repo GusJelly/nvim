@@ -6,7 +6,7 @@ require('rose-pine').setup({
 	bold_vert_split = false,
 	dim_nc_background = false,
 	disable_background = true,
-	disable_float_background = false,
+	disable_float_background = true,
 	disable_italics = false,
 
 	--- @usage string hex value or named color from rosepinetheme.com/palette
@@ -80,7 +80,7 @@ require('vscode').setup({
     -- style = 'light'
 
     -- Enable transparent background
-    transparent = false,
+    transparent = true,
 
     -- Enable italic comment
     italic_comments = true,
@@ -260,7 +260,7 @@ dracula.setup({
   -- show the '~' characters after the end of buffers
   show_end_of_buffer = true, -- default false
   -- use transparent background
-  transparent_bg = false, -- default false
+  transparent_bg = true, -- default false
   -- set custom lualine background color
   lualine_bg_color = "#44475a", -- default nil
   -- set italic comment
@@ -302,5 +302,7 @@ monokai.setup {
 
 
 vim.cmd("colorscheme rose-pine")
+vim.cmd([[highlight Visual guifg=#000000 guibg=#E0DEF4 gui=none]])
+
 --vim.cmd("set background=dark")
 

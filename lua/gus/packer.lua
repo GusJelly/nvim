@@ -122,5 +122,10 @@ return require('packer').startup(function(use)
         requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
     })
 
+    use({
+        'mfussenegger/nvim-dap',
+        "jay-babu/mason-nvim-dap.nvim",
+    })
+
 end)
 

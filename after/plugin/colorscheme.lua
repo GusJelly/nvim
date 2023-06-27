@@ -1,19 +1,19 @@
 require('rose-pine').setup({
 	--- @usage 'auto'|'main'|'moon'|'dawn'
-	variant = 'auto',
+	variant = 'dawn',
 	--- @usage 'main'|'moon'|'dawn'
 	dark_variant = 'main',
 	bold_vert_split = false,
 	dim_nc_background = false,
 	disable_background = true,
-	disable_float_background = true,
+	disable_float_background = false,
 	disable_italics = false,
 
 	--- @usage string hex value or named color from rosepinetheme.com/palette
 	groups = {
-		background = '#0A0A0A',
+		background = 'base',
 		background_nc = '_experimental_nc',
-		panel = '#1f1f1f',
+		panel = 'surface',
 		panel_nc = 'base',
 		border = 'highlight_med',
 		comment = 'muted',
@@ -300,7 +300,7 @@ monokai.setup {
 }
 
 
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme rose-pine")
 
 --vim.cmd([[highlight Visual guibg=#264F78 gui=none]])
 

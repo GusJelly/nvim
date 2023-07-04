@@ -199,6 +199,11 @@ _G.packer_plugins = {
     path = "/home/gustavo/.local/share/nvim/site/pack/packer/start/melange-nvim",
     url = "https://github.com/savq/melange-nvim"
   },
+  ["modus-theme-vim"] = {
+    loaded = true,
+    path = "/home/gustavo/.local/share/nvim/site/pack/packer/start/modus-theme-vim",
+    url = "https://github.com/ishan9299/modus-theme-vim"
+  },
   ["monokai.nvim"] = {
     loaded = true,
     path = "/home/gustavo/.local/share/nvim/site/pack/packer/start/monokai.nvim",

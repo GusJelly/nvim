@@ -127,5 +127,6 @@ return require('packer').startup(function(use)
         "jay-babu/mason-nvim-dap.nvim",
     })
 
+    use 'ishan9299/modus-theme-vim'
 end)
 

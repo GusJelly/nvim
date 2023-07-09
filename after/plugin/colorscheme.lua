@@ -299,7 +299,6 @@ monokai.setup {
     }
 }
 
-
 vim.cmd("colorscheme modus-vivendi")
 
 --vim.cmd([[highlight Visual guibg=#264F78 gui=none]])

@@ -1,7 +1,3 @@
--- Disable NetRw
---vim.g.loaded_netrw = 1
---vim.g.loaded_netrwPlugin = 1
-
 --vim.opt.guicursor = ""
 vim.opt.cursorline = false
 
@@ -13,7 +9,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.smartindent = true
+vim.opt.smartindent = false
 
 vim.opt.wrap = false
 
@@ -32,5 +28,15 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- Makes it so we don't get auto indenting for comments cause it annoys me
+vim.cmd(":set formatoptions-=cro")
+
+-- Disables NetRW's ugly banner
+vim.cmd("let g:netrw_banner=0")
+-- Makes NetRW use the "tree view" style
+vim.cmd("let g:netrw_liststyle=3")
+-- Make NetRW open new split to the right
+vim.cmd("let g:netrw_altv=1")
+
+--vim.opt.colorcolumn = "80"
 

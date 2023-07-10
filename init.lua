@@ -196,6 +196,13 @@ require('lazy').setup({
     'ishan9299/modus-theme-vim',
     'ThePrimeagen/harpoon',
   },
+  -- Markdown-Preview
+  {
+    "iamcco/markdown-preview.nvim",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -433,11 +440,11 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
+  clangd = {},
+  gopls = {},
+  pyright = {},
+  rust_analyzer = {},
+  tsserver = {},
 
   lua_ls = {
     Lua = {
@@ -530,6 +537,8 @@ vim.keymap.set("n", "<leader>th", "<cmd>:tabprevious<CR>")
 vim.keymap.set("n", "<leader>tl", "<cmd>:tabnext<CR>")
 vim.keymap.set("n", "<leader>tn", "<cmd>:tabnew<CR>")
 vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>")
+-- Terminal mode keymaps
+vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>")  -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
 
 -- Harpoon keybindings:
 local mark = require("harpoon.mark")

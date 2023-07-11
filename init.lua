@@ -146,7 +146,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'modus-vivendi',
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -191,10 +191,8 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+
   -- Gustavo's chosen plugins
-  {
-    'vimwiki/vimwiki'
-  },
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -204,13 +202,27 @@ require('lazy').setup({
     'ishan9299/modus-theme-vim',
     'ThePrimeagen/harpoon',
   },
-  -- Markdown-Preview
+
   {
+    -- Markdown-Preview
     "iamcco/markdown-preview.nvim",
     config = function()
       vim.fn["mkdp#util#install"]()
     end,
   },
+  {
+    "ellisonleao/glow.nvim",
+    config = true,
+    cmd = "Glow"
+  },
+  -- rose-pine
+ 	{ 'rose-pine/neovim', name = 'rose-pine' },
+  -- nvim-ts-rainbow
+  {
+    'p00f/nvim-ts-rainbow'
+  }
+
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -266,7 +278,7 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+vim.o.termguicolors = false
 
 
 -- [[ Basic Keymaps ]]
@@ -327,6 +339,14 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+  },
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
@@ -579,15 +599,15 @@ vim.cmd("let g:netrw_liststyle=3")
 -- Make NetRW open new split to the right
 vim.cmd("let g:netrw_altv=1")
 vim.opt.wrap = true
--- Winbar:
-vim.opt.winbar = "%f %m"
+-- -- Winbar:
+-- vim.opt.winbar = "%f %m"
 
 -- THESE COMMANDS ONLY WORK FOR THE MODUS THEMES!!!!
 vim.g.modus_termtrans_enable = 0  -- makes background transparent
 vim.g.modus_dim_inactive_window = 0  -- This disables the different color for inactive panes
 
 -- Colorscheme being used:
-vim.cmd("colorscheme modus-vivendi")
+vim.cmd("colorscheme onedark")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

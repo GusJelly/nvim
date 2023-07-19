@@ -691,6 +691,7 @@ vim.keymap.set("n", "<leader>th", "<cmd>:tabprevious<CR>")
 vim.keymap.set("n", "<leader>tl", "<cmd>:tabnext<CR>")
 vim.keymap.set("n", "<leader>tn", "<cmd>:tabnew<CR>")
 vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>")
+
 -- Terminal mode keymaps
 vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
 
@@ -720,8 +721,13 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
-vim.opt.cursorline = true
-vim.opt.smartindent = true
+vim.opt.cursorline = false
+
+-- indenting madness:
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.autoindent = true
+vim.opt.expandtab = true
 
 -- Disables NetRW's ugly banner
 vim.cmd("let g:netrw_banner=0")
@@ -745,7 +751,7 @@ vim.cmd(":colorscheme rose-pine")
 vim.opt.wrap = true
 -- global statusline
 vim.cmd(":set laststatus=3")
-vim.cmd(":highlight cursorline guibg=#1A1A1A")
+vim.cmd(":highlight cursorline guibg=#232323")
 -- vim.cmd(":highlight WinSeparator guibg=none")
 -- which-key window background-color:
 -- vim.cmd(":highlight WhichKeyFloat guibg='#080808'")

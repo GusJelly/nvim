@@ -41,6 +41,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.opt.guicursor = ''
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -146,7 +147,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'modus-vivendi',
         component_separators = '|',
         section_separators = '',
       },
@@ -199,7 +200,6 @@ require('lazy').setup({
     opts = {} -- this is equalent to setup({}) function
   },
   {
-    'ishan9299/modus-theme-vim',
     'ThePrimeagen/harpoon',
   },
 
@@ -216,12 +216,52 @@ require('lazy').setup({
     cmd = "Glow"
   },
   -- rose-pine
- 	{ 'rose-pine/neovim', name = 'rose-pine' },
-  -- nvim-ts-rainbow
   {
-    'p00f/nvim-ts-rainbow'
-  }
+    'rose-pine/neovim', name = 'rose-pine'
+  },
+  -- Colorschemes
+  {
+    'GustavoPrietoP/doom-themes.nvim',
+    'Mofiqul/dracula.nvim',
+    'ishan9299/modus-theme-vim',
+    'junegunn/seoul256.vim',
+    'tamelion/neovim-molokai',
+    'bluz71/vim-moonfly-colors'
+  },
+  {
+    'NTBBloodbath/doom-one.nvim',
+    setup = function()
+      -- Add color to cursor
+      vim.g.doom_one_cursor_coloring = false
+      -- Set :terminal colors
+      vim.g.doom_one_terminal_colors = true
+      -- Enable italic comments
+      vim.g.doom_one_italic_comments = true
+      -- Enable TS support
+      vim.g.doom_one_enable_treesitter = true
+      -- Color whole diagnostic text or only underline
+      vim.g.doom_one_diagnostics_text_color = false
+      -- Enable transparent background
+      vim.g.doom_one_transparent_background = false
 
+      -- Pumblend transparency
+      vim.g.doom_one_pumblend_enable = true
+      vim.g.doom_one_pumblend_transparency = 20
+
+      -- Plugins integration
+      vim.g.doom_one_plugin_neorg = true
+      vim.g.doom_one_plugin_barbar = false
+      vim.g.doom_one_plugin_telescope = true
+      vim.g.doom_one_plugin_neogit = true
+      vim.g.doom_one_plugin_nvim_tree = false
+      vim.g.doom_one_plugin_dashboard = false
+      vim.g.doom_one_plugin_startify = false
+      vim.g.doom_one_plugin_whichkey = true
+      vim.g.doom_one_plugin_indent_blankline = true
+      vim.g.doom_one_plugin_vim_illuminate = false
+      vim.g.doom_one_plugin_lspsaga = false
+    end,
+  },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -278,7 +318,7 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = false
+vim.o.termguicolors = true
 
 
 -- [[ Basic Keymaps ]]
@@ -339,14 +379,6 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
-  rainbow = {
-    enable = true,
-    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
-  },
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
@@ -589,7 +621,7 @@ vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end)
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.smartindent = true
 
 -- Disables NetRW's ugly banner
@@ -600,14 +632,17 @@ vim.cmd("let g:netrw_liststyle=3")
 vim.cmd("let g:netrw_altv=1")
 vim.opt.wrap = true
 -- -- Winbar:
--- vim.opt.winbar = "%f %m"
 
 -- THESE COMMANDS ONLY WORK FOR THE MODUS THEMES!!!!
-vim.g.modus_termtrans_enable = 0  -- makes background transparent
+vim.g.modus_termtrans_enable = 1  -- makes background transparent
 vim.g.modus_dim_inactive_window = 0  -- This disables the different color for inactive panes
+vim.g.modus_yellow_comments = 0
+vim.g.modus_green_strings = 0
+vim.g.modus_faint_syntax = 0
+vim.g.modus_cursorline_intense = 0
 
 -- Colorscheme being used:
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme moonfly")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

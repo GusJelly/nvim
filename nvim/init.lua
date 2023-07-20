@@ -163,7 +163,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'rose-pine',
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -745,13 +745,13 @@ vim.cmd("let g:netrw_altv=1")
 -- vim.g.modus_cursorline_intense = 0
 
 -- Colorscheme being used:
-vim.cmd(":colorscheme rose-pine")
+vim.cmd(":colorscheme onedark")
 
 -- My overrides:
 vim.opt.wrap = true
 -- global statusline
 vim.cmd(":set laststatus=3")
-vim.cmd(":highlight cursorline guibg=#232323")
+vim.cmd(":highlight cursorline guibg=none")
 -- vim.cmd(":highlight WinSeparator guibg=none")
 -- which-key window background-color:
 -- vim.cmd(":highlight WhichKeyFloat guibg='#080808'")

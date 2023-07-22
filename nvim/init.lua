@@ -211,6 +211,9 @@ require('lazy').setup({
 
   -- Gustavo's chosen plugins
   {
+    'vimwiki/vimwiki',
+  },
+  {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
@@ -244,7 +247,7 @@ require('lazy').setup({
       dim_nc_background = false,
       disable_background = true,
       disable_float_background = true,
-      disable_italics = false,
+      disable_italics = true,
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
       groups = {
@@ -297,6 +300,11 @@ require('lazy').setup({
     'junegunn/seoul256.vim',
     'tamelion/neovim-molokai',
     'bluz71/vim-moonfly-colors',
+    'Mofiqul/vscode.nvim',
+    'savq/melange-nvim'
+  },
+  {
+    'rmehri01/onenord.nvim'
   },
   {
     'ellisonleao/gruvbox.nvim',
@@ -722,6 +730,8 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.cursorline = false
+vim.opt.wrap = true
+vim.opt.winbar = "%f %m"
 
 -- indenting madness:
 vim.opt.tabstop = 4
@@ -748,15 +758,17 @@ vim.cmd("let g:netrw_altv=1")
 vim.cmd(":colorscheme onedark")
 
 -- My overrides:
-vim.opt.wrap = true
 -- global statusline
 vim.cmd(":set laststatus=3")
 vim.cmd(":highlight cursorline guibg=none")
+vim.cmd(":set nocompatible")
+vim.cmd(":filetype plugin on")
+vim.cmd(":syntax on")
+-- vim.cmd(":highlight Visual guibg=#264F78")
 -- vim.cmd(":highlight WinSeparator guibg=none")
 -- which-key window background-color:
 -- vim.cmd(":highlight WhichKeyFloat guibg='#080808'")
 -- Winbar:
-vim.opt.winbar = "%f %m"
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

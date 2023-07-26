@@ -163,7 +163,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'rose-pine',
         component_separators = '|',
         section_separators = '',
       },
@@ -245,8 +245,8 @@ require('lazy').setup({
       dark_variant = 'main',
       bold_vert_split = false,
       dim_nc_background = false,
-      disable_background = true,
-      disable_float_background = true,
+      disable_background = false,
+      disable_float_background = false,
       disable_italics = true,
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
@@ -330,40 +330,6 @@ require('lazy').setup({
       dim_inactive = false,
       transparent_mode = true,
     })
-  },
-  {
-    'NTBBloodbath/doom-one.nvim',
-    setup = function()
-      -- Add color to cursor
-      vim.g.doom_one_cursor_coloring = false
-      -- Set :terminal colors
-      vim.g.doom_one_terminal_colors = true
-      -- Enable italic comments
-      vim.g.doom_one_italic_comments = true
-      -- Enable TS support
-      vim.g.doom_one_enable_treesitter = true
-      -- Color whole diagnostic text or only underline
-      vim.g.doom_one_diagnostics_text_color = false
-      -- Enable transparent background
-      vim.g.doom_one_transparent_background = false
-
-      -- Pumblend transparency
-      vim.g.doom_one_pumblend_enable = true
-      vim.g.doom_one_pumblend_transparency = 20
-
-      -- Plugins integration
-      vim.g.doom_one_plugin_neorg = true
-      vim.g.doom_one_plugin_barbar = false
-      vim.g.doom_one_plugin_telescope = true
-      vim.g.doom_one_plugin_neogit = true
-      vim.g.doom_one_plugin_nvim_tree = false
-      vim.g.doom_one_plugin_dashboard = false
-      vim.g.doom_one_plugin_startify = false
-      vim.g.doom_one_plugin_whichkey = true
-      vim.g.doom_one_plugin_indent_blankline = true
-      vim.g.doom_one_plugin_vim_illuminate = false
-      vim.g.doom_one_plugin_lspsaga = false
-    end,
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -730,7 +696,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.cursorline = false
-vim.opt.wrap = true
+-- vim.opt.wrap = true
 vim.opt.winbar = "%f %m"
 
 -- indenting madness:
@@ -755,7 +721,7 @@ vim.cmd("let g:netrw_altv=1")
 -- vim.g.modus_cursorline_intense = 0
 
 -- Colorscheme being used:
-vim.cmd(":colorscheme onedark")
+vim.cmd(":colorscheme rose-pine")
 
 -- My overrides:
 -- global statusline

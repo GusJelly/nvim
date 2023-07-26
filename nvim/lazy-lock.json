@@ -1,9 +1,9 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "176e85eeb63f1a5970d6b88f1725039d85ca0055" },
   "LuaSnip": { "branch": "master", "commit": "0b4950a237ce441a6a3a947d501622453f6860ea" },
+  "calendar.vim": { "branch": "master", "commit": "66e6d0955efb6beb68912dce3ff484e8805d975c" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
-  "doom-one.nvim": { "branch": "main", "commit": "a43528cbd7908ccec7af4587ec8e18be149095bd" },
   "doom-themes.nvim": { "branch": "main", "commit": "03d417d3eab71c320744f8da22251715ba6cee53" },
   "dracula.nvim": { "branch": "main", "commit": "948d237241b91389c8c2f109885b91cd2574b8bb" },
   "fidget.nvim": { "branch": "main", "commit": "0ba1e16d07627532b6cae915cc992ecac249fb97" },

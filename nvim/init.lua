@@ -41,7 +41,6 @@ P.S. You can delete this when you're done too. It's your config now :)
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.opt.guicursor = ''
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -86,7 +85,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -110,22 +109,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  {
-    'folke/which-key.nvim',
-    opts = {},
-    config = function()
-      require("which-key").setup {
-        window = {
-          border = "none",          -- none, single, double, shadow
-          position = "bottom",      -- bottom, top
-          margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
-          padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
-          winblend = 0,             -- value between 0-100 0 for fully opaque and 100 for fully transparent
-          zindex = 1000,            -- positive value to position WhichKey above other floating windows.
-        },
-      }
-    end
-  },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -139,8 +123,7 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
       end,
@@ -163,7 +146,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'rose-pine',
+        theme = 'modus-vivendi',
         component_separators = '|',
         section_separators = '',
       },
@@ -176,13 +159,13 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = ' ',
+      char = '┊',
       show_trailing_blankline_indent = false,
     },
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',         opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -208,128 +191,10 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-
   -- Gustavo's chosen plugins
   {
-    'vimwiki/vimwiki',
-  },
-  {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
-  },
-  {
-    'ThePrimeagen/harpoon',
-  },
-
-  {
-    -- Markdown-Preview
-    "iamcco/markdown-preview.nvim",
-    config = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
-  {
-    "ellisonleao/glow.nvim",
-    config = true,
-    cmd = "Glow"
-  },
-  -- rose-pine
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    require('rose-pine').setup({
-      --- @usage 'auto'|'main'|'moon'|'dawn'
-      variant = 'auto',
-      --- @usage 'main'|'moon'|'dawn'
-      dark_variant = 'main',
-      bold_vert_split = false,
-      dim_nc_background = false,
-      disable_background = false,
-      disable_float_background = false,
-      disable_italics = true,
-
-      --- @usage string hex value or named color from rosepinetheme.com/palette
-      groups = {
-        background = 'base',
-        background_nc = '_experimental_nc',
-        panel = 'surface',
-        panel_nc = 'base',
-        border = 'highlight_med',
-        comment = 'muted',
-        link = 'iris',
-        punctuation = 'subtle',
-
-        error = 'love',
-        hint = 'iris',
-        info = 'foam',
-        warn = 'gold',
-
-        headings = {
-          h1 = 'iris',
-          h2 = 'foam',
-          h3 = 'rose',
-          h4 = 'gold',
-          h5 = 'pine',
-          h6 = 'foam',
-        }
-        -- or set all headings at once
-        -- headings = 'subtle'
-      },
-
-      -- Whether or not highlight_groups optios should change only only update
-      -- the settings they touch or should reset the entire highlight_group.
-      respect_default_highlight_groups = true,
-
-      -- Change specific vim highlight groups
-      -- https://github.com/rose-pine/neovim/wiki/Recipes
-      highlight_groups = {
-        ColorColumn = { bg = 'rose' },
-
-        -- Blend colours against the "base" background
-        CursorLine = { bg = 'foam', blend = 10 },
-        StatusLine = { fg = 'love', bg = 'love', blend = 10 },
-      }
-    })
-  },
-  -- Colorschemes
-  {
-    'GustavoPrietoP/doom-themes.nvim',
-    'Mofiqul/dracula.nvim',
     'ishan9299/modus-theme-vim',
-    'junegunn/seoul256.vim',
-    'tamelion/neovim-molokai',
-    'bluz71/vim-moonfly-colors',
-    'Mofiqul/vscode.nvim',
-    'savq/melange-nvim'
-  },
-  {
-    'rmehri01/onenord.nvim'
-  },
-  {
-    'ellisonleao/gruvbox.nvim',
-    require("gruvbox").setup({
-      undercurl = true,
-      underline = true,
-      bold = true,
-      italic = {
-        strings = true,
-        comments = true,
-        operators = false,
-        folds = true,
-      },
-      strikethrough = true,
-      invert_selection = false,
-      invert_signs = false,
-      invert_tabline = false,
-      invert_intend_guides = false,
-      inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "",  -- can be "hard", "soft" or empty string
-      palette_overrides = {},
-      overrides = {},
-      dim_inactive = false,
-      transparent_mode = true,
-    })
+    'ThePrimeagen/harpoon',
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -568,11 +433,11 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  clangd = {},
-  gopls = {},
-  pyright = {},
-  rust_analyzer = {},
-  tsserver = {},
+  -- clangd = {},
+  -- gopls = {},
+  -- pyright = {},
+  -- rust_analyzer = {},
+  -- tsserver = {},
 
   lua_ls = {
     Lua = {
@@ -665,9 +530,8 @@ vim.keymap.set("n", "<leader>th", "<cmd>:tabprevious<CR>")
 vim.keymap.set("n", "<leader>tl", "<cmd>:tabnext<CR>")
 vim.keymap.set("n", "<leader>tn", "<cmd>:tabnew<CR>")
 vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>")
-
 -- Terminal mode keymaps
-vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
+vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>")  -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
 
 -- Harpoon keybindings:
 local mark = require("harpoon.mark")
@@ -686,24 +550,13 @@ vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end)
 vim.keymap.set("n", "<leader>8", function() ui.nav_file(8) end)
 vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end)
 
--- search and replace keymap
--- I have no idea how it works lmao
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
 
 -- Miscelanious changes:
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
-vim.opt.cursorline = false
--- vim.opt.wrap = true
-vim.opt.winbar = "%f %m"
-
--- indenting madness:
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.autoindent = true
-vim.opt.expandtab = true
+vim.opt.cursorline = true
+vim.opt.smartindent = true
 
 -- Disables NetRW's ugly banner
 vim.cmd("let g:netrw_banner=0")
@@ -711,30 +564,16 @@ vim.cmd("let g:netrw_banner=0")
 vim.cmd("let g:netrw_liststyle=3")
 -- Make NetRW open new split to the right
 vim.cmd("let g:netrw_altv=1")
+vim.opt.wrap = true
+-- Winbar:
+vim.opt.winbar = "%f %m"
 
 -- THESE COMMANDS ONLY WORK FOR THE MODUS THEMES!!!!
--- vim.g.modus_termtrans_enable = 1    -- makes background transparent
--- vim.g.modus_dim_inactive_window = 0 -- This disables the different color for inactive panes
--- vim.g.modus_yellow_comments = 0
--- vim.g.modus_green_strings = 0
--- vim.g.modus_faint_syntax = 0
--- vim.g.modus_cursorline_intense = 0
+vim.g.modus_termtrans_enable = 0  -- makes background transparent
+vim.g.modus_dim_inactive_window = 0  -- This disables the different color for inactive panes
 
 -- Colorscheme being used:
-vim.cmd(":colorscheme rose-pine")
-
--- My overrides:
--- global statusline
-vim.cmd(":set laststatus=3")
-vim.cmd(":highlight cursorline guibg=none")
-vim.cmd(":set nocompatible")
-vim.cmd(":filetype plugin on")
-vim.cmd(":syntax on")
--- vim.cmd(":highlight Visual guibg=#264F78")
--- vim.cmd(":highlight WinSeparator guibg=none")
--- which-key window background-color:
--- vim.cmd(":highlight WhichKeyFloat guibg='#080808'")
--- Winbar:
+vim.cmd("colorscheme modus-vivendi")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

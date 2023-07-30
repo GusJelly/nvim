@@ -163,7 +163,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'rose-pine',
+        theme = 'gruvbox',
         component_separators = '|',
         section_separators = '',
       },
@@ -245,8 +245,8 @@ require('lazy').setup({
       dark_variant = 'main',
       bold_vert_split = false,
       dim_nc_background = false,
-      disable_background = false,
-      disable_float_background = false,
+      disable_background = true,
+      disable_float_background = true,
       disable_italics = true,
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
@@ -321,7 +321,7 @@ require('lazy').setup({
       strikethrough = true,
       invert_selection = false,
       invert_signs = false,
-      invert_tabline = false,
+      invert_tabline = true,
       invert_intend_guides = false,
       inverse = true, -- invert background for search, diffs, statuslines and errors
       contrast = "",  -- can be "hard", "soft" or empty string
@@ -696,6 +696,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.cursorline = false
+vim.opt.colorcolumn = '80'
 -- vim.opt.wrap = true
 vim.opt.winbar = "%f %m"
 
@@ -713,15 +714,15 @@ vim.cmd("let g:netrw_liststyle=3")
 vim.cmd("let g:netrw_altv=1")
 
 -- THESE COMMANDS ONLY WORK FOR THE MODUS THEMES!!!!
-vim.g.modus_termtrans_enable = 1    -- makes background transparent
-vim.g.modus_dim_inactive_window = 0 -- This disables the different color for inactive panes
-vim.g.modus_yellow_comments = 0
-vim.g.modus_green_strings = 0
-vim.g.modus_faint_syntax = 0
-vim.g.modus_cursorline_intense = 0
+-- vim.g.modus_termtrans_enable = 1    -- makes background transparent
+-- vim.g.modus_dim_inactive_window = 0 -- This disables the different color for inactive panes
+-- vim.g.modus_yellow_comments = 0
+-- vim.g.modus_green_strings = 0
+-- vim.g.modus_faint_syntax = 0
+-- vim.g.modus_cursorline_intense = 0
 
 -- Colorscheme being used:
-vim.cmd(":colorscheme rose-pine")
+vim.cmd(":colorscheme gruvbox")
 
 -- My overrides:
 -- global statusline
@@ -731,7 +732,7 @@ vim.cmd(":set nocompatible")
 vim.cmd(":filetype plugin on")
 vim.cmd(":syntax on")
 -- vim.cmd(":highlight Visual guibg=#264F78")
--- vim.cmd(":highlight WinSeparator guibg=none")
+vim.cmd(":highlight WinSeparator guibg=none")
 -- which-key window background-color:
 -- vim.cmd(":highlight WhichKeyFloat guibg='#080808'")
 -- Winbar:

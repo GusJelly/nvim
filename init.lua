@@ -154,7 +154,7 @@ require('lazy').setup({
     config = function()
       require('onedark').setup  {
         -- Main options --
-        style = 'cool', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+        style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
         transparent = true,  -- Show/hide background
         term_colors = true, -- Change terminal color as per the selected theme style
         ending_tildes = true, -- Show the end-of-buffer tildes. By default they are hidden
@@ -201,7 +201,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'vscode',
         component_separators = '|',
         section_separators = '',
       },
@@ -249,13 +249,27 @@ require('lazy').setup({
 
   -- Gustavo's chosen plugins
   {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
+
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
     'vimwiki/vimwiki',
   },
+
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
   },
+
   {
     'ThePrimeagen/harpoon',
   },
@@ -267,11 +281,13 @@ require('lazy').setup({
       vim.fn["mkdp#util#install"]()
     end,
   },
+
   {
     "ellisonleao/glow.nvim",
     config = true,
     cmd = "Glow"
   },
+
   -- rose-pine
   {
     'rose-pine/neovim',
@@ -330,20 +346,44 @@ require('lazy').setup({
       }
     })
   },
+
   -- Colorschemes
   {
-    'GustavoPrietoP/doom-themes.nvim',
     'Mofiqul/dracula.nvim',
     'ishan9299/modus-theme-vim',
-    'junegunn/seoul256.vim',
-    'tamelion/neovim-molokai',
     'bluz71/vim-moonfly-colors',
-    'Mofiqul/vscode.nvim',
-    'savq/melange-nvim'
   },
+
   {
-    'rmehri01/onenord.nvim'
+    'Mofiqul/vscode.nvim',
+    config =
+      require('vscode').setup({
+        -- Alternatively set style in setup
+        -- style = 'light'
+
+        -- Enable transparent background
+        transparent = true,
+
+        -- Enable italic comment
+        italic_comments = true,
+
+        -- Disable nvim-tree background color
+        disable_nvimtree_bg = true,
+
+        -- Override colors (see ./lua/vscode/colors.lua)
+        color_overrides = {
+          vscLineNumber = '#FFFFFF',
+        },
+
+        -- Override highlight groups (see ./lua/vscode/theme.lua)
+        group_overrides = {
+          -- this supports the same val table as vim.api.nvim_set_hl
+          -- use colors from this colorscheme by requiring vscode.colors!
+          Cursor = { fg=require('vscode').vscDarkBlue, bg=require('vscode').vscLightGreen, bold=true },
+        }
+      })
   },
+
   {
     'ellisonleao/gruvbox.nvim',
     require("gruvbox").setup({
@@ -359,10 +399,10 @@ require('lazy').setup({
       strikethrough = true,
       invert_selection = false,
       invert_signs = false,
-      invert_tabline = true,
+      invert_tabline = false,
       invert_intend_guides = false,
       inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "",  -- can be "hard", "soft" or empty string
+      contrast = "hard",  -- can be "hard", "soft" or empty string
       palette_overrides = {},
       overrides = {},
       dim_inactive = false,
@@ -693,7 +733,9 @@ cmp.setup {
 }
 
 -- Gustavo Remaps:
-vim.keymap.set("n", "<leader>pv", "<cmd>:Explore<CR>")
+-- vim.keymap.set("n", "<leader>pv", "<cmd>:Explore<CR>")
+-- Use oil keymap
+vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- greatest remap ever : asbjornHaland
@@ -763,17 +805,20 @@ vim.cmd("let g:netrw_altv=1")
 vim.cmd(":colorscheme onedark")
 
 -- My overrides:
+local color = '#1f1f1f'  -- color for using in overrides for backgrounds
 -- global statusline
 vim.cmd(":set laststatus=3")
-vim.cmd(":highlight cursorline guibg=none")
+-- vim.cmd(":highlight cursorline guibg=none")
+
 vim.cmd(":set nocompatible")
 vim.cmd(":filetype plugin on")
 vim.cmd(":syntax on")
-vim.cmd(":highlight Visual guibg=#264F78")
+
+-- vim.cmd(":highlight Visual guibg=#264F78")
 vim.cmd(":highlight WinSeparator guibg=none")
-vim.cmd(":highlight Pmenu guibg='#0f0f0f'")  -- change autocompletio popup color
+vim.cmd(":highlight Pmenu guibg=" .. color)  -- change autocompletio popup color
 -- which-key window background-color:
-vim.cmd(":highlight WhichKeyFloat guibg='#0f0f0f'")
+vim.cmd(":highlight WhichKeyFloat guibg=" .. color)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

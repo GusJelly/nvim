@@ -154,8 +154,8 @@ require('lazy').setup({
     config = function()
       require('onedark').setup  {
         -- Main options --
-        style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-        transparent = true,  -- Show/hide background
+        style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+        transparent = false,  -- Show/hide background
         term_colors = true, -- Change terminal color as per the selected theme style
         ending_tildes = true, -- Show the end-of-buffer tildes. By default they are hidden
         cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
@@ -171,8 +171,8 @@ require('lazy').setup({
           comments = 'italic',
           keywords = 'none',
           functions = 'none',
-          strings = 'none',
-          variables = 'none'
+          strings = 'italic',
+          variables = 'italic'
         },
 
         -- Lualine options --
@@ -180,33 +180,38 @@ require('lazy').setup({
           transparent = false, -- lualine center bar transparency
         },
 
-    -- Custom Highlights --
-    colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
+        -- Custom Highlights --
+        colors = {
+          -- bg0 = "#0f0f0f",
+          -- bg1 = "#1a1a1a",
+          -- bg2 = "#0f0f0f",
+          -- bg3 = "#1f1f1f",
+        }, -- Override default colors
+        highlights = {}, -- Override highlight groups
 
-    -- Plugins Config --
-    diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl instead of underline for diagnostics
-        background = true,    -- use background color for virtual text
-    },
-}
+        -- Plugins Config --
+        diagnostics = {
+          darker = true, -- darker colors for diagnostic
+          undercurl = true,   -- use undercurl instead of underline for diagnostics
+          background = true,    -- use background color for virtual text
+        },
+      }
     end,
   },
 
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'vscode',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
+  -- {
+  --   -- Set lualine as statusline
+  --   'nvim-lualine/lualine.nvim',
+  --   -- See `:help lualine.txt`
+  --   opts = {
+  --     options = {
+  --       icons_enabled = false,
+  --       theme = 'tokyonight',
+  --       component_separators = '|',
+  --       section_separators = '',
+  --     },
+  --   },
+  -- },
 
   {
     -- Add indentation guides even on blank lines
@@ -214,7 +219,7 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = ' ',
+      char = '┊',
       show_trailing_blankline_indent = false,
     },
   },
@@ -249,6 +254,103 @@ require('lazy').setup({
 
   -- Gustavo's chosen plugins
   {
+    'catppuccin/nvim',
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        background = { -- :h background
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = false, -- disables setting the background color.
+        show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+        term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
+        dim_inactive = {
+          enabled = false, -- dims the background color of inactive window
+          shade = "dark",
+          percentage = 0.15, -- percentage of the shade to apply to the inactive window
+        },
+        no_italic = false, -- Force no italic
+        no_bold = false, -- Force no bold
+        no_underline = false, -- Force no underline
+        styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+          comments = { "italic" }, -- Change the style of comments
+          conditionals = { "italic" },
+          loops = {},
+          functions = {},
+          keywords = {},
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+          operators = {},
+        },
+        color_overrides = {},
+        custom_highlights = {},
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          treesitter = true,
+          notify = false,
+          mini = false,
+          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+        },
+      })
+
+-- setup must be called before loading
+vim.cmd.colorscheme "catppuccin"
+    end
+  },
+
+  -- nvim-orgmode
+  {
+    'lukas-reineke/headlines.nvim',
+  },
+  {
+    'nvim-orgmode/orgmode',
+    config = function()
+      -- Load custom tree-sitter grammar for org filetype
+      require('orgmode').setup_ts_grammar()
+
+      -- Tree-sitter configuration
+      require'nvim-treesitter.configs'.setup {
+        -- If TS highlights are not enabled at all, or disabled via ``disable`` prop, highlighting will fallback to default Vim syntax highlighting
+        highlight = {
+          enable = true,
+          disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
+          additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
+        },
+        ensure_installed = {'org'}, -- Or run :TSUpdate org
+      }
+      require('orgmode').setup({
+        org_agenda_files = {'~/org/*.org'},
+        org_default_notes_file = '~/org/*.org'
+      })
+    end
+  },
+  -- {
+  --   'akinsho/org-bullets.nvim',
+  --   config = function()
+  --     require('org-bullets').setup {
+  --       concealcursor = true,
+  --       symbols = {
+  --         list = "•",
+  --         -- headlines can be a list
+  --         headlines = { "◉", "○", "✸", "✿" },
+  --       },
+  --       checkboxes = {
+  --         half = { "", "OrgTSCheckboxHalfChecked" },
+  --         done = { "✓", "OrgDone" },
+  --         todo = { "˟", "OrgTODO" },
+  --       }
+  --     }
+  --   end
+  -- },
+
+  {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
@@ -262,6 +364,7 @@ require('lazy').setup({
 
   {
     'vimwiki/vimwiki',
+    'dhruvasagar/vim-table-mode'
   },
 
   {
@@ -355,6 +458,47 @@ require('lazy').setup({
   },
 
   {
+    'folke/tokyonight.nvim',
+    config = function()
+      require("tokyonight").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+        light_style = "day", -- The theme is used when the background is set to light
+        transparent = false, -- Enable this to disable setting the background color
+        terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
+        styles = {
+          -- Style to be applied to different syntax groups
+          -- Value is any valid attr-list value for `:help nvim_set_hl`
+          comments = { italic = true },
+          keywords = { italic = true },
+          functions = {},
+          variables = {},
+          -- Background styles. Can be "dark", "transparent" or "normal"
+          sidebars = "dark", -- style for sidebars, see below
+          floats = "dark", -- style for floating windows
+        },
+        sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+        day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+        hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+        dim_inactive = false, -- dims inactive windows
+        lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
+
+        --- You can override specific color groups to use other groups or a hex color
+        --- function will be called with a ColorScheme table
+        ---@param colors ColorScheme
+        on_colors = function(colors) end,
+
+        --- You can override specific highlights to use other groups or a hex color
+        --- function will be called with a Highlights and ColorScheme table
+        ---@param highlights Highlights
+        ---@param colors ColorScheme
+        on_highlights = function(highlights, colors) end,
+      })
+    end
+  },
+
+  {
     'Mofiqul/vscode.nvim',
     config =
       require('vscode').setup({
@@ -441,7 +585,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -775,7 +919,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 vim.opt.colorcolumn = '80'
 -- vim.opt.wrap = true
 vim.opt.winbar = "%f %m"
@@ -802,10 +946,10 @@ vim.cmd("let g:netrw_altv=1")
 -- vim.g.modus_cursorline_intense = 0
 
 -- Colorscheme being used:
-vim.cmd(":colorscheme onedark")
+vim.cmd(":colorscheme tokyonight")
 
 -- My overrides:
-local color = '#1f1f1f'  -- color for using in overrides for backgrounds
+-- local color = '#000000'  -- color for using in overrides for backgrounds
 -- global statusline
 vim.cmd(":set laststatus=3")
 -- vim.cmd(":highlight cursorline guibg=none")
@@ -816,9 +960,9 @@ vim.cmd(":syntax on")
 
 -- vim.cmd(":highlight Visual guibg=#264F78")
 vim.cmd(":highlight WinSeparator guibg=none")
-vim.cmd(":highlight Pmenu guibg=" .. color)  -- change autocompletio popup color
+-- vim.cmd(":highlight Pmenu guibg=" .. color)  -- change autocompletio popup color
 -- which-key window background-color:
-vim.cmd(":highlight WhichKeyFloat guibg=" .. color)
+-- vim.cmd(":highlight WhichKeyFloat guibg=" .. color)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -1,47 +1,8 @@
---[[
-
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-
-Kickstart.nvim is *not* a distribution.
-
-Kickstart.nvim is a template for your own configuration.
-  The goal is that you can read every line of code, top-to-bottom, understand
-  what your configuration is doing, and modify it to suit your needs.
-
-  Once you've done that, you should start exploring, configuring and tinkering to
-  explore Neovim!
-
-  If you don't know anything about Lua, I recommend taking some time to read through
-  a guide. One possible example:
-  - https://learnxinyminutes.com/docs/lua/
-
-  And then you can explore or search through `:help lua-guide`
-
-
-Kickstart Guide:
-
-I have left several `:help X` comments throughout the init.lua
-You should run that command and read that help section for more information.
-
-In addition, I have some `NOTE:` items throughout the file.
-These are for you, the reader to help understand what is happening. Feel free to delete
-them once you know what you're doing, but they should serve as a guide for when you
-are first encountering a few different constructs in your nvim config.
-
-I hope you enjoy your Neovim journey,
-- TJ
-
-P.S. You can delete this when you're done too. It's your config now :)
---]]
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.opt.guicursor = ''
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -86,7 +47,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -110,24 +71,9 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
+  { 'folke/which-key.nvim', opts = {} },
   {
-    'folke/which-key.nvim',
-    opts = {},
-    config = function()
-      require("which-key").setup {
-        window = {
-          border = "none",          -- none, single, double, shadow
-          position = "bottom",      -- bottom, top
-          margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
-          padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
-          winblend = 0,             -- value between 0-100 0 for fully opaque and 100 for fully transparent
-          zindex = 1000,            -- positive value to position WhichKey above other floating windows.
-        },
-      }
-    end
-  },
-  {
-    -- Adds git releated signs to the gutter, as well as utilities for managing changes
+    -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
       -- See `:help gitsigns.txt`
@@ -139,8 +85,7 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
       end,
@@ -148,70 +93,10 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
+    -- Colorschemes:
     'navarasu/onedark.nvim',
     priority = 1000,
-    config = function()
-      require('onedark').setup  {
-        -- Main options --
-        style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-        transparent = false,  -- Show/hide background
-        term_colors = true, -- Change terminal color as per the selected theme style
-        ending_tildes = true, -- Show the end-of-buffer tildes. By default they are hidden
-        cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-
-        -- toggle theme style ---
-        toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-        toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
-
-        -- Change code style ---
-        -- Options are italic, bold, underline, none
-        -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
-        code_style = {
-          comments = 'italic',
-          keywords = 'none',
-          functions = 'none',
-          strings = 'italic',
-          variables = 'italic'
-        },
-
-        -- Lualine options --
-        lualine = {
-          transparent = false, -- lualine center bar transparency
-        },
-
-        -- Custom Highlights --
-        colors = {
-          -- bg0 = "#0f0f0f",
-          -- bg1 = "#1a1a1a",
-          -- bg2 = "#0f0f0f",
-          -- bg3 = "#1f1f1f",
-        }, -- Override default colors
-        highlights = {}, -- Override highlight groups
-
-        -- Plugins Config --
-        diagnostics = {
-          darker = true, -- darker colors for diagnostic
-          undercurl = true,   -- use undercurl instead of underline for diagnostics
-          background = true,    -- use background color for virtual text
-        },
-      }
-    end,
   },
-
-  -- {
-  --   -- Set lualine as statusline
-  --   'nvim-lualine/lualine.nvim',
-  --   -- See `:help lualine.txt`
-  --   opts = {
-  --     options = {
-  --       icons_enabled = false,
-  --       theme = 'tokyonight',
-  --       component_separators = '|',
-  --       section_separators = '',
-  --     },
-  --   },
-  -- },
 
   {
     -- Add indentation guides even on blank lines
@@ -225,7 +110,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',         opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -252,308 +137,6 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- Gustavo's chosen plugins
-  {
-    'catppuccin/nvim',
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
-        background = { -- :h background
-          light = "latte",
-          dark = "mocha",
-        },
-        transparent_background = false, -- disables setting the background color.
-        show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-        term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
-        dim_inactive = {
-          enabled = false, -- dims the background color of inactive window
-          shade = "dark",
-          percentage = 0.15, -- percentage of the shade to apply to the inactive window
-        },
-        no_italic = false, -- Force no italic
-        no_bold = false, -- Force no bold
-        no_underline = false, -- Force no underline
-        styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-          comments = { "italic" }, -- Change the style of comments
-          conditionals = { "italic" },
-          loops = {},
-          functions = {},
-          keywords = {},
-          strings = {},
-          variables = {},
-          numbers = {},
-          booleans = {},
-          properties = {},
-          types = {},
-          operators = {},
-        },
-        color_overrides = {},
-        custom_highlights = {},
-        integrations = {
-          cmp = true,
-          gitsigns = true,
-          nvimtree = true,
-          treesitter = true,
-          notify = false,
-          mini = false,
-          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-        },
-      })
-
--- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
-    end
-  },
-
-  -- nvim-orgmode
-  {
-    'lukas-reineke/headlines.nvim',
-  },
-  {
-    'nvim-orgmode/orgmode',
-    config = function()
-      -- Load custom tree-sitter grammar for org filetype
-      require('orgmode').setup_ts_grammar()
-
-      -- Tree-sitter configuration
-      require'nvim-treesitter.configs'.setup {
-        -- If TS highlights are not enabled at all, or disabled via ``disable`` prop, highlighting will fallback to default Vim syntax highlighting
-        highlight = {
-          enable = true,
-          disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
-          additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
-        },
-        ensure_installed = {'org'}, -- Or run :TSUpdate org
-      }
-      require('orgmode').setup({
-        org_agenda_files = {'~/org/*.org'},
-        org_default_notes_file = '~/org/*.org'
-      })
-    end
-  },
-  -- {
-  --   'akinsho/org-bullets.nvim',
-  --   config = function()
-  --     require('org-bullets').setup {
-  --       concealcursor = true,
-  --       symbols = {
-  --         list = "•",
-  --         -- headlines can be a list
-  --         headlines = { "◉", "○", "✸", "✿" },
-  --       },
-  --       checkboxes = {
-  --         half = { "", "OrgTSCheckboxHalfChecked" },
-  --         done = { "✓", "OrgDone" },
-  --         todo = { "˟", "OrgTODO" },
-  --       }
-  --     }
-  --   end
-  -- },
-
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  },
-
-  {
-    'stevearc/oil.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-
-  {
-    'vimwiki/vimwiki',
-    'dhruvasagar/vim-table-mode'
-  },
-
-  {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
-  },
-
-  {
-    'ThePrimeagen/harpoon',
-  },
-
-  {
-    -- Markdown-Preview
-    "iamcco/markdown-preview.nvim",
-    config = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
-
-  {
-    "ellisonleao/glow.nvim",
-    config = true,
-    cmd = "Glow"
-  },
-
-  -- rose-pine
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    require('rose-pine').setup({
-      --- @usage 'auto'|'main'|'moon'|'dawn'
-      variant = 'auto',
-      --- @usage 'main'|'moon'|'dawn'
-      dark_variant = 'main',
-      bold_vert_split = false,
-      dim_nc_background = false,
-      disable_background = true,
-      disable_float_background = true,
-      disable_italics = true,
-
-      --- @usage string hex value or named color from rosepinetheme.com/palette
-      groups = {
-        background = 'base',
-        background_nc = '_experimental_nc',
-        panel = 'surface',
-        panel_nc = 'base',
-        border = 'highlight_med',
-        comment = 'muted',
-        link = 'iris',
-        punctuation = 'subtle',
-
-        error = 'love',
-        hint = 'iris',
-        info = 'foam',
-        warn = 'gold',
-
-        headings = {
-          h1 = 'iris',
-          h2 = 'foam',
-          h3 = 'rose',
-          h4 = 'gold',
-          h5 = 'pine',
-          h6 = 'foam',
-        }
-        -- or set all headings at once
-        -- headings = 'subtle'
-      },
-
-      -- Whether or not highlight_groups optios should change only only update
-      -- the settings they touch or should reset the entire highlight_group.
-      respect_default_highlight_groups = true,
-
-      -- Change specific vim highlight groups
-      -- https://github.com/rose-pine/neovim/wiki/Recipes
-      highlight_groups = {
-        ColorColumn = { bg = 'rose' },
-
-        -- Blend colours against the "base" background
-        CursorLine = { bg = 'foam', blend = 10 },
-        StatusLine = { fg = 'love', bg = 'love', blend = 10 },
-      }
-    })
-  },
-
-  -- Colorschemes
-  {
-    'Mofiqul/dracula.nvim',
-    'ishan9299/modus-theme-vim',
-    'bluz71/vim-moonfly-colors',
-  },
-
-  {
-    'folke/tokyonight.nvim',
-    config = function()
-      require("tokyonight").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-        light_style = "day", -- The theme is used when the background is set to light
-        transparent = false, -- Enable this to disable setting the background color
-        terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
-        styles = {
-          -- Style to be applied to different syntax groups
-          -- Value is any valid attr-list value for `:help nvim_set_hl`
-          comments = { italic = true },
-          keywords = { italic = true },
-          functions = {},
-          variables = {},
-          -- Background styles. Can be "dark", "transparent" or "normal"
-          sidebars = "dark", -- style for sidebars, see below
-          floats = "dark", -- style for floating windows
-        },
-        sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-        day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
-        hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-        dim_inactive = false, -- dims inactive windows
-        lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
-
-        --- You can override specific color groups to use other groups or a hex color
-        --- function will be called with a ColorScheme table
-        ---@param colors ColorScheme
-        on_colors = function(colors) end,
-
-        --- You can override specific highlights to use other groups or a hex color
-        --- function will be called with a Highlights and ColorScheme table
-        ---@param highlights Highlights
-        ---@param colors ColorScheme
-        on_highlights = function(highlights, colors) end,
-      })
-    end
-  },
-
-  {
-    'Mofiqul/vscode.nvim',
-    config =
-      require('vscode').setup({
-        -- Alternatively set style in setup
-        -- style = 'light'
-
-        -- Enable transparent background
-        transparent = true,
-
-        -- Enable italic comment
-        italic_comments = true,
-
-        -- Disable nvim-tree background color
-        disable_nvimtree_bg = true,
-
-        -- Override colors (see ./lua/vscode/colors.lua)
-        color_overrides = {
-          vscLineNumber = '#FFFFFF',
-        },
-
-        -- Override highlight groups (see ./lua/vscode/theme.lua)
-        group_overrides = {
-          -- this supports the same val table as vim.api.nvim_set_hl
-          -- use colors from this colorscheme by requiring vscode.colors!
-          Cursor = { fg=require('vscode').vscDarkBlue, bg=require('vscode').vscLightGreen, bold=true },
-        }
-      })
-  },
-
-  {
-    'ellisonleao/gruvbox.nvim',
-    require("gruvbox").setup({
-      undercurl = true,
-      underline = true,
-      bold = true,
-      italic = {
-        strings = true,
-        comments = true,
-        operators = false,
-        folds = true,
-      },
-      strikethrough = true,
-      invert_selection = false,
-      invert_signs = false,
-      invert_tabline = false,
-      invert_intend_guides = false,
-      inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "hard",  -- can be "hard", "soft" or empty string
-      palette_overrides = {},
-      overrides = {},
-      dim_inactive = false,
-      transparent_mode = true,
-    })
-  },
-
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -566,7 +149,7 @@ vim.cmd.colorscheme "catppuccin"
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -585,7 +168,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
--- vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -602,7 +185,6 @@ vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
-vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
@@ -610,7 +192,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-
 
 -- [[ Basic Keymaps ]]
 
@@ -674,7 +255,7 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
   highlight = { enable = true },
   indent = { enable = true },
@@ -789,12 +370,16 @@ end
 --
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
+--
+--  If you want to override the default filetypes that your language server will attach to you can
+--  define the property 'filetypes' to the map in question.
 local servers = {
   clangd = {},
   gopls = {},
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
+  html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
     Lua = {
@@ -824,8 +409,9 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
     }
-  end,
+  end
 }
 
 -- [[ Configure nvim-cmp ]]
@@ -846,7 +432,7 @@ cmp.setup {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete {},
+    -- ['<C-Space>'] = cmp.mapping.complete {},
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
@@ -876,93 +462,40 @@ cmp.setup {
   },
 }
 
--- Gustavo Remaps:
--- vim.keymap.set("n", "<leader>pv", "<cmd>:Explore<CR>")
--- Use oil keymap
+-- Disable cursorj animations
+vim.cmd[[set guicursor=]]
+
+-- CUSTOM
 vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
--- greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>")
+vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()")
+-- Terminal mode keymaps
+vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
+-- TABS
 vim.keymap.set("n", "<leader>th", "<cmd>:tabprevious<CR>")
 vim.keymap.set("n", "<leader>tl", "<cmd>:tabnext<CR>")
 vim.keymap.set("n", "<leader>tn", "<cmd>:tabnew<CR>")
 vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>")
+-- half page jumping
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Terminal mode keymaps
-vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
+-- VIMWIKI
+vim.cmd[[set nocompatible]]
+vim.cmd[[filetype plugin on]]
+vim.cmd[[syntax on]]
 
--- Harpoon keybindings:
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
+vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[set rnu]]
+vim.cmd[[set number]]
 
-vim.keymap.set("n", "<leader>ha", mark.add_file)
-vim.keymap.set("n", "<leader>he", ui.toggle_quick_menu)
+vim.opt.scrolloff=8
 
-vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
-vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
-vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end)
-vim.keymap.set("n", "<leader>6", function() ui.nav_file(6) end)
-vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end)
-vim.keymap.set("n", "<leader>8", function() ui.nav_file(8) end)
-vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end)
-
--- search and replace keymap
--- I have no idea how it works lmao
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-
--- Miscelanious changes:
-vim.opt.nu = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 8
-vim.opt.cursorline = true
-vim.opt.colorcolumn = '80'
--- vim.opt.wrap = true
-vim.opt.winbar = "%f %m"
-
--- indenting madness:
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.autoindent = true
-vim.opt.expandtab = true
-
--- Disables NetRW's ugly banner
-vim.cmd("let g:netrw_banner=0")
--- Makes NetRW use the "tree view" style
-vim.cmd("let g:netrw_liststyle=3")
--- Make NetRW open new split to the right
-vim.cmd("let g:netrw_altv=1")
-
--- THESE COMMANDS ONLY WORK FOR THE MODUS THEMES!!!!
--- vim.g.modus_termtrans_enable = 1    -- makes background transparent
--- vim.g.modus_dim_inactive_window = 0 -- This disables the different color for inactive panes
--- vim.g.modus_yellow_comments = 0
--- vim.g.modus_green_strings = 0
--- vim.g.modus_faint_syntax = 0
--- vim.g.modus_cursorline_intense = 0
-
--- Colorscheme being used:
-vim.cmd(":colorscheme tokyonight")
-
--- My overrides:
--- local color = '#000000'  -- color for using in overrides for backgrounds
--- global statusline
-vim.cmd(":set laststatus=3")
--- vim.cmd(":highlight cursorline guibg=none")
-
-vim.cmd(":set nocompatible")
-vim.cmd(":filetype plugin on")
-vim.cmd(":syntax on")
-
--- vim.cmd(":highlight Visual guibg=#264F78")
-vim.cmd(":highlight WinSeparator guibg=none")
--- vim.cmd(":highlight Pmenu guibg=" .. color)  -- change autocompletio popup color
--- which-key window background-color:
--- vim.cmd(":highlight WhichKeyFloat guibg=" .. color)
+vim.cmd[[let g:netrw_banner = 0]]
+vim.cmd[[let g:netrw_browse_split = 4]]
+vim.cmd[[let g:netrw_liststyle = 3]]
+vim.cmd[[let g:netrw_altv = 1]]
+vim.cmd[[let loaded_netrwPlugin = 1]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

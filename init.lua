@@ -468,7 +468,8 @@ vim.cmd[[set guicursor=]]
 -- CUSTOM
 vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>")
 vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>")
-vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()")
+vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()<CR>")
+vim.keymap.set("n", "<leader>gl", "<cmd>:LazyGit<CR>")
 -- Terminal mode keymaps
 vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
 -- TABS

@@ -462,7 +462,7 @@ cmp.setup {
   },
 }
 
--- Disable cursorj animations
+-- Disable cursor animations
 vim.cmd[[set guicursor=]]
 
 -- CUSTOM
@@ -498,8 +498,12 @@ vim.cmd[[syntax on]]
 vim.cmd[[colorscheme tokyonight]]
 vim.cmd[[set rnu]]
 vim.cmd[[set number]]
+vim.cmd[[highlight WinSeperator guibg=none]]
+vim.cmd[[set laststatus=3]]
 
 vim.opt.scrolloff=8
+
+vim.cmd[[set winbar=%f\ %m]]
 
 vim.cmd[[let g:netrw_banner = 0]]
 vim.cmd[[let g:netrw_browse_split = 4]]

@@ -496,20 +496,20 @@ vim.cmd[[filetype plugin on]]
 vim.cmd[[syntax on]]
 
 vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[set background=dark]]
 vim.cmd[[set rnu]]
 vim.cmd[[set number]]
 vim.cmd[[highlight WinSeperator guibg=none]]
 vim.cmd[[set laststatus=3]]
 
-vim.opt.scrolloff=8
+vim.opt.scrolloff=4
 
 vim.cmd[[set winbar=%f\ %m]]
 
-vim.cmd[[let g:netrw_banner = 0]]
-vim.cmd[[let g:netrw_browse_split = 4]]
-vim.cmd[[let g:netrw_liststyle = 3]]
-vim.cmd[[let g:netrw_altv = 1]]
-vim.cmd[[let loaded_netrwPlugin = 1]]
+vim.opt.expandtab = true
+vim.opt.autoindent=true
+vim.opt.tabstop=4
+vim.opt.shiftwidth=4
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -168,7 +168,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -498,10 +498,7 @@ vim.cmd[[set nocompatible]]
 vim.cmd[[filetype plugin on]]
 vim.cmd[[syntax on]]
 
-vim.cmd[[colorscheme modus-vivendi]]
-vim.g.modus_dim_inactive_window = 0
-vim.g.modus_termtrans_enable = 1
-
+vim.cmd[[colorscheme tokyonight]]
 vim.cmd[[set background=dark]]
 vim.cmd[[set rnu]]
 vim.cmd[[set number]]

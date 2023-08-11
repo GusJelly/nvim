@@ -489,20 +489,26 @@ vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>")
 -- half page jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- BUFFERS
+vim.keymap.set("n", "<leader>b[", "<cmd>:bprevious<CR>")
+vim.keymap.set("n", "<leader>b]", "<cmd>:bnext<CR>")
 
 -- VIMWIKI
 vim.cmd[[set nocompatible]]
 vim.cmd[[filetype plugin on]]
 vim.cmd[[syntax on]]
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme modus-vivendi]]
+vim.g.modus_dim_inactive_window = 0
+vim.g.modus_termtrans_enable = 1
+
 vim.cmd[[set background=dark]]
 vim.cmd[[set rnu]]
 vim.cmd[[set number]]
 vim.cmd[[highlight WinSeperator guibg=none]]
 vim.cmd[[set laststatus=3]]
 
-vim.opt.scrolloff=4
+vim.opt.scrolloff=8
 
 vim.cmd[[set winbar=%f\ %m]]
 

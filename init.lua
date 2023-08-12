@@ -98,16 +98,16 @@ require('lazy').setup({
     priority = 1000,
   },
 
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-  },
+  -- {
+  --   -- Add indentation guides even on blank lines
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   -- Enable `lukas-reineke/indent-blankline.nvim`
+  --   -- See `:help indent_blankline.txt`
+  --   opts = {
+  --     char = '┊',
+  --     show_trailing_blankline_indent = false,
+  --   },
+  -- },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -492,27 +492,33 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- BUFFERS
 vim.keymap.set("n", "<leader>b[", "<cmd>:bprevious<CR>")
 vim.keymap.set("n", "<leader>b]", "<cmd>:bnext<CR>")
+-- Yank to clipboard
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
 
 -- VIMWIKI
 vim.cmd[[set nocompatible]]
 vim.cmd[[filetype plugin on]]
 vim.cmd[[syntax on]]
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme rose-pine]]
+
 vim.cmd[[set background=dark]]
 vim.cmd[[set rnu]]
 vim.cmd[[set number]]
 vim.cmd[[highlight WinSeperator guibg=none]]
 vim.cmd[[set laststatus=3]]
 
-vim.opt.scrolloff=8
 
 vim.cmd[[set winbar=%f\ %m]]
+
+vim.opt.scrolloff=8
 
 vim.opt.expandtab = true
 vim.opt.autoindent=true
 vim.opt.tabstop=4
-vim.opt.shiftwidth=4
+-- vim.opt.shiftwidth=4
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

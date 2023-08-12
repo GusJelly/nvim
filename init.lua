@@ -495,14 +495,16 @@ vim.keymap.set("n", "<leader>b]", "<cmd>:bnext<CR>")
 -- Yank to clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-
+-- Start shell command
+vim.keymap.set("n", "<leader>ss", ":!")
 
 -- VIMWIKI
 vim.cmd[[set nocompatible]]
 vim.cmd[[filetype plugin on]]
 vim.cmd[[syntax on]]
 
-vim.cmd[[colorscheme rose-pine]]
+-- Colorscheme
+vim.cmd[[colorscheme gruvbox]]
 
 vim.cmd[[set background=dark]]
 vim.cmd[[set rnu]]

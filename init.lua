@@ -499,6 +499,15 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>sc", ":!")
 -- ZenMode
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
+-- Center view after jumping to a mark
+vim.keymap.set("n", "'a", "'azz")
+vim.keymap.set("n", "'s", "'szz")
+vim.keymap.set("n", "'d", "'dzz")
+vim.keymap.set("n", "'f", "'fzz")
+vim.keymap.set("n", "'q", "'qzz")
+vim.keymap.set("n", "'w", "'wzz")
+vim.keymap.set("n", "'e", "'ezz")
+vim.keymap.set("n", "'z", "'zzz")
 
 -- VIMWIKI
 vim.cmd[[set nocompatible]]

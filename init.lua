@@ -92,12 +92,6 @@ require('lazy').setup({
         },
     },
 
-    {
-        -- Colorschemes:
-        'navarasu/onedark.nvim',
-        priority = 1000,
-    },
-
     -- {
     --   -- Add indentation guides even on blank lines
     --   'lukas-reineke/indent-blankline.nvim',
@@ -532,6 +526,7 @@ vim.opt.scrolloff=8
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.cursorline = false
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

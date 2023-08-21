@@ -516,7 +516,7 @@ vim.cmd[[filetype plugin on]]
 vim.cmd[[syntax on]]
 
 -- Colorscheme
-vim.cmd[[colorscheme onedark]]
+vim.cmd[[colorscheme rose-pine]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
 vim.cmd[[set rnu]]

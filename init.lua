@@ -33,7 +33,7 @@ require('lazy').setup({
     'tpope/vim-rhubarb',
 
     -- Detect tabstop and shiftwidth automatically
-    -- 'tpope/vim-sleuth',
+    'tpope/vim-sleuth',
 
     -- NOTE: This is where your plugins related to LSP can be installed.
     --  The configuration is done below. Search for lspconfig to find it below.
@@ -504,19 +504,13 @@ vim.keymap.set("n", "'w", "'wzz")
 vim.keymap.set("n", "'e", "'ezz")
 vim.keymap.set("n", "'z", "'zzz")
 
--- VIMWIKI
-vim.cmd[[set nocompatible]]
-vim.cmd[[filetype plugin on]]
-vim.cmd[[syntax on]]
-
 -- Colorscheme
-vim.cmd[[colorscheme rose-pine]]
+vim.cmd[[colorscheme gruvbox-material]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
 vim.cmd[[set rnu]]
 vim.cmd[[set number]]
 vim.cmd[[set laststatus=3]]
-
 
 vim.cmd[[set winbar=%f\ %m]]
 

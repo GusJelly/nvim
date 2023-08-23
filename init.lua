@@ -463,15 +463,15 @@ vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>", { desc =  'enter oil.nvim' })
 vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>", {desc = 'spawn harpoon ui'})
 vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()<CR>", {desc = 'add file to harpoon'})
 vim.keymap.set("n", "<leader>gl", "<cmd>:LazyGit<CR>", {desc = 'spawn lazygit'})
-vim.keymap.set("n", "<leader>1", "<cmd>:lua require('harpoon.ui').nav_file(1)<CR>")
-vim.keymap.set("n", "<leader>2", "<cmd>:lua require('harpoon.ui').nav_file(2)<CR>")
-vim.keymap.set("n", "<leader>3", "<cmd>:lua require('harpoon.ui').nav_file(3)<CR>")
-vim.keymap.set("n", "<leader>4", "<cmd>:lua require('harpoon.ui').nav_file(4)<CR>")
-vim.keymap.set("n", "<leader>5", "<cmd>:lua require('harpoon.ui').nav_file(5)<CR>")
-vim.keymap.set("n", "<leader>6", "<cmd>:lua require('harpoon.ui').nav_file(6)<CR>")
-vim.keymap.set("n", "<leader>7", "<cmd>:lua require('harpoon.ui').nav_file(7)<CR>")
-vim.keymap.set("n", "<leader>8", "<cmd>:lua require('harpoon.ui').nav_file(8)<CR>")
-vim.keymap.set("n", "<leader>9", "<cmd>:lua require('harpoon.ui').nav_file(9)<CR>")
+vim.keymap.set("n", "<leader>1", "<cmd>:lua require('harpoon.ui').nav_file(1)<CR>", {desc = 'harpoon go to file 1'})
+vim.keymap.set("n", "<leader>2", "<cmd>:lua require('harpoon.ui').nav_file(2)<CR>", {desc = 'harpoon go to file 2'})
+vim.keymap.set("n", "<leader>3", "<cmd>:lua require('harpoon.ui').nav_file(3)<CR>", {desc = 'harpoon go to file 3'})
+vim.keymap.set("n", "<leader>4", "<cmd>:lua require('harpoon.ui').nav_file(4)<CR>", {desc = 'harpoon go to file 4'})
+vim.keymap.set("n", "<leader>5", "<cmd>:lua require('harpoon.ui').nav_file(5)<CR>", {desc = 'harpoon go to file 5'})
+vim.keymap.set("n", "<leader>6", "<cmd>:lua require('harpoon.ui').nav_file(6)<CR>", {desc = 'harpoon go to file 6'})
+vim.keymap.set("n", "<leader>7", "<cmd>:lua require('harpoon.ui').nav_file(7)<CR>", {desc = 'harpoon go to file 7'})
+vim.keymap.set("n", "<leader>8", "<cmd>:lua require('harpoon.ui').nav_file(8)<CR>", {desc = 'harpoon go to file 8'})
+vim.keymap.set("n", "<leader>9", "<cmd>:lua require('harpoon.ui').nav_file(9)<CR>", {desc = 'harpoon go to file 9'})
 
 -- Terminal mode keymaps
 vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
@@ -494,27 +494,17 @@ vim.keymap.set("n", "]b", "<cmd>:bnext<CR>", {desc = 'next buffer'})
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- Start shell command
-vim.keymap.set("n", "<leader>sc", ":!")
+-- Set up shell command
+vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 
 -- ZenMode
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
-
--- Center view after jumping to a mark
--- vim.keymap.set("n", "'a", "'azz")
--- vim.keymap.set("n", "'s", "'szz")
--- vim.keymap.set("n", "'d", "'dzz")
--- vim.keymap.set("n", "'f", "'fzz")
--- vim.keymap.set("n", "'q", "'qzz")
--- vim.keymap.set("n", "'w", "'wzz")
--- vim.keymap.set("n", "'e", "'ezz")
--- vim.keymap.set("n", "'z", "'zzz")
 
 -- Colorscheme
 vim.cmd[[colorscheme gruvbox-material]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
--- Disable cursor animations
+-- Disable cursor animations without bugs
 vim.cmd[[set guicursor=n-v-c-sm:block]]
 
 -- Line numbers
@@ -523,12 +513,16 @@ vim.cmd[[set number]]
 
 -- global status
 vim.cmd[[set laststatus=3]]
+
 -- top bar
 vim.cmd[[set winbar=%f\ %m]]
 
+-- Telescope keybindings
+vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search keybindings'})
+
 vim.opt.scrolloff=8
 
--- set tabstop=4 shiftwidth=4 expandtab
+-- Working with tabs
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true

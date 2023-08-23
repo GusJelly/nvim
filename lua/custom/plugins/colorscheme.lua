@@ -238,13 +238,6 @@ return {
         }
     },
 
-    -- Gruvbuddy
-    {
-        'tjdevries/gruvbuddy.nvim',
-        name = "gruvbuddy",
-        lazy = true,
-    },
-
     -- Moonfly
     {
         'bluz71/vim-moonfly-colors',
@@ -306,6 +299,11 @@ return {
     -- Gruvbox-Material
     {
         'sainnhe/gruvbox-material',
-        lazy = true
+        lazy = true,
+        init = function()
+            vim.g.gruvbox_material_background = 'hard'
+            vim.g.gruvbox_material_enable_bold = 1
+            vim.g.gruvbox_material_enable_italic = 1
+        end
     },
 }

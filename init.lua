@@ -256,8 +256,8 @@ require('nvim-treesitter.configs').setup {
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
+            -- init_selection = '<c-space>',
+            -- node_incremental = '<c-space>',
             scope_incremental = '<c-s>',
             node_decremental = '<M-space>',
         },
@@ -456,8 +456,6 @@ cmp.setup {
     },
 }
 
--- Disable cursor animations
-vim.cmd[[set guicursor=n-v-c-sm:block]]
 
 -- CUSTOM
 vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>")
@@ -485,8 +483,8 @@ vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- BUFFERS
-vim.keymap.set("n", "<leader>b[", "<cmd>:bprevious<CR>")
-vim.keymap.set("n", "<leader>b]", "<cmd>:bnext<CR>")
+vim.keymap.set("n", "[b", "<cmd>:bprevious<CR>")
+vim.keymap.set("n", "]b", "<cmd>:bnext<CR>")
 -- Yank to clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
@@ -495,23 +493,29 @@ vim.keymap.set("n", "<leader>sc", ":!")
 -- ZenMode
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 -- Center view after jumping to a mark
-vim.keymap.set("n", "'a", "'azz")
-vim.keymap.set("n", "'s", "'szz")
-vim.keymap.set("n", "'d", "'dzz")
-vim.keymap.set("n", "'f", "'fzz")
-vim.keymap.set("n", "'q", "'qzz")
-vim.keymap.set("n", "'w", "'wzz")
-vim.keymap.set("n", "'e", "'ezz")
-vim.keymap.set("n", "'z", "'zzz")
+-- vim.keymap.set("n", "'a", "'azz")
+-- vim.keymap.set("n", "'s", "'szz")
+-- vim.keymap.set("n", "'d", "'dzz")
+-- vim.keymap.set("n", "'f", "'fzz")
+-- vim.keymap.set("n", "'q", "'qzz")
+-- vim.keymap.set("n", "'w", "'wzz")
+-- vim.keymap.set("n", "'e", "'ezz")
+-- vim.keymap.set("n", "'z", "'zzz")
 
 -- Colorscheme
-vim.cmd[[colorscheme onedark]]
+vim.cmd[[colorscheme gruvbox-material]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
+-- Disable cursor animations
+vim.cmd[[set guicursor=n-v-c-sm:block]]
+
+-- Line numbers
 vim.cmd[[set rnu]]
 vim.cmd[[set number]]
-vim.cmd[[set laststatus=3]]
 
+-- global status
+vim.cmd[[set laststatus=3]]
+-- top bar
 vim.cmd[[set winbar=%f\ %m]]
 
 vim.opt.scrolloff=8
@@ -522,5 +526,3 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.cursorline = false
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et

@@ -457,7 +457,7 @@ cmp.setup {
 }
 
 -- Disable cursor animations
-vim.cmd[[set guicursor=]]
+vim.cmd[[set guicursor=n-v-c-sm:block]]
 
 -- CUSTOM
 vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>")
@@ -505,7 +505,7 @@ vim.keymap.set("n", "'e", "'ezz")
 vim.keymap.set("n", "'z", "'zzz")
 
 -- Colorscheme
-vim.cmd[[colorscheme gruvbox-material]]
+vim.cmd[[colorscheme onedark]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
 vim.cmd[[set rnu]]

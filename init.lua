@@ -101,8 +101,10 @@ require('lazy').setup({
             options = {
                 icons_enabled = false,
                 theme = 'gruvbox-material',
-                component_separators = '|',
-                section_separators = '',
+                -- component_separators = '|',
+                -- section_separators = '',
+                component_separators = { left = '', right = ''},
+                section_separators = { left = '', right = ''},
             },
         },
     },

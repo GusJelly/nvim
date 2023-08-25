@@ -518,7 +518,7 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme gruvbox-material]]
+vim.cmd[[colorscheme rose-pine]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
 -- Disable cursor animations without bugs

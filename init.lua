@@ -100,7 +100,7 @@ require('lazy').setup({
         opts = {
             options = {
                 icons_enabled = false,
-                theme = 'rose-pine',
+                theme = 'auto',
                 component_separators = '|',
                 section_separators = '',
                 -- component_separators = { left = '', right = ''},
@@ -518,7 +518,7 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme rose-pine]]
+vim.cmd[[colorscheme edge]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
 -- Disable cursor animations without bugs

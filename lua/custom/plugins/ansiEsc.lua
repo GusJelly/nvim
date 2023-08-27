@@ -1,1 +1,4 @@
-return { 'powerman/vim-plugin-AnsiEsc' }
+return {
+    'powerman/vim-plugin-AnsiEsc',
+    priority = 10000
+}

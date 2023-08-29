@@ -1,1 +1,0 @@
-return { 'Shougo/unite.vim' }

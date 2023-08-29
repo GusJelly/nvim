@@ -119,6 +119,12 @@ return {
     -- Modus-themes from emacs
     {
         'ishan9299/modus-theme-vim',
+        lazy = true,
+        init = function()
+            vim.g.modus_green_strings = 1
+            vim.g.modus_termtrans_enable = 1
+            vim.g.modus_dim_inactive_window = 0
+        end
     },
 
     -- Rose-Pine

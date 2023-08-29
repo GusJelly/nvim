@@ -522,22 +522,23 @@ vim.cmd[[colorscheme gruvbox-material]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
 -- Disable cursor animations without bugs
-vim.cmd[[set guicursor=n-v-c-sm:block]]
+vim.opt.guicursor = "n-v-c-sm:block"
 
 -- Line numbers
-vim.cmd[[set rnu]]
-vim.cmd[[set number]]
+vim.opt.relativenumber = true
+vim.opt.number = true
 
 -- global status
-vim.cmd[[set laststatus=3]]
+vim.opt.laststatus = 3
 
 -- top bar
-vim.cmd[[set winbar=%f\ %m]]
+vim.opt.winbar = "%f %m"
 
 -- Telescope keybindings
 vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search keybindings'})
 
-vim.opt.scrolloff=8
+vim.opt.scrolloff = 8
+vim.opt.colorcolumn = '80'
 
 -- Working with tabs
 vim.opt.tabstop = 4

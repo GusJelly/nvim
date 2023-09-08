@@ -425,6 +425,10 @@ mason_lspconfig.setup_handlers {
     end
 }
 
+require('lspconfig').sourcekit.setup{
+  cmd = {'/usr/libexec/swift/5.8.1/bin/sourcekit-lsp'}
+}
+
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 local cmp = require 'cmp'
@@ -518,11 +522,11 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme gruvbox-material]]
+vim.cmd[[colorscheme rose-pine]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
 -- Disable cursor animations without bugs
-vim.opt.guicursor = "n-v-c-sm:block"
+-- vim.opt.guicursor = "n-v-c-sm:block"
 
 -- Line numbers
 vim.opt.relativenumber = true
@@ -536,6 +540,9 @@ vim.opt.winbar = "%f %m"
 
 -- Telescope keybindings
 vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search keybindings'})
+
+-- vim-table-mode keybindings
+vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
 
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = '80'

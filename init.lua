@@ -2,7 +2,7 @@
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -556,3 +556,11 @@ vim.opt.cursorline = false
 -- Move selected text:
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Markdown settings:
+vim.cmd[[set nocompatible]]
+vim.cmd[[filetype plugin on]]
+vim.cmd[[syntax on]]
+
+vim.opt.conceallevel = 2
+

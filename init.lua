@@ -522,7 +522,7 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme vscode]]
+vim.cmd[[colorscheme rose-pine]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 
 -- Disable cursor animations without bugs
@@ -553,3 +553,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.cursorline = false
 
+-- Move selected text:
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

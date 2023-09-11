@@ -6,8 +6,10 @@ return {
 
         require("neorg").setup {
             load = {
+                ["core.ui"] = {},
                 ["core.defaults"] = {}, -- Loads default behaviour
                 ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.itero"] = {},
                 ["core.dirman"] = { -- Manages Neorg workspaces
 
                     config = {
@@ -18,6 +20,9 @@ return {
                     },
 
                 },
+
+                ["core.ui.calendar"] = {},
+
             },
         }
     end,

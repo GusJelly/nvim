@@ -359,5 +359,5 @@ return {
                 vscLineNumber = '#FFFFFF',
             },
         }
-    }
+    },
 }

@@ -542,7 +542,7 @@ vim.opt.number = true
 vim.opt.laststatus = 3
 
 -- top bar
-vim.opt.winbar = "%f %m"
+-- vim.opt.winbar = "%f %m"
 
 -- Telescope keybindings
 vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search keybindings'})
@@ -573,6 +573,3 @@ vim.cmd[[syntax on]]
 
 -- toggle line wrap:
 vim.opt.wrap = false
-
--- Compile latexDocument:
-vim.keymap.set("n" ,"<leader>pdf", ":!pdflatex ", {desc = 'compile with pdflatex'})

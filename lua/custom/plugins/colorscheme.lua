@@ -4,7 +4,7 @@ return {
         "folke/tokyonight.nvim",
         lazy = true,
         opts = {
-            style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+            style = "day", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
             light_style = "day", -- The theme is used when the background is set to light
             transparent = true, -- Enable this to disable setting the background color
             terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
@@ -120,11 +120,11 @@ return {
     {
         'ishan9299/modus-theme-vim',
         lazy = true,
-        -- init = function()
-        --     vim.g.modus_green_strings = 1
-        --     vim.g.modus_termtrans_enable = 1
-        --     vim.g.modus_dim_inactive_window = 0
-        -- end
+        init = function()
+            -- vim.g.modus_green_strings = 1
+            -- vim.g.modus_termtrans_enable = 1
+            vim.g.modus_dim_inactive_window = 0
+        end
     },
 
     -- Rose-Pine

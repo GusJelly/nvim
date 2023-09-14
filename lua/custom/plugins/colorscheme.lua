@@ -44,7 +44,7 @@ return {
         lazy = true,
         name = "catppuccin",
         opts = {
-            flavour = "mocha", -- latte, frappe, macchiato, mocha
+            flavour = "latte", -- latte, frappe, macchiato, mocha
             background = { -- :h background
                 light = "latte",
                 dark = "mocha",
@@ -120,11 +120,11 @@ return {
     {
         'ishan9299/modus-theme-vim',
         lazy = true,
-        init = function()
-            vim.g.modus_green_strings = 1
-            vim.g.modus_termtrans_enable = 1
-            vim.g.modus_dim_inactive_window = 0
-        end
+        -- init = function()
+        --     vim.g.modus_green_strings = 1
+        --     vim.g.modus_termtrans_enable = 1
+        --     vim.g.modus_dim_inactive_window = 0
+        -- end
     },
 
     -- Rose-Pine
@@ -134,7 +134,7 @@ return {
         name = 'rose-pine',
         opts = {
             --- @usage 'auto'|'main'|'moon'|'dawn'
-            variant = 'auto',
+            variant = 'dawn',
             --- @usage 'main'|'moon'|'dawn'
             dark_variant = 'main',
             bold_vert_split = false,

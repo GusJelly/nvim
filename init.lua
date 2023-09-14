@@ -551,7 +551,7 @@ vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search
 vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
 
 vim.opt.scrolloff = 8
-vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = '128'
 
 -- Working with tabs
 vim.opt.tabstop = 4
@@ -573,3 +573,6 @@ vim.cmd[[syntax on]]
 
 -- toggle line wrap:
 vim.opt.wrap = false
+
+-- Compile latexDocument:
+vim.keymap.set("n" ,"<leader>pdf", ":!pdflatex ", {desc = 'compile with pdflatex'})

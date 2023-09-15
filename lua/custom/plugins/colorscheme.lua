@@ -121,9 +121,12 @@ return {
         'ishan9299/modus-theme-vim',
         lazy = true,
         init = function()
-            -- vim.g.modus_green_strings = 1
-            -- vim.g.modus_termtrans_enable = 1
             vim.g.modus_dim_inactive_window = 0
+            vim.g.modus_yellow_comments = 1
+            vim.g.modus_green_strings = 1
+            vim.g.modus_faint_syntax = 0
+            vim.g.modus_cursorline_intense = 0
+            -- vim.g.modus_termtrans_enable = 1
         end
     },
 
@@ -343,7 +346,7 @@ return {
         lazy = true,
         opts = {
             -- Alternatively set style in setup
-            -- style = 'light'
+            style = 'light',
 
             -- Enable transparent background
             transparent = true,

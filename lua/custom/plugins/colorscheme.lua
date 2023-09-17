@@ -4,9 +4,9 @@ return {
         "folke/tokyonight.nvim",
         lazy = true,
         opts = {
-            style = "day", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+            style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
             light_style = "day", -- The theme is used when the background is set to light
-            transparent = true, -- Enable this to disable setting the background color
+            transparent = false, -- Enable this to disable setting the background color
             terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
             styles = {
                 -- Style to be applied to different syntax groups
@@ -44,13 +44,13 @@ return {
         lazy = true,
         name = "catppuccin",
         opts = {
-            flavour = "latte", -- latte, frappe, macchiato, mocha
+            flavour = "mocha", -- latte, frappe, macchiato, mocha
             background = { -- :h background
                 light = "latte",
                 dark = "mocha",
             },
             transparent_background = true, -- disables setting the background color.
-            show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+            show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
             term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
             dim_inactive = {
                 enabled = false, -- dims the background color of inactive window
@@ -81,8 +81,8 @@ return {
                 gitsigns = true,
                 nvimtree = true,
                 treesitter = true,
-                notify = false,
-                mini = false,
+                notify = true,
+                mini = true,
                 -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
             },
         },
@@ -137,13 +137,13 @@ return {
         name = 'rose-pine',
         opts = {
             --- @usage 'auto'|'main'|'moon'|'dawn'
-            variant = 'dawn',
+            variant = 'main',
             --- @usage 'main'|'moon'|'dawn'
             dark_variant = 'main',
             bold_vert_split = false,
             dim_nc_background = false,
-            disable_background = false,
-            disable_float_background = false,
+            disable_background = true,
+            disable_float_background = true,
             disable_italics = false,
 
             --- @usage string hex value or named color from rosepinetheme.com/palette

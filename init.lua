@@ -530,6 +530,8 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 -- Colorscheme
 vim.cmd[[colorscheme catppuccin]]
 vim.cmd[[highlight WinSeparator guibg=none]]
+-- make background transparent:
+-- vim.cmd[[highlight Normal guibg=none]]
 
 -- Disable cursor animations without bugs
 -- vim.opt.guicursor = "n-v-c-sm:block"
@@ -539,7 +541,7 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- global status
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
 
 -- top bar
 -- vim.opt.winbar = "%f %m"

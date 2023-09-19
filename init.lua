@@ -2,6 +2,7 @@
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
+-- hello
 vim.g.maplocalleader = ','
 
 -- Install package manager
@@ -559,7 +560,7 @@ vim.opt.colorcolumn = '128'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- Move selected text:
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

@@ -5,5 +5,6 @@ return {
     end,
     opts = {
         render = "minimal",
+        background_colour = "#000000"
     }
 }

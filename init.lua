@@ -529,7 +529,7 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme rose-pine]]
+vim.cmd[[colorscheme catppuccin]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]

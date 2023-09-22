@@ -110,17 +110,17 @@ require('lazy').setup({
         },
     },
 
-    {
-        -- Add indentation guides even on blank lines
-        'lukas-reineke/indent-blankline.nvim',
-        -- Enable `lukas-reineke/indent-blankline.nvim`
-        -- See `:help indent_blankline.txt`
-        opts = {
-        char = '┊',
-        show_trailing_blankline_indent = false,
-      },
-    },
-
+    -- {
+    --     -- Add indentation guides even on blank lines
+    --     'lukas-reineke/indent-blankline.nvim',
+    --     -- Enable `lukas-reineke/indent-blankline.nvim`
+    --     -- See `:help indent_blankline.txt`
+    --     opts = {
+    --     char = '┊',
+    --     show_trailing_blankline_indent = false,
+    --   },
+    -- },
+    --
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim', opts = {} },
 
@@ -529,8 +529,9 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd[[colorscheme gruvbox]]
 vim.cmd[[highlight WinSeparator guibg=none]]
+vim.cmd[[set background=light]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 

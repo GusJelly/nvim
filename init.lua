@@ -110,17 +110,17 @@ require('lazy').setup({
         },
     },
 
-    -- {
-    --     -- Add indentation guides even on blank lines
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     -- Enable `lukas-reineke/indent-blankline.nvim`
-    --     -- See `:help indent_blankline.txt`
-    --     opts = {
-    --     char = '┊',
-    --     show_trailing_blankline_indent = false,
-    --   },
-    -- },
-    --
+    {
+        -- Add indentation guides even on blank lines
+        'lukas-reineke/indent-blankline.nvim',
+        -- Enable `lukas-reineke/indent-blankline.nvim`
+        -- See `:help indent_blankline.txt`
+        opts = {
+        char = '┊',
+        show_trailing_blankline_indent = false,
+      },
+    },
+
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim', opts = {} },
 
@@ -490,7 +490,7 @@ vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>", { desc =  'enter oil.nvim' })
 -- vim.keymap.set("n", "<leader>pv", "<cmd>:E<CR>")
 vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>", {desc = 'spawn harpoon ui'})
 vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()<CR>", {desc = 'add file to harpoon'})
-vim.keymap.set("n", "<leader>gl", "<cmd>:LazyGit<CR>", {desc = 'spawn lazygit'})
+vim.keymap.set("n", "<leader>lg", "<cmd>:LazyGit<CR>", {desc = 'spawn lazygit'})
 vim.keymap.set("n", "<leader>1", "<cmd>:lua require('harpoon.ui').nav_file(1)<CR>", {desc = 'harpoon go to file 1'})
 vim.keymap.set("n", "<leader>2", "<cmd>:lua require('harpoon.ui').nav_file(2)<CR>", {desc = 'harpoon go to file 2'})
 vim.keymap.set("n", "<leader>3", "<cmd>:lua require('harpoon.ui').nav_file(3)<CR>", {desc = 'harpoon go to file 3'})
@@ -529,24 +529,25 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme rose-pine]]
+vim.cmd[[colorscheme onedark]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 vim.cmd[[set background=dark]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 
 -- Disable cursor animations without bugs
-vim.opt.guicursor = "n-v-c-sm:block"
+-- vim.opt.guicursor = "n-v-c-sm:block"
+vim.opt.guicursor = ""
 
 -- Line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- global status
--- vim.opt.laststatus = 3
+vim.opt.laststatus = 3
 
 -- top bar
--- vim.opt.winbar = "%f %m"
+vim.opt.winbar = "%f %m"
 
 -- Telescope keybindings
 vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search keybindings'})
@@ -555,7 +556,7 @@ vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search
 vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
 
 vim.opt.scrolloff = 8
-vim.opt.colorcolumn = '128'
+vim.opt.colorcolumn = '80'
 
 -- Working with tabs
 vim.opt.tabstop = 4
@@ -576,4 +577,4 @@ vim.cmd[[filetype plugin on]]
 vim.cmd[[syntax on]]
 
 -- toggle line wrap:
-vim.opt.wrap = false
+vim.opt.wrap = true

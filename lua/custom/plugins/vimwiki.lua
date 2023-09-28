@@ -1,5 +1,6 @@
 return {
     'vimwiki/vimwiki',
+
     init = function()
         -- Markdown settings:
         vim.cmd[[set nocompatible]]

@@ -100,27 +100,27 @@ require('lazy').setup({
         -- See `:help lualine.txt`
         opts = {
             options = {
-                icons_enabled = false,
+                icons_enabled = true,
                 theme = 'auto',
-                component_separators = '|',
-                section_separators = '',
-                -- component_separators = { left = '', right = ''},
-                -- section_separators = { left = '', right = ''},
+                -- component_separators = '|',
+                -- section_separators = '',
+                component_separators = { left = '', right = ''},
+                section_separators = { left = '', right = ''},
             },
         },
     },
 
-    -- {
-    --     -- Add indentation guides even on blank lines
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     -- Enable `lukas-reineke/indent-blankline.nvim`
-    --     -- See `:help indent_blankline.txt`
-    --     opts = {
-    --     char = '┊',
-    --     show_trailing_blankline_indent = false,
-    --   },
-    -- },
-    --
+    {
+        -- Add indentation guides even on blank lines
+        'lukas-reineke/indent-blankline.nvim',
+        -- Enable `lukas-reineke/indent-blankline.nvim`
+        -- See `:help indent_blankline.txt`
+        opts = {
+        char = '┊',
+        show_trailing_blankline_indent = false,
+      },
+    },
+
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim', opts = {} },
 
@@ -526,7 +526,7 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme rose-pine]]
+vim.cmd[[colorscheme gruvbox-material]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 vim.cmd[[set background=dark]]
 -- make background transparent:

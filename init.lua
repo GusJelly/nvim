@@ -261,20 +261,17 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- [[ Configure Treesitter ]]
--- Load custom treesitter grammar for org filetype
-require('orgmode').setup_ts_grammar()
 -- See `:help nvim-treesitter`
 ---@diagnostic disable-next-line: missing-fields
 require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'org', 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = true,
 
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = {'org'},
     },
     indent = { enable = true },
     incremental_selection = {
@@ -529,7 +526,7 @@ vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
 
 -- Colorscheme
-vim.cmd[[colorscheme onedark]]
+vim.cmd[[colorscheme rose-pine]]
 vim.cmd[[highlight WinSeparator guibg=none]]
 vim.cmd[[set background=dark]]
 -- make background transparent:
@@ -556,7 +553,7 @@ vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search
 vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
 
 vim.opt.scrolloff = 8
-vim.opt.colorcolumn = '80'
+-- vim.opt.colorcolumn = '128'
 
 -- Working with tabs
 vim.opt.tabstop = 4

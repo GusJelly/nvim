@@ -44,7 +44,7 @@ return {
         lazy = true,
         name = "catppuccin",
         opts = {
-            flavour = "mocha", -- latte, frappe, macchiato, mocha
+            flavour = "latte", -- latte, frappe, macchiato, mocha
             background = { -- :h background
                 light = "latte",
                 dark = "mocha",
@@ -137,7 +137,7 @@ return {
         name = 'rose-pine',
         opts = {
             --- @usage 'auto'|'main'|'moon'|'dawn'
-            variant = 'main',
+            variant = 'auto',
             --- @usage 'main'|'moon'|'dawn'
             dark_variant = 'main',
             bold_vert_split = false,

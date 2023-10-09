@@ -48,7 +48,7 @@ require('lazy').setup({
 
             -- Useful status updates for LSP
             -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-            { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+            { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
             -- Additional lua configuration, makes nvim stuff amazing!
             'folke/neodev.nvim',
@@ -72,7 +72,7 @@ require('lazy').setup({
     },
 
     -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim', opts = {} },
+    { 'folke/which-key.nvim',          opts = {} },
     {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
         'lewis6991/gitsigns.nvim',
@@ -86,9 +86,12 @@ require('lazy').setup({
                 changedelete = { text = '~' },
             },
             on_attach = function(bufnr)
-                vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-                vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-                vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+                vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
+                    { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+                vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk,
+                    { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
+                vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk,
+                    { buffer = bufnr, desc = '[P]review [H]unk' })
             end,
         },
     },
@@ -102,27 +105,16 @@ require('lazy').setup({
             options = {
                 icons_enabled = true,
                 theme = 'auto',
-                -- component_separators = '|',
-                -- section_separators = '',
-                component_separators = { left = '', right = ''},
-                section_separators = { left = '', right = ''},
+                component_separators = '|',
+                section_separators = '',
+                -- component_separators = { left = '', right = ''},
+                -- section_separators = { left = '', right = ''},
             },
         },
     },
 
-    {
-        -- Add indentation guides even on blank lines
-        'lukas-reineke/indent-blankline.nvim',
-        -- Enable `lukas-reineke/indent-blankline.nvim`
-        -- See `:help indent_blankline.txt`
-        opts = {
-        char = '┊',
-        show_trailing_blankline_indent = false,
-      },
-    },
-
     -- "gc" to comment visual regions/lines
-    { 'numToStr/Comment.nvim', opts = {} },
+    { 'numToStr/Comment.nvim',         opts = {} },
 
     -- Fuzzy Finder (files, lsp, etc)
     { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -394,7 +386,7 @@ local servers = {
     pyright = {},
     rust_analyzer = {},
     tsserver = {},
-    html = { filetypes = { 'html', 'twig', 'hbs'} },
+    html = { filetypes = { 'html', 'twig', 'hbs' } },
 
     lua_ls = {
         Lua = {
@@ -429,8 +421,8 @@ mason_lspconfig.setup_handlers {
     end
 }
 
-require('lspconfig').sourcekit.setup{
-  cmd = {'/usr/libexec/swift/5.8.1/bin/sourcekit-lsp'}
+require('lspconfig').sourcekit.setup {
+    cmd = { '/usr/libexec/swift/5.8.1/bin/sourcekit-lsp' }
 }
 
 -- [[ Configure nvim-cmp ]]
@@ -483,52 +475,55 @@ cmp.setup {
 
 
 -- CUSTOM
-vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>", { desc =  'enter oil.nvim' })
+vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>", { desc = 'enter oil.nvim' })
 -- vim.keymap.set("n", "<leader>pv", "<cmd>:E<CR>")
-vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>", {desc = 'spawn harpoon ui'})
-vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()<CR>", {desc = 'add file to harpoon'})
-vim.keymap.set("n", "<leader>lg", "<cmd>:LazyGit<CR>", {desc = 'spawn lazygit'})
-vim.keymap.set("n", "<leader>1", "<cmd>:lua require('harpoon.ui').nav_file(1)<CR>", {desc = 'harpoon go to file 1'})
-vim.keymap.set("n", "<leader>2", "<cmd>:lua require('harpoon.ui').nav_file(2)<CR>", {desc = 'harpoon go to file 2'})
-vim.keymap.set("n", "<leader>3", "<cmd>:lua require('harpoon.ui').nav_file(3)<CR>", {desc = 'harpoon go to file 3'})
-vim.keymap.set("n", "<leader>4", "<cmd>:lua require('harpoon.ui').nav_file(4)<CR>", {desc = 'harpoon go to file 4'})
-vim.keymap.set("n", "<leader>5", "<cmd>:lua require('harpoon.ui').nav_file(5)<CR>", {desc = 'harpoon go to file 5'})
-vim.keymap.set("n", "<leader>6", "<cmd>:lua require('harpoon.ui').nav_file(6)<CR>", {desc = 'harpoon go to file 6'})
-vim.keymap.set("n", "<leader>7", "<cmd>:lua require('harpoon.ui').nav_file(7)<CR>", {desc = 'harpoon go to file 7'})
-vim.keymap.set("n", "<leader>8", "<cmd>:lua require('harpoon.ui').nav_file(8)<CR>", {desc = 'harpoon go to file 8'})
-vim.keymap.set("n", "<leader>9", "<cmd>:lua require('harpoon.ui').nav_file(9)<CR>", {desc = 'harpoon go to file 9'})
+vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = 'spawn harpoon ui' })
+vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()<CR>", { desc = 'add file to harpoon' })
+vim.keymap.set("n", "<leader>lg", "<cmd>:LazyGit<CR>", { desc = 'spawn lazygit' })
+vim.keymap.set("n", "<leader>1", "<cmd>:lua require('harpoon.ui').nav_file(1)<CR>", { desc = 'harpoon go to file 1' })
+vim.keymap.set("n", "<leader>2", "<cmd>:lua require('harpoon.ui').nav_file(2)<CR>", { desc = 'harpoon go to file 2' })
+vim.keymap.set("n", "<leader>3", "<cmd>:lua require('harpoon.ui').nav_file(3)<CR>", { desc = 'harpoon go to file 3' })
+vim.keymap.set("n", "<leader>4", "<cmd>:lua require('harpoon.ui').nav_file(4)<CR>", { desc = 'harpoon go to file 4' })
+vim.keymap.set("n", "<leader>5", "<cmd>:lua require('harpoon.ui').nav_file(5)<CR>", { desc = 'harpoon go to file 5' })
+vim.keymap.set("n", "<leader>6", "<cmd>:lua require('harpoon.ui').nav_file(6)<CR>", { desc = 'harpoon go to file 6' })
+vim.keymap.set("n", "<leader>7", "<cmd>:lua require('harpoon.ui').nav_file(7)<CR>", { desc = 'harpoon go to file 7' })
+vim.keymap.set("n", "<leader>8", "<cmd>:lua require('harpoon.ui').nav_file(8)<CR>", { desc = 'harpoon go to file 8' })
+vim.keymap.set("n", "<leader>9", "<cmd>:lua require('harpoon.ui').nav_file(9)<CR>", { desc = 'harpoon go to file 9' })
 
 -- Terminal mode keymaps
 vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
 
 -- TABS
-vim.keymap.set("n", "<leader>th", "<cmd>:tabprevious<CR>", {desc = 'previous tab'})
-vim.keymap.set("n", "<leader>tl", "<cmd>:tabnext<CR>", {desc = 'next tab'})
-vim.keymap.set("n", "<leader>tn", "<cmd>:tabnew<CR>", {desc = 'new tab'})
-vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>", {desc = 'close current tab'})
+vim.keymap.set("n", "<leader>th", "<cmd>:tabprevious<CR>", { desc = 'previous tab' })
+vim.keymap.set("n", "<leader>tl", "<cmd>:tabnext<CR>", { desc = 'next tab' })
+vim.keymap.set("n", "<leader>tn", "<cmd>:tabnew<CR>", { desc = 'new tab' })
+vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>", { desc = 'close current tab' })
 
 -- half page jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- BUFFERS
-vim.keymap.set("n", "[b", "<cmd>:bprevious<CR>", {desc = 'previous buffer'})
-vim.keymap.set("n", "]b", "<cmd>:bnext<CR>", {desc = 'next buffer'})
+vim.keymap.set("n", "[b", "<cmd>:bprevious<CR>", { desc = 'previous buffer' })
+vim.keymap.set("n", "]b", "<cmd>:bnext<CR>", { desc = 'next buffer' })
 
 -- Yank to clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Set up shell command
-vim.keymap.set("n", "<leader>sc", ":!", {desc = 'Set up shell command'})
+vim.keymap.set("n", "<leader>sc", ":!", { desc = 'Set up shell command' })
 
 -- ZenMode
-vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", {desc = 'Zen Mode'})
+vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
+
+-- Format code in current buffer with LSP
+vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd[[colorscheme gruvbox-material]]
-vim.cmd[[highlight WinSeparator guibg=none]]
-vim.cmd[[set background=dark]]
+vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[highlight WinSeparator guibg=none]]
+vim.cmd [[set background=dark]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 
@@ -547,7 +542,7 @@ vim.opt.laststatus = 3
 vim.opt.winbar = "%f %m"
 
 -- Telescope keybindings
-vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", {desc = 'search keybindings'})
+vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", { desc = 'search keybindings' })
 
 -- vim-table-mode keybindings
 vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
@@ -569,9 +564,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.opt.conceallevel = 2
 
 -- Markdown settings:
-vim.cmd[[set nocompatible]]
-vim.cmd[[filetype plugin on]]
-vim.cmd[[syntax on]]
+vim.cmd [[set nocompatible]]
+vim.cmd [[filetype plugin on]]
+vim.cmd [[syntax on]]
 
 -- toggle line wrap:
 vim.opt.wrap = true

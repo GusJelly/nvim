@@ -29,6 +29,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     -- NOTE: First, some plugins that don't require any configuration
 
+    -- Prime harpoon
+    'ThePrimeagen/harpoon',
+
     -- Git related plugins
     'tpope/vim-fugitive',
     'tpope/vim-rhubarb',
@@ -477,9 +480,9 @@ cmp.setup {
 -- CUSTOM
 vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>", { desc = 'enter oil.nvim' })
 -- vim.keymap.set("n", "<leader>pv", "<cmd>:E<CR>")
-vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = 'spawn harpoon ui' })
-vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()<CR>", { desc = 'add file to harpoon' })
 vim.keymap.set("n", "<leader>lg", "<cmd>:LazyGit<CR>", { desc = 'spawn lazygit' })
+vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = 'harpoon spawn gui' })
+vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()", { desc = 'harpoon add file' })
 vim.keymap.set("n", "<leader>1", "<cmd>:lua require('harpoon.ui').nav_file(1)<CR>", { desc = 'harpoon go to file 1' })
 vim.keymap.set("n", "<leader>2", "<cmd>:lua require('harpoon.ui').nav_file(2)<CR>", { desc = 'harpoon go to file 2' })
 vim.keymap.set("n", "<leader>3", "<cmd>:lua require('harpoon.ui').nav_file(3)<CR>", { desc = 'harpoon go to file 3' })

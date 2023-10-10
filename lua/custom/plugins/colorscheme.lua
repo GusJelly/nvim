@@ -4,9 +4,9 @@ return {
         "folke/tokyonight.nvim",
         lazy = true,
         opts = {
-            style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-            light_style = "day", -- The theme is used when the background is set to light
-            transparent = false, -- Enable this to disable setting the background color
+            style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+            light_style = "day",    -- The theme is used when the background is set to light
+            transparent = false,    -- Enable this to disable setting the background color
             terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
             styles = {
                 -- Style to be applied to different syntax groups
@@ -16,14 +16,14 @@ return {
                 functions = {},
                 variables = {},
                 -- Background styles. Can be "dark", "transparent" or "normal"
-                sidebars = "dark", -- style for sidebars, see below
-                floats = "dark", -- style for floating windows
+                sidebars = "dark",            -- style for sidebars, see below
+                floats = "dark",              -- style for floating windows
             },
-            sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-            day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+            sidebars = { "qf", "help" },      -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+            day_brightness = 0.3,             -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
             hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-            dim_inactive = false, -- dims inactive windows
-            lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+            dim_inactive = false,             -- dims inactive windows
+            lualine_bold = false,             -- When `true`, section headers in the lualine theme will be bold
 
             --- You can override specific color groups to use other groups or a hex color
             --- function will be called with a ColorScheme table
@@ -45,23 +45,23 @@ return {
         name = "catppuccin",
         opts = {
             flavour = "latte", -- latte, frappe, macchiato, mocha
-            background = { -- :h background
+            background = {     -- :h background
                 light = "latte",
                 dark = "mocha",
             },
-            transparent_background = true, -- disables setting the background color.
-            show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-            term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+            transparent_background = false, -- disables setting the background color.
+            show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
+            term_colors = false,           -- sets terminal colors (e.g. `g:terminal_color_0`)
             dim_inactive = {
-                enabled = false, -- dims the background color of inactive window
+                enabled = false,           -- dims the background color of inactive window
                 shade = "dark",
-                percentage = 0.15, -- percentage of the shade to apply to the inactive window
+                percentage = 0.15,         -- percentage of the shade to apply to the inactive window
             },
-            no_italic = false, -- Force no italic
-            no_bold = false, -- Force no bold
-            no_underline = false, -- Force no underline
-            styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-                comments = { "italic" }, -- Change the style of comments
+            no_italic = false,             -- Force no italic
+            no_bold = false,               -- Force no bold
+            no_underline = false,          -- Force no underline
+            styles = {                     -- Handles the styles of general hi groups (see `:h highlight-args`):
+                comments = { "italic" },   -- Change the style of comments
                 conditionals = { "italic" },
                 loops = {},
                 functions = {},
@@ -91,7 +91,7 @@ return {
     -- Gruvbox
     {
         'ellisonleao/gruvbox.nvim',
-	lazy = true,
+        lazy = true,
         opts = {
             undercurl = true,
             underline = true,
@@ -108,7 +108,7 @@ return {
             invert_tabline = false,
             invert_intend_guides = false,
             inverse = true, -- invert background for search, diffs, statuslines and errors
-            contrast = "", -- can be "hard", "soft" or empty string
+            contrast = "",  -- can be "hard", "soft" or empty string
             palette_overrides = {},
             overrides = {},
             dim_inactive = false,
@@ -142,8 +142,8 @@ return {
             dark_variant = 'main',
             bold_vert_split = false,
             dim_nc_background = false,
-            disable_background = true,
-            disable_float_background = true,
+            disable_background = false,
+            disable_float_background = false,
             disable_italics = false,
 
             --- @usage string hex value or named color from rosepinetheme.com/palette
@@ -204,15 +204,15 @@ return {
         lazy = true,
         opts = {
             -- Main options --
-            style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-            transparent = false,  -- Show/hide background
-            term_colors = true, -- Change terminal color as per the selected theme style
-            ending_tildes = true, -- Show the end-of-buffer tildes. By default they are hidden
+            style = 'dark',               -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+            transparent = false,          -- Show/hide background
+            term_colors = true,           -- Change terminal color as per the selected theme style
+            ending_tildes = true,         -- Show the end-of-buffer tildes. By default they are hidden
             cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
             -- toggle theme style ---
-            toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-            toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+            toggle_style_key = nil,                                                            -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+            toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
 
             -- Change code style ---
             -- Options are italic, bold, underline, none
@@ -231,14 +231,14 @@ return {
             },
 
             -- Custom Highlights --
-            colors = {}, -- Override default colors
+            colors = {},     -- Override default colors
             highlights = {}, -- Override highlight groups
 
             -- Plugins Config --
             diagnostics = {
-                darker = true, -- darker colors for diagnostic
-                undercurl = true,   -- use undercurl instead of underline for diagnostics
-                background = true,    -- use background color for virtual text
+                darker = true,     -- darker colors for diagnostic
+                undercurl = true,  -- use undercurl instead of underline for diagnostics
+                background = true, -- use background color for virtual text
             },
         }
     },

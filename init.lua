@@ -37,7 +37,7 @@ require('lazy').setup({
     'tpope/vim-rhubarb',
 
     -- Detect tabstop and shiftwidth automatically
-    'tpope/vim-sleuth',
+    -- 'tpope/vim-sleuth',
 
     -- NOTE: This is where your plugins related to LSP can be installed.
     --  The configuration is done below. Search for lspconfig to find it below.
@@ -435,6 +435,7 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
+---@diagnostic disable-next-line: missing-fields
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -481,7 +482,8 @@ cmp.setup {
 vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>", { desc = 'enter oil.nvim' })
 -- vim.keymap.set("n", "<leader>pv", "<cmd>:E<CR>")
 vim.keymap.set("n", "<leader>lg", "<cmd>:LazyGit<CR>", { desc = 'spawn lazygit' })
-vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = 'harpoon spawn gui' })
+vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>",
+    { desc = 'harpoon spawn gui' })
 vim.keymap.set("n", "<leader>ha", "<cmd>:lua require('harpoon.mark').add_file()<CR>", { desc = 'harpoon add file' })
 vim.keymap.set("n", "<leader>1", "<cmd>:lua require('harpoon.ui').nav_file(1)<CR>", { desc = 'harpoon go to file 1' })
 vim.keymap.set("n", "<leader>2", "<cmd>:lua require('harpoon.ui').nav_file(2)<CR>", { desc = 'harpoon go to file 2' })
@@ -524,7 +526,7 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme onedark]]
 vim.cmd [[highlight WinSeparator guibg=none]]
 vim.cmd [[set background=dark]]
 -- make background transparent:
@@ -573,3 +575,16 @@ vim.cmd [[syntax on]]
 
 -- toggle line wrap:
 vim.opt.wrap = true
+
+-- remember folds throughout sessons
+vim.api.nvim_create_autocmd({"BufWinLeave"}, {
+  pattern = {"*.*"},
+  desc = "save view (folds), when closing file",
+  command = "mkview",
+})
+vim.api.nvim_create_autocmd({"BufWinEnter"}, {
+  pattern = {"*.*"},
+  desc = "load view (folds), when opening file",
+  command = "silent! loadview"
+})
+

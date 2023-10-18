@@ -4,7 +4,7 @@ return {
         "folke/tokyonight.nvim",
         lazy = true,
         opts = {
-            style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+            style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
             light_style = "day",    -- The theme is used when the background is set to light
             transparent = false,    -- Enable this to disable setting the background color
             terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
@@ -20,7 +20,7 @@ return {
                 floats = "dark",              -- style for floating windows
             },
             sidebars = { "qf", "help" },      -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-            day_brightness = 0.3,             -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+            day_brightness = 1.0,             -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
             hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
             dim_inactive = false,             -- dims inactive windows
             lualine_bold = false,             -- When `true`, section headers in the lualine theme will be bold
@@ -211,7 +211,7 @@ return {
             cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
             -- toggle theme style ---
-            toggle_style_key = nil,                                                            -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+            toggle_style_key = nil,                                                              -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
             toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
 
             -- Change code style ---
@@ -263,6 +263,43 @@ return {
     -- mellow
     {
         'kvrohit/mellow.nvim',
+        lazy = true,
+    },
+
+    {
+        'Mofiqul/vscode.nvim',
+        config = function()
+            local c = require('vscode.colors').get_colors()
+            require('vscode').setup({
+                -- Alternatively set style in setup
+                -- style = 'light'
+
+                -- Enable transparent background
+                transparent = true,
+
+                -- Enable italic comment
+                italic_comments = true,
+
+                -- Disable nvim-tree background color
+                disable_nvimtree_bg = true,
+
+                -- Override colors (see ./lua/vscode/colors.lua)
+                color_overrides = {
+                    vscLineNumber = '#000000',
+                },
+
+                -- Override highlight groups (see ./lua/vscode/theme.lua)
+                group_overrides = {
+                    -- this supports the same val table as vim.api.nvim_set_hl
+                    -- use colors from this colorscheme by requiring vscode.colors!
+                    Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+                }
+            })
+        end
+    },
+
+    {
+        'NLKNguyen/papercolor-theme',
         lazy = true,
     }
 

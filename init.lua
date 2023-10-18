@@ -399,6 +399,7 @@ local servers = {
     },
 }
 
+-- LSP configuration with Mason and stuff
 -- Setup neovim lua configuration
 require('neodev').setup()
 
@@ -526,9 +527,9 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme onedark]]
+vim.cmd [[colorscheme PaperColor]]
 vim.cmd [[highlight WinSeparator guibg=none]]
-vim.cmd [[set background=dark]]
+vim.cmd [[set background=light]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 

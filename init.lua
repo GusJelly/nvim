@@ -527,7 +527,7 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme PaperColor]]
+vim.cmd [[colorscheme catppuccin]]
 vim.cmd [[highlight WinSeparator guibg=none]]
 vim.cmd [[set background=light]]
 -- make background transparent:
@@ -554,7 +554,7 @@ vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", { desc = 'searc
 vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
 
 vim.opt.scrolloff = 8
--- vim.opt.colorcolumn = '128'
+vim.opt.colorcolumn = '80'
 
 -- Working with tabs
 vim.opt.tabstop = 4
@@ -577,15 +577,14 @@ vim.cmd [[syntax on]]
 -- toggle line wrap:
 vim.opt.wrap = true
 
--- remember folds throughout sessons
-vim.api.nvim_create_autocmd({"BufWinLeave"}, {
-  pattern = {"*.*"},
-  desc = "save view (folds), when closing file",
-  command = "mkview",
+-- remember folds throughout sessions
+vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+    pattern = { "*.*" },
+    desc = "save view (folds), when closing file",
+    command = "mkview",
 })
-vim.api.nvim_create_autocmd({"BufWinEnter"}, {
-  pattern = {"*.*"},
-  desc = "load view (folds), when opening file",
-  command = "silent! loadview"
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+    pattern = { "*.*" },
+    desc = "load view (folds), when opening file",
+    command = "silent! loadview"
 })
-

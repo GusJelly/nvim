@@ -527,7 +527,7 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme github_light_high_contrast]]
 vim.cmd [[highlight WinSeparator guibg=none]]
 vim.cmd [[set background=light]]
 -- make background transparent:

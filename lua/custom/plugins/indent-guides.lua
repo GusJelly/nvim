@@ -26,5 +26,25 @@ return {
             highlight = "IblWhitespace",
             remove_blankline_trail = true,
         },
+        exclude = {
+            filetypes = {
+                "lspinfo",
+                "packer",
+                "checkhealth",
+                "help",
+                "man",
+                "gitcommit",
+                "TelescopePrompt",
+                "TelescopeResults",
+                "org",
+                "",
+            },
+            buftypes = {
+                "terminal",
+                "nofile",
+                "quickfix",
+                "prompt",
+            },
+        },
     }
 }

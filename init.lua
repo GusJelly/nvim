@@ -260,7 +260,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 ---@diagnostic disable-next-line: missing-fields
 require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+    ensure_installed = { 'c', 'go', 'lua', 'python', 'typescript', 'vimdoc', 'vim' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = true,
@@ -527,9 +527,10 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme doom-one]]
+-- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
-vim.cmd [[set background=light]]
+vim.cmd [[set background=dark]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 
@@ -560,7 +561,7 @@ vim.opt.colorcolumn = '80'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- Move selected text:
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

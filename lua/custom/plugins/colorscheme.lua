@@ -47,7 +47,7 @@ return {
             flavour = "latte", -- latte, frappe, macchiato, mocha
             background = {     -- :h background
                 light = "latte",
-                dark = "mocha",
+                dark = "frappe",
             },
             transparent_background = true, -- disables setting the background color.
             show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
@@ -279,7 +279,7 @@ return {
                 -- style = 'light'
 
                 -- Enable transparent background
-                transparent = true,
+                transparent = false,
 
                 -- Enable italic comment
                 italic_comments = true,
@@ -289,7 +289,7 @@ return {
 
                 -- Override colors (see ./lua/vscode/colors.lua)
                 color_overrides = {
-                    vscLineNumber = '#000000',
+                    -- vscLineNumber = '#000000',
                 },
 
                 -- Override highlight groups (see ./lua/vscode/theme.lua)
@@ -356,6 +356,16 @@ return {
                 groups = {},
             })
         end,
+    },
+
+    {
+        'tjdevries/gruvbuddy.nvim',
+        lazy = true
+    },
+
+    {
+        'NTBBloodbath/doom-one.nvim',
+		lazy = true,
     }
 
 }

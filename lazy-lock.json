@@ -40,6 +40,7 @@
   "orgmode": { "branch": "master", "commit": "5ef11419116578a6cbfb0a18674e590237ded080" },
   "papercolor-theme": { "branch": "master", "commit": "9051480ad9129ff4ab4fffb38b44779b9081626f" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+  "rainbow-delimiters.nvim": { "branch": "master", "commit": "9fda1322e704acfbb5a9691e2c4303368d591367" },
   "rose-pine": { "branch": "main", "commit": "e29002cbee4854a9c8c4b148d8a52fae3176070f" },
   "sniprun": { "branch": "master", "commit": "0ad935699a5e24ca3a0aa621c7425ac7029775b3" },
   "tagbar": { "branch": "master", "commit": "5d6990e4fc5b3e3b88a3af90146f2561c4f6d828" },

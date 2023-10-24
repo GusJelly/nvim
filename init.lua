@@ -100,21 +100,21 @@ require('lazy').setup({
     },
 
     -- Lualine
-    {
-        -- Set lualine as statusline
-        'nvim-lualine/lualine.nvim',
-        -- See `:help lualine.txt`
-        opts = {
-            options = {
-                icons_enabled = true,
-                theme = 'auto',
-                component_separators = '|',
-                section_separators = '',
-                -- component_separators = { left = '', right = ''},
-                -- section_separators = { left = '', right = ''},
-            },
-        },
-    },
+    -- {
+    --     -- Set lualine as statusline
+    --     'nvim-lualine/lualine.nvim',
+    --     -- See `:help lualine.txt`
+    --     opts = {
+    --         options = {
+    --             icons_enabled = true,
+    --             theme = 'auto',
+    --             component_separators = '|',
+    --             section_separators = '',
+    --             -- component_separators = { left = '', right = ''},
+    --             -- section_separators = { left = '', right = ''},
+    --         },
+    --     },
+    -- },
 
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim',         opts = {} },
@@ -425,10 +425,6 @@ mason_lspconfig.setup_handlers {
     end
 }
 
-require('lspconfig').sourcekit.setup {
-    cmd = { '/usr/libexec/swift/5.8.1/bin/sourcekit-lsp' }
-}
-
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 local cmp = require 'cmp'
@@ -480,8 +476,8 @@ cmp.setup {
 
 
 -- CUSTOM
-vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>", { desc = 'enter oil.nvim' })
--- vim.keymap.set("n", "<leader>pv", "<cmd>:E<CR>")
+-- vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>", { desc = 'enter oil.nvim' })
+vim.keymap.set("n", "<leader>pv", "<cmd>:E<CR>")
 vim.keymap.set("n", "<leader>lg", "<cmd>:LazyGit<CR>", { desc = 'spawn lazygit' })
 vim.keymap.set("n", "<leader>hg", "<cmd>:lua require('harpoon.ui').toggle_quick_menu()<CR>",
     { desc = 'harpoon spawn gui' })
@@ -527,7 +523,7 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme gruvbox-material]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
 vim.cmd [[set background=dark]]
@@ -543,10 +539,10 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- global status
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
 
 -- top bar
-vim.opt.winbar = "%f %m"
+-- vim.opt.winbar = "%f %m"
 
 -- Telescope keybindings
 vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", { desc = 'search keybindings' })
@@ -561,7 +557,7 @@ vim.opt.colorcolumn = '80'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Move selected text:
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -577,6 +573,9 @@ vim.cmd [[syntax on]]
 
 -- toggle line wrap:
 vim.opt.wrap = true
+
+-- NetRW configuration
+vim.g.netrw_liststyle = 3
 
 -- remember folds throughout sessions
 vim.api.nvim_create_autocmd({ "BufWinLeave" }, {

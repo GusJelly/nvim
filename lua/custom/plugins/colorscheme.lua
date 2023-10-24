@@ -4,9 +4,9 @@ return {
         "folke/tokyonight.nvim",
         lazy = true,
         opts = {
-            style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+            style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
             light_style = "day",    -- The theme is used when the background is set to light
-            transparent = false,    -- Enable this to disable setting the background color
+            transparent = true,    -- Enable this to disable setting the background color
             terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
             styles = {
                 -- Style to be applied to different syntax groups
@@ -23,7 +23,7 @@ return {
             day_brightness = 1.0,             -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
             hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
             dim_inactive = false,             -- dims inactive windows
-            lualine_bold = false,             -- When `true`, section headers in the lualine theme will be bold
+            lualine_bold = true,             -- When `true`, section headers in the lualine theme will be bold
 
             --- You can override specific color groups to use other groups or a hex color
             --- function will be called with a ColorScheme table
@@ -47,9 +47,9 @@ return {
             flavour = "latte", -- latte, frappe, macchiato, mocha
             background = {     -- :h background
                 light = "latte",
-                dark = "frappe",
+                dark = "mocha",
             },
-            transparent_background = true, -- disables setting the background color.
+            transparent_background = false, -- disables setting the background color.
             show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
             term_colors = false,           -- sets terminal colors (e.g. `g:terminal_color_0`)
             dim_inactive = {
@@ -209,7 +209,7 @@ return {
         opts = {
             -- Main options --
             style = 'dark',               -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-            transparent = false,          -- Show/hide background
+            transparent = true,          -- Show/hide background
             term_colors = true,           -- Change terminal color as per the selected theme style
             ending_tildes = true,         -- Show the end-of-buffer tildes. By default they are hidden
             cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu

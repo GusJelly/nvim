@@ -523,7 +523,7 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme gruvbox-material]]
+vim.cmd [[colorscheme edge]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
 vim.cmd [[set background=dark]]
@@ -557,7 +557,7 @@ vim.opt.colorcolumn = '80'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- Move selected text:
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -575,7 +575,8 @@ vim.cmd [[syntax on]]
 vim.opt.wrap = true
 
 -- NetRW configuration
-vim.g.netrw_liststyle = 3
+-- vim.g.netrw_liststyle = 3
+-- vim.g.netrw_cursor = 0
 
 -- remember folds throughout sessions
 vim.api.nvim_create_autocmd({ "BufWinLeave" }, {

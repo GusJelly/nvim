@@ -254,13 +254,31 @@ return {
         init = function()
             vim.g.gruvbox_material_ui_contrast = "high"
             vim.g.gruvbox_material_float_style = "dim"
-            vim.g.gruvbox_material_statusline_style = "original"
-            vim.g.gruvbox_material_background = "hard"
+            -- vim.g.gruvbox_material_statusline_style = "original"
+            -- vim.g.gruvbox_material_background = "hard"
             vim.g.gruvbox_material_foreground = "original"
             vim.g.gruvbox_material_enable_bold = 1
             vim.g.gruvbox_material_enable_italic = 1
             vim.g.gruvbox_material_better_performance = 1
             vim.g.gruvbox_material_transparent_background = 1
+        end
+    },
+
+    -- Edge from gruvbox_material guy
+    {
+        'sainnhe/edge',
+        lazy = true,
+        init = function()
+            vim.g.edge_enable_italic = 1
+        end
+    },
+
+    {
+        'sainnhe/sonokai',
+        lazy = true,
+        init = function()
+            vim.g.sonokai_style = 'andromeda'
+            vim.g.sonokai_better_performance = 1
         end
     },
 

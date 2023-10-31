@@ -389,7 +389,14 @@ local servers = {
     pyright = {},
     rust_analyzer = {},
     tsserver = {},
-    html = { filetypes = { 'html', 'twig', 'hbs' } },
+    html = {
+        filetypes = {
+            'html',
+            'twig',
+            'hbs',
+            'php'
+        }
+    },
 
     lua_ls = {
         Lua = {
@@ -524,10 +531,10 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme onedark]]
+vim.cmd [[colorscheme catppuccin]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
-vim.cmd [[set background=light]]
+vim.cmd [[set background=dark]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 

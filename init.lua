@@ -100,21 +100,21 @@ require('lazy').setup({
     },
 
     -- Lualine
-    -- {
-    --     -- Set lualine as statusline
-    --     'nvim-lualine/lualine.nvim',
-    --     -- See `:help lualine.txt`
-    --     opts = {
-    --         options = {
-    --             icons_enabled = true,
-    --             theme = 'auto',
-    --             component_separators = '|',
-    --             section_separators = '',
-    --             -- component_separators = { left = '', right = ''},
-    --             -- section_separators = { left = '', right = ''},
-    --         },
-    --     },
-    -- },
+    {
+        -- Set lualine as statusline
+        'nvim-lualine/lualine.nvim',
+        -- See `:help lualine.txt`
+        opts = {
+            options = {
+                icons_enabled = true,
+                theme = 'auto',
+                component_separators = '|',
+                section_separators = '',
+                -- component_separators = { left = '', right = ''},
+                -- section_separators = { left = '', right = ''},
+            },
+        },
+    },
 
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim',         opts = {} },
@@ -491,6 +491,7 @@ vim.keymap.set("n", "<leader>6", "<cmd>:lua require('harpoon.ui').nav_file(6)<CR
 vim.keymap.set("n", "<leader>7", "<cmd>:lua require('harpoon.ui').nav_file(7)<CR>", { desc = 'harpoon go to file 7' })
 vim.keymap.set("n", "<leader>8", "<cmd>:lua require('harpoon.ui').nav_file(8)<CR>", { desc = 'harpoon go to file 8' })
 vim.keymap.set("n", "<leader>9", "<cmd>:lua require('harpoon.ui').nav_file(9)<CR>", { desc = 'harpoon go to file 9' })
+vim.keymap.set("n", "<leader>;", "<cmd>:SymbolsOutline<CR>", { desc = 'Open symbols outline' })
 
 -- Terminal mode keymaps
 vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
@@ -502,8 +503,8 @@ vim.keymap.set("n", "<leader>tn", "<cmd>:tabnew<CR>", { desc = 'new tab' })
 vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>", { desc = 'close current tab' })
 
 -- half page jumping
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>M")
+vim.keymap.set("n", "<C-u>", "<C-u>M")
 
 -- BUFFERS
 vim.keymap.set("n", "[b", "<cmd>:bprevious<CR>", { desc = 'previous buffer' })
@@ -523,7 +524,7 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme edge]]
+vim.cmd [[colorscheme onedark]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
 vim.cmd [[set background=light]]
@@ -551,9 +552,9 @@ vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", { desc = 'searc
 vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
 
 vim.opt.scrolloff = 8
-vim.opt.colorcolumn = '80'
+-- vim.opt.colorcolumn = '80'
 
--- Working with tabs
+-- make indent 4 spaces
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -578,14 +579,14 @@ vim.opt.wrap = true
 -- vim.g.netrw_liststyle = 3
 vim.g.netrw_cursor = 0
 
--- remember folds throughout sessions
-vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
-    pattern = { "*.*" },
-    desc = "save view (folds), when closing file",
-    command = "mkview",
-})
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-    pattern = { "*.*" },
-    desc = "load view (folds), when opening file",
-    command = "silent! loadview"
-})
+-- -- remember folds throughout sessions
+-- vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+--     pattern = { "*.*" },
+--     desc = "save view (folds), when closing file",
+--     command = "mkview",
+-- })
+-- vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+--     pattern = { "*.*" },
+--     desc = "load view (folds), when opening file",
+--     command = "silent! loadview"
+-- })

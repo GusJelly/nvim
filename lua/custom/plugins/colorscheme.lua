@@ -51,7 +51,7 @@ return {
             },
             transparent_background = false, -- disables setting the background color.
             show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
-            term_colors = false,           -- sets terminal colors (e.g. `g:terminal_color_0`)
+            term_colors = true,           -- sets terminal colors (e.g. `g:terminal_color_0`)
             dim_inactive = {
                 enabled = false,           -- dims the background color of inactive window
                 shade = "dark",
@@ -75,9 +75,9 @@ return {
                 operators = {},
             },
             color_overrides = {
-                latte = {
-                    text = "#000000"
-                },
+                -- latte = {
+                --     base = "#ffffff"
+                -- },
             },
             custom_highlights = {},
             integrations = {
@@ -209,7 +209,7 @@ return {
         opts = {
             -- Main options --
             style = 'dark',               -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-            transparent = true,          -- Show/hide background
+            transparent = false,          -- Show/hide background
             term_colors = true,           -- Change terminal color as per the selected theme style
             ending_tildes = true,         -- Show the end-of-buffer tildes. By default they are hidden
             cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
@@ -260,7 +260,7 @@ return {
             vim.g.gruvbox_material_enable_bold = 1
             vim.g.gruvbox_material_enable_italic = 1
             vim.g.gruvbox_material_better_performance = 1
-            vim.g.gruvbox_material_transparent_background = 1
+            vim.g.gruvbox_material_transparent_background = 0
         end
     },
 
@@ -337,7 +337,7 @@ return {
                     compile_file_suffix = '_compiled', -- Compiled file suffix
                     hide_end_of_buffer = true,         -- Hide the '~' character at the end of the buffer for a cleaner look
                     hide_nc_statusline = true,         -- Override the underline style for non-active statuslines
-                    transparent = true,                -- Disable setting background
+                    transparent = false,                -- Disable setting background
                     terminal_colors = true,            -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
                     dim_inactive = false,              -- Non focused panes set to alternative background
                     module_default = true,             -- Default enable value for modules

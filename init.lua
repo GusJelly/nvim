@@ -531,10 +531,10 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme github_light_high_contrast]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
-vim.cmd [[set background=dark]]
+vim.cmd [[set background=light]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 
@@ -585,15 +585,3 @@ vim.opt.wrap = true
 -- NetRW configuration
 -- vim.g.netrw_liststyle = 3
 vim.g.netrw_cursor = 0
-
--- -- remember folds throughout sessions
--- vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
---     pattern = { "*.*" },
---     desc = "save view (folds), when closing file",
---     command = "mkview",
--- })
--- vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
---     pattern = { "*.*" },
---     desc = "load view (folds), when opening file",
---     command = "silent! loadview"
--- })

@@ -22,7 +22,7 @@ return {
             org_agenda_files = '~/org/**/*',
             org_default_notes_file = '~/org/refile.org',
             org_hide_emphasis_markers = true,
-            org_hide_leading_stars = true
+            org_hide_leading_stars = false
         })
     end,
 }

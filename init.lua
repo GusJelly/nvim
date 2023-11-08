@@ -99,22 +99,22 @@ require('lazy').setup({
         },
     },
 
-    -- -- Lualine
-    -- {
-    --     -- Set lualine as statusline
-    --     'nvim-lualine/lualine.nvim',
-    --     -- See `:help lualine.txt`
-    --     opts = {
-    --         options = {
-    --             icons_enabled = true,
-    --             theme = 'auto',
-    --             component_separators = '|',
-    --             section_separators = '',
-    --             -- component_separators = { left = '', right = ''},
-    --             -- section_separators = { left = '', right = ''},
-    --         },
-    --     },
-    -- },
+    -- Lualine
+    {
+        -- Set lualine as statusline
+        'nvim-lualine/lualine.nvim',
+        -- See `:help lualine.txt`
+        opts = {
+            options = {
+                icons_enabled = true,
+                theme = 'auto',
+                component_separators = '|',
+                section_separators = '',
+                -- component_separators = { left = '', right = ''},
+                -- section_separators = { left = '', right = ''},
+            },
+        },
+    },
 
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim',         opts = {} },
@@ -531,10 +531,10 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme rose-pine]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
-vim.cmd [[set background=light]]
+vim.cmd [[set background=dark]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 

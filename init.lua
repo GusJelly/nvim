@@ -37,7 +37,7 @@ require('lazy').setup({
     'tpope/vim-rhubarb',
 
     -- Detect tabstop and shiftwidth automatically
-    -- 'tpope/vim-sleuth',
+    'tpope/vim-sleuth',
 
     -- NOTE: This is where your plugins related to LSP can be installed.
     --  The configuration is done below. Search for lspconfig to find it below.
@@ -99,22 +99,22 @@ require('lazy').setup({
         },
     },
 
-    -- Lualine
-    {
-        -- Set lualine as statusline
-        'nvim-lualine/lualine.nvim',
-        -- See `:help lualine.txt`
-        opts = {
-            options = {
-                icons_enabled = true,
-                theme = 'auto',
-                component_separators = '|',
-                section_separators = '',
-                -- component_separators = { left = '', right = ''},
-                -- section_separators = { left = '', right = ''},
-            },
-        },
-    },
+    -- -- Lualine
+    -- {
+    --     -- Set lualine as statusline
+    --     'nvim-lualine/lualine.nvim',
+    --     -- See `:help lualine.txt`
+    --     opts = {
+    --         options = {
+    --             icons_enabled = true,
+    --             theme = 'auto',
+    --             component_separators = '|',
+    --             section_separators = '',
+    --             -- component_separators = { left = '', right = ''},
+    --             -- section_separators = { left = '', right = ''},
+    --         },
+    --     },
+    -- },
 
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim',         opts = {} },
@@ -534,7 +534,7 @@ vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat'
 vim.cmd [[colorscheme catppuccin]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
-vim.cmd [[set background=dark]]
+vim.cmd [[set background=light]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 
@@ -585,3 +585,22 @@ vim.opt.wrap = true
 -- NetRW configuration
 -- vim.g.netrw_liststyle = 3
 vim.g.netrw_cursor = 0
+
+
+-- -- Configuring Blade treesitter parser:
+-- local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+-- parser_config.blade = {
+--     install_info = {
+--         url = "https://github.com/EmranMR/tree-sitter-blade",
+--         files = { "src/parser.c" },
+--         branch = "main",
+--     },
+--     filetype = "blade"
+-- }
+--
+-- vim.cmd([[
+--     " Set the *.blade.php file to be filetype of blade
+--     augroup BladeFiltypeRelated
+--       au BufNewFile,BufRead *.blade.php set ft=blade
+--     augroup END
+-- ]])

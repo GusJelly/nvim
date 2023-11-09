@@ -531,7 +531,7 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[colorscheme edge]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.cmd [[highlight WinSeparator guibg=none]]
 vim.cmd [[set background=dark]]
@@ -559,7 +559,7 @@ vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", { desc = 'searc
 vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
 
 vim.opt.scrolloff = 8
--- vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = '80'
 
 -- make indent 4 spaces
 vim.opt.tabstop = 4
@@ -585,22 +585,3 @@ vim.opt.wrap = true
 -- NetRW configuration
 -- vim.g.netrw_liststyle = 3
 vim.g.netrw_cursor = 0
-
-
--- -- Configuring Blade treesitter parser:
--- local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
--- parser_config.blade = {
---     install_info = {
---         url = "https://github.com/EmranMR/tree-sitter-blade",
---         files = { "src/parser.c" },
---         branch = "main",
---     },
---     filetype = "blade"
--- }
---
--- vim.cmd([[
---     " Set the *.blade.php file to be filetype of blade
---     augroup BladeFiltypeRelated
---       au BufNewFile,BufRead *.blade.php set ft=blade
---     augroup END
--- ]])

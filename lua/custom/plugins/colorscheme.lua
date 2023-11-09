@@ -2,7 +2,10 @@ return {
     -- tokyonight
     {
         "folke/tokyonight.nvim",
-        opts = {},
+        opts = {
+            transparent = true,
+            style = "night",
+        },
     },
 
     -- catppuccin
@@ -15,7 +18,7 @@ return {
                 light = "latte",
                 dark = "mocha",
             },
-            transparent_background = true, -- disables setting the background color.
+            transparent_background = false, -- disables setting the background color.
             show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
             term_colors = true,           -- sets terminal colors (e.g. `g:terminal_color_0`)
             dim_inactive = {
@@ -230,6 +233,8 @@ return {
         lazy = true,
         init = function()
             vim.g.edge_enable_italic = 1
+            vim.g.edge_style = 'default'
+            vim.g.edge_transparent_background = 1
         end
     },
 

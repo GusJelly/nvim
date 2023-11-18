@@ -106,7 +106,7 @@ require('lazy').setup({
         -- See `:help lualine.txt`
         opts = {
             options = {
-                icons_enabled = true,
+                icons_enabled = false,
                 theme = 'auto',
                 component_separators = '|',
                 section_separators = '',
@@ -547,10 +547,10 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- global status
--- vim.opt.laststatus = 3
+vim.opt.laststatus = 3
 
 -- top bar
--- vim.opt.winbar = "%f %m"
+vim.opt.winbar = "%f %m"
 
 -- Telescope keybindings
 vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", { desc = 'search keybindings' })

@@ -558,7 +558,7 @@ vim.keymap.set("n", "<leader>sk", "<cmd>:Telescope keymaps<CR>", { desc = 'searc
 -- vim-table-mode keybindings
 vim.keymap.set("n", "<leader>tm", "<cmd>:TableModeToggle<CR>", { desc = 'toggle table mode' })
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 5
 vim.opt.colorcolumn = '80'
 
 -- make indent 4 spaces

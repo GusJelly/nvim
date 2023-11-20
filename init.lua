@@ -61,8 +61,7 @@ require('lazy').setup({
     {
         -- Autocompletion
         'hrsh7th/nvim-cmp',
-        dependencies = {
-            -- Snippet Engine & its associated nvim-cmp source
+        dependencies = { -- Snippet Engine & its associated nvim-cmp source
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
 
@@ -99,22 +98,22 @@ require('lazy').setup({
         },
     },
 
-    -- Lualine
-    {
-        -- Set lualine as statusline
-        'nvim-lualine/lualine.nvim',
-        -- See `:help lualine.txt`
-        opts = {
-            options = {
-                icons_enabled = false,
-                theme = 'auto',
-                component_separators = '|',
-                section_separators = '',
-                -- component_separators = { left = '', right = ''},
-                -- section_separators = { left = '', right = ''},
-            },
-        },
-    },
+    -- -- Lualine
+    -- {
+    --     -- Set lualine as statusline
+    --     'nvim-lualine/lualine.nvim',
+    --     -- See `:help lualine.txt`
+    --     opts = {
+    --         options = {
+    --             icons_enabled = false,
+    --             theme = 'auto',
+    --             component_separators = '|',
+    --             section_separators = '',
+    --             -- component_separators = { left = '', right = ''},
+    --             -- section_separators = { left = '', right = ''},
+    --         },
+    --     },
+    -- },
 
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim',         opts = {} },
@@ -533,8 +532,8 @@ vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat'
 -- Colorscheme
 vim.cmd [[colorscheme edge]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
-vim.cmd [[highlight WinSeparator guibg=none]]
-vim.cmd [[set background=dark]]
+-- vim.cmd [[highlight WinSeparator guibg=none]]
+vim.cmd [[set background=light]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 

@@ -18,9 +18,9 @@ return {
                 light = "latte",
                 dark = "mocha",
             },
-            transparent_background = false, -- disables setting the background color.
+            transparent_background = true, -- disables setting the background color.
             show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
-            term_colors = true,           -- sets terminal colors (e.g. `g:terminal_color_0`)
+            term_colors = true,            -- sets terminal colors (e.g. `g:terminal_color_0`)
             dim_inactive = {
                 enabled = false,           -- dims the background color of inactive window
                 shade = "dark",
@@ -90,14 +90,34 @@ return {
 
     -- Modus-themes from emacs
     {
-        'ishan9299/modus-theme-vim',
+        'GusJelly/modus-themes.nvim',
         init = function()
-            vim.g.modus_dim_inactive_window = 0
-            vim.g.modus_yellow_comments = 1
-            vim.g.modus_green_strings = 1
-            vim.g.modus_faint_syntax = 0
-            vim.g.modus_cursorline_intense = 0
-            -- vim.g.modus_termtrans_enable = 1
+            require("modus-themes").setup({
+                -- Theme comes in two styles `modus_operandi` and `modus_vivendi`
+                -- `auto` will automatically set style based on background set with vim.o.background
+                style = "auto",
+                variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+                styles = {
+                    -- Style to be applied to different syntax groups
+                    -- Value is any valid attr-list value for `:help nvim_set_hl`
+                    comments = { italic = true },
+                    keywords = { italic = true },
+                    functions = {},
+                    variables = {},
+                },
+
+                --- You can override specific color groups to use other groups or a hex color
+                --- function will be called with a ColorScheme table
+                ---@param colors ColorScheme
+                on_colors = function(colors) end,
+
+                --- You can override specific highlights to use other groups or a hex color
+                --- function will be called with a Highlights and ColorScheme table
+                ---@param highlights Highlights
+                ---@param colors ColorScheme
+                on_highlights = function(highlights, colors)
+                end,
+            })
         end
     },
 
@@ -297,7 +317,7 @@ return {
                     compile_file_suffix = '_compiled', -- Compiled file suffix
                     hide_end_of_buffer = true,         -- Hide the '~' character at the end of the buffer for a cleaner look
                     hide_nc_statusline = true,         -- Override the underline style for non-active statuslines
-                    transparent = false,                -- Disable setting background
+                    transparent = false,               -- Disable setting background
                     terminal_colors = true,            -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
                     dim_inactive = false,              -- Non focused panes set to alternative background
                     module_default = true,             -- Default enable value for modules

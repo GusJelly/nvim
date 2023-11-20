@@ -9,6 +9,7 @@ return {
         require('orgmode').setup_ts_grammar()
 
         -- Setup treesitter
+        ---@diagnostic disable-next-line: missing-fields
         require('nvim-treesitter.configs').setup({
             highlight = {
                 enable = true,
@@ -24,5 +25,13 @@ return {
             org_hide_emphasis_markers = true,
             org_hide_leading_stars = false
         })
+
+        -- Change some highlight groups based on the current theme
+        if vim.g.colors_name == "modus" and vim.o.bg == "light"  then
+            vim.cmd [[highlight OrgAgendaScheduled guifg='#ffb4af']]
+            vim.cmd [[highlight OrgDONE guifg='#046C31']]
+            vim.cmd [[highlight OrgTODO guifg='#B4292D']]
+            vim.cmd [[highlight OrgAgendaDeadline guifg='#B4292D']]
+        end
     end,
 }

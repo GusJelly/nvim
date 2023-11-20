@@ -530,10 +530,12 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = 'Zen Mode' })
 vim.keymap.set("n", "<leader>cf", ":Format<CR>", { desc = 'LSP: [C]ode [F]ormat' })
 
 -- Colorscheme
-vim.cmd [[colorscheme edge]]
+vim.cmd [[colorscheme modus]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
--- vim.cmd [[highlight WinSeparator guibg=none]]
-vim.cmd [[set background=light]]
+vim.o.bg = "light"
+
+-- Highlights need to come after the background and color scheme
+vim.cmd [[highlight WinSeparator guibg=none]]
 -- make background transparent:
 -- vim.cmd[[highlight Normal guibg=none]]
 
@@ -584,3 +586,4 @@ vim.opt.wrap = true
 -- NetRW configuration
 -- vim.g.netrw_liststyle = 3
 vim.g.netrw_cursor = 0
+

@@ -55,6 +55,7 @@ require('lazy').setup({
 
             -- Additional lua configuration, makes nvim stuff amazing!
             'folke/neodev.nvim',
+            opts = {}
         },
     },
 
@@ -393,7 +394,8 @@ local servers = {
             'html',
             'twig',
             'hbs',
-            'php'
+            'php',
+            'blade'
         }
     },
 

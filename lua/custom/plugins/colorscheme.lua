@@ -146,15 +146,15 @@ return {
     {
         'sainnhe/gruvbox-material',
         init = function()
-            vim.g.gruvbox_material_ui_contrast = "high"
-            vim.g.gruvbox_material_float_style = "dim"
-            vim.g.gruvbox_material_statusline_style = "original"
-            vim.g.gruvbox_material_background = "hard"
-            vim.g.gruvbox_material_foreground = "original"
-            vim.g.gruvbox_material_enable_bold = 1
-            vim.g.gruvbox_material_enable_italic = 1
-            vim.g.gruvbox_material_better_performance = 1
-            vim.g.gruvbox_material_transparent_background = 1
+            -- vim.g.gruvbox_material_ui_contrast = "high"
+            -- vim.g.gruvbox_material_float_style = "dim"
+            -- vim.g.gruvbox_material_statusline_style = "original"
+            -- vim.g.gruvbox_material_background = "hard"
+            -- vim.g.gruvbox_material_foreground = "original"
+            -- vim.g.gruvbox_material_enable_bold = 1
+            -- vim.g.gruvbox_material_enable_italic = 1
+            -- vim.g.gruvbox_material_better_performance = 1
+            -- vim.g.gruvbox_material_transparent_background = 1
         end
     },
 
@@ -179,7 +179,7 @@ return {
                     compile_file_suffix = '_compiled', -- Compiled file suffix
                     hide_end_of_buffer = true,         -- Hide the '~' character at the end of the buffer for a cleaner look
                     hide_nc_statusline = true,         -- Override the underline style for non-active statuslines
-                    transparent = false,               -- Disable setting background
+                    transparent = true,               -- Disable setting background
                     terminal_colors = true,            -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
                     dim_inactive = false,              -- Non focused panes set to alternative background
                     module_default = true,             -- Default enable value for modules
@@ -201,7 +201,7 @@ return {
                         search = false,
                     },
                     darken = { -- Darken floating windows and sidebar-like windows
-                        floats = false,
+                        floats = true,
                         sidebars = {
                             enabled = true,
                             list = {}, -- Apply dark background to specific windows

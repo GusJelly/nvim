@@ -1,7 +1,7 @@
 -- Colorscheme
-vim.cmd [[colorscheme modus]]
+vim.cmd [[colorscheme gruvbox-material]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
-vim.o.bg = "light"
+vim.o.bg = "dark"
 vim.cmd [[highlight NormalNC guibg=none]]
 
 -- Highlight changes needs to come after the background and color scheme
@@ -28,7 +28,7 @@ vim.opt.colorcolumn = '80'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Concealing for org-mode
 vim.opt.conceallevel = 2

@@ -1,7 +1,7 @@
 -- Colorscheme
-vim.cmd [[colorscheme gruvbox-material]]
+vim.cmd [[colorscheme catppuccin]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
-vim.o.bg = "dark"
+vim.o.bg = "light"
 vim.cmd [[highlight NormalNC guibg=none]]
 
 -- Highlight changes needs to come after the background and color scheme

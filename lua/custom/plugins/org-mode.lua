@@ -33,5 +33,7 @@ return {
             vim.cmd [[highlight OrgTODO guifg='#B4292D']]
             vim.cmd [[highlight OrgAgendaDeadline guifg='#B4292D']]
         end
+
+        vim.g.orgmode_org_hide_leading_stars = true
     end,
 }

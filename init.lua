@@ -76,7 +76,6 @@ require('lazy').setup({
 
     -- Useful plugin to show you pending keybinds.
     { 'folke/which-key.nvim',          opts = {} },
-    {
         -- Adds git related signs to the gutter, as well as utilities for managing changes
         'lewis6991/gitsigns.nvim',
         opts = {
@@ -97,24 +96,6 @@ require('lazy').setup({
                     { buffer = bufnr, desc = '[P]review [H]unk' })
             end,
         },
-    },
-
-    -- -- Lualine
-    -- {
-    --     -- Set lualine as statusline
-    --     'nvim-lualine/lualine.nvim',
-    --     -- See `:help lualine.txt`
-    --     opts = {
-    --         options = {
-    --             icons_enabled = false,
-    --             theme = 'auto',
-    --             component_separators = '|',
-    --             section_separators = '',
-    --             -- component_separators = { left = '', right = ''},
-    --             -- section_separators = { left = '', right = ''},
-    --         },
-    --     },
-    -- },
 
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim',         opts = {} },

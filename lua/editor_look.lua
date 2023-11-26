@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[colorscheme gruvbox-material]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.o.bg = "dark"
 vim.cmd [[highlight NormalNC guibg=none]]

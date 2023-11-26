@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme kanagawa]]
+vim.cmd [[colorscheme rose-pine]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.o.bg = "dark"
 
@@ -14,7 +14,7 @@ vim.opt.guicursor = ""
 vim.opt.relativenumber = true
 vim.opt.number = true
 
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- global status
 vim.opt.laststatus = 3

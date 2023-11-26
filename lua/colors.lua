@@ -11,7 +11,8 @@ vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2f2f2f" })
 -- Groups supposed to be transparent
 local groups = {
     "Normal", "NormalNC", "SignColumn", "NormalFloat", "Pmenu",
-    "TelescopeNormal", "TelescopePromptNormal", "TelescopeBorder"
+    "TelescopeNormal", "TelescopePromptNormal", "TelescopeBorder",
+    "LineNr", "CursorLine", "CursorLineNr"
 }
 
 function ColorMyPencils()
@@ -21,3 +22,5 @@ function ColorMyPencils()
 end
 
 ColorMyPencils()
+
+vim.api.nvim_set_hl(0, "CursorLineNr", {fg = "#FF9E3B"})

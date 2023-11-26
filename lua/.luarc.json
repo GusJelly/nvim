@@ -1,7 +1,8 @@
 {
     "diagnostics.globals": [
         "disable",
-        "high_visibility"
+        "high_visibility",
+        "colorMyPencils"
     ],
     "workspace.library": [
         "/home/gustavo/.local/share/nvim/lazy/neodev.nvim/types/stable",

@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme gruvbox-material]]
+vim.cmd [[colorscheme rose-pine]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.o.bg = "dark"
 vim.cmd [[highlight NormalNC guibg=none]]
@@ -39,7 +39,7 @@ vim.cmd [[filetype plugin on]]
 vim.cmd [[syntax on]]
 
 -- toggle line wrap:
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 -- NetRW configuration
 -- vim.g.netrw_liststyle = 3

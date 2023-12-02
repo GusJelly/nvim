@@ -218,5 +218,16 @@ return {
     {
         'rebelot/kanagawa.nvim',
         'Mofiqul/vscode.nvim'
+    },
+
+    -- falcon
+    {
+        'fenetikm/falcon'
+    },
+
+    -- onedark
+    {
+        'navarasu/onedark.nvim',
+        opts = {}
     }
 }

@@ -241,7 +241,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 ---@diagnostic disable-next-line: missing-fields
 require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'go', 'lua', 'python', 'typescript', 'vimdoc', 'vim' },
+    ensure_installed = { 'c', 'go', 'lua', 'python' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = true,

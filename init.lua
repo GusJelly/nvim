@@ -376,7 +376,6 @@ local servers = {
             'twig',
             'hbs',
             'php',
-            'blade'
         }
     },
 

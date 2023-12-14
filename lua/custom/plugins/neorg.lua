@@ -12,7 +12,10 @@ return {
                     config = {
                         workspaces = {
                             notes = "~/notes",
+                            programming = "~/notes/programming",
+                            life = "~/notes/life"
                         },
+                        default_workspace = "notes"
                     },
                 },
             },

@@ -8,7 +8,7 @@ vim.cmd [[highlight WinSeparator guibg=none]]
 
 -- Disable cursor animations without bugs
 -- vim.opt.guicursor = "n-v-c-sm:block"
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 -- Line numbers
 vim.opt.relativenumber = true

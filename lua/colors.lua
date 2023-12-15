@@ -14,4 +14,4 @@ function ColorMyPencils()
     vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "#0f0f0f" })
 end
 
--- ColorMyPencils()
+ColorMyPencils()

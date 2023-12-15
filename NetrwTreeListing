@@ -1,7 +1,0 @@
-../
-nvim/
-| .git/
-| after/
-| lua/
-| init.lua
-| lazy-lock.json

@@ -12,8 +12,8 @@ vim.keymap.set("n", "<leader>tn", "<cmd>:tabnew<CR>", { desc = 'new tab' })
 vim.keymap.set("n", "<leader>tk", "<cmd>:tabclose<CR>", { desc = 'close current tab' })
 
 -- half page jumping
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>M")
+vim.keymap.set("n", "<C-u>", "<C-u>M")
 
 -- BUFFERS
 vim.keymap.set("n", "[b", "<cmd>:bprevious<CR>", { desc = 'previous buffer' })

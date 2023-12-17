@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme kanagawa]]
+vim.cmd [[colorscheme rose-pine]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.o.bg = "dark"
 

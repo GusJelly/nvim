@@ -370,14 +370,7 @@ local servers = {
     pyright = {},
     rust_analyzer = {},
     tsserver = {},
-    html = {
-        filetypes = {
-            'html',
-            'twig',
-            'hbs',
-            'php',
-        }
-    },
+    html = {},
 
     lua_ls = {
         Lua = {

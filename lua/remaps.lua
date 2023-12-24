@@ -44,3 +44,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- nvim-dap
 vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Add breakpoint at current line" })
+vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", {desc = "[D]ap [C]ontinue"})
+vim.keymap.set("n", "<leader>dsi", "<cmd>DapStepInto<CR>", {desc = "[D]ap [S]tep [I]nto"})
+vim.keymap.set("n", "<leader>dso", "<cmd>DapStepOut<CR>", {desc = "[D]ap [S]tep [O]ut"})
+vim.keymap.set("n", "<leader>dsv", "<cmd>DapStepOver<CR>", {desc = "[D]ap [S]tep O[V]er"})
+vim.keymap.set("n", "<leader>dt", "<cmd>DapTerminate<CR>", {desc = "[D]ap [T]erminate"})

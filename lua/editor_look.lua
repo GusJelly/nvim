@@ -1,12 +1,12 @@
 -- Colorscheme
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[colorscheme kanagawa]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.o.bg = "dark"
 
 -- Highlight changes needs to come after the background and color scheme
 vim.cmd [[highlight WinSeparator guibg=none]]
 
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 -- Line numbers
 vim.opt.relativenumber = true

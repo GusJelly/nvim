@@ -12,7 +12,8 @@ local groups = {
     "LineNr",
     "EndOfBuffer",
     "FloatTitle",
-    "ZenBg"
+    "ZenBg",
+    "@neorg.tags.ranged_verbatim.code_block"
 }
 
 function ColorMyPencils()

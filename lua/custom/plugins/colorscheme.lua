@@ -49,36 +49,6 @@ return {
         },
     },
 
-    -- Modus-themes from emacs
-    {
-        'GusJelly/modus-themes.nvim',
-        opts = {
-            -- Theme comes in two styles `modus_operandi` and `modus_vivendi`
-            -- `auto` will automatically set style based on background set with vim.o.background
-            style = "auto",
-            variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
-            styles = {
-                -- Style to be applied to different syntax groups
-                -- Value is any valid attr-list value for `:help nvim_set_hl`
-                comments = { italic = true },
-                keywords = { italic = true },
-                functions = {},
-                variables = {},
-            },
-
-            --- You can override specific color groups to use other groups or a hex color
-            --- function will be called with a ColorScheme table
-            ---@param colors ColorScheme
-            on_colors = function(colors) end,
-
-            --- You can override specific highlights to use other groups or a hex color
-            --- function will be called with a Highlights and ColorScheme table
-            ---@param highlights Highlights
-            ---@param colors ColorScheme
-            on_highlights = function(highlights, colors) end,
-        },
-    },
-
     -- Rose-Pine
     {
         'rose-pine/neovim',
@@ -139,118 +109,48 @@ return {
         }
     },
 
-    -- Gruvbox-Material
+    -- Gruvbox
     {
-        'sainnhe/gruvbox-material',
-        init = function()
-            vim.g.gruvbox_material_ui_contrast = "high"
-            -- vim.g.gruvbox_material_float_style = "dim"
-            -- vim.g.gruvbox_material_statusline_style = "original"
-            -- vim.g.gruvbox_material_background = "hard"
-            -- vim.g.gruvbox_material_foreground = "original"
-            -- vim.g.gruvbox_material_enable_bold = 1
-            -- vim.g.gruvbox_material_enable_italic = 1
-            vim.g.gruvbox_material_better_performance = 1
-            vim.g.gruvbox_material_transparent_background = 1
-        end
-    },
-
-    -- Edge from gruvbox_material guy
-    {
-        'sainnhe/edge',
-        lazy = true,
-        init = function()
-            vim.g.edge_enable_italic = 1
-            vim.g.edge_style = 'default'
-            vim.g.edge_transparent_background = 1
-        end
-    },
-
-    {
-        'projekt0n/github-nvim-theme',
-        config = function()
-            require('github-theme').setup({
-                options = {
-                    -- Compiled file's destination location
-                    compile_path = vim.fn.stdpath('cache') .. '/github-theme',
-                    compile_file_suffix = '_compiled', -- Compiled file suffix
-                    hide_end_of_buffer = true,         -- Hide the '~' character at the end of the buffer for a cleaner look
-                    hide_nc_statusline = true,         -- Override the underline style for non-active statuslines
-                    transparent = true,                -- Disable setting background
-                    terminal_colors = true,            -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-                    dim_inactive = false,              -- Non focused panes set to alternative background
-                    module_default = true,             -- Default enable value for modules
-                    styles = {                         -- Style to be applied to different syntax groups
-                        comments = 'NONE',             -- Value is any valid attr-list value `:help attr-list`
-                        functions = 'NONE',
-                        keywords = 'NONE',
-                        variables = 'NONE',
-                        conditionals = 'NONE',
-                        constants = 'NONE',
-                        numbers = 'NONE',
-                        operators = 'NONE',
-                        strings = 'NONE',
-                        types = 'NONE',
-                    },
-                    inverse = { -- Inverse highlight for different types
-                        match_paren = false,
-                        visual = false,
-                        search = false,
-                    },
-                    darken = { -- Darken floating windows and sidebar-like windows
-                        floats = true,
-                        sidebars = {
-                            enabled = true,
-                            list = {}, -- Apply dark background to specific windows
-                        },
-                    },
-                    modules = { -- List of various plugins and additional options
-                        -- ...
-                    },
-                },
-                palettes = {},
-                specs = {},
-                groups = {},
-            })
-        end,
-    },
-
-    {
-        'Mofiqul/vscode.nvim'
+        'ellisonleao/gruvbox.nvim',
+        opts = {
+            contrast = "hard", -- can be "hard", "soft" or empty string
+            italic = {
+                strings = true,
+                emphasis = true,
+                comments = true,
+                operators = false,
+                folds = true,
+            }
+        }
     },
 
     -- Kanagawa
     {
         'rebelot/kanagawa.nvim',
         opts = {
-            compile = false,     -- enable compiling the colorscheme
-            undercurl = true,    -- enable undercurls
+            compile = false,  -- enable compiling the colorscheme
+            undercurl = true, -- enable undercurls
             commentStyle = { italic = true },
             functionStyle = {},
             keywordStyle = { italic = true },
             statementStyle = { bold = true },
             typeStyle = {},
-            transparent = false, -- do not set background color
-            dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+            transparent = false,   -- do not set background color
+            dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
             terminalColors = true, -- define vim.g.terminal_color_{0,17}
-            colors = {     -- add/modify theme and palette colors
+            colors = {             -- add/modify theme and palette colors
                 palette = {},
                 theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
             },
             overrides = function(colors) -- add/modify highlights
                 return {}
             end,
-            theme = "wave", -- Load "wave" theme when 'background' option is not set
-            background = { -- map the value of 'background' option to a theme
+            theme = "wave",    -- Load "wave" theme when 'background' option is not set
+            background = {     -- map the value of 'background' option to a theme
                 dark = "wave", -- try "dragon" !
                 light = "lotus"
             },
         }
-    },
-
-    -- falcon
-    {
-        'fenetikm/falcon'
     },
 
     -- onedark

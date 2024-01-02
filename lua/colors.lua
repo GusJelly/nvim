@@ -21,7 +21,7 @@ function ColorMyPencils()
         vim.api.nvim_set_hl(0, i, { bg = 'none' })
     end
 
-    vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2f2f2f" })
+    -- vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2f2f2f" })
 end
 
 ColorMyPencils()

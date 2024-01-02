@@ -455,3 +455,4 @@ cmp.setup {
 require('remaps')
 require('editor_look')
 require('colors')
+require('editor')

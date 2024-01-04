@@ -3,7 +3,6 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
 
     config = function()
-
         require('lualine').setup {
             options = {
                 icons_enabled = false,
@@ -24,11 +23,11 @@ return {
                 }
             },
             sections = {
-                lualine_a = { 'mode' },
-                lualine_b = {},
-                lualine_c = { '%=', '%f %m' },    -- using '%=' makes the module go into the middle of the statusline
+                lualine_a = {},
+                lualine_b = { 'mode' },
+                lualine_c = { '%=', 'filename' }, -- using '%=' makes the module go into the middle of the statusline
                 lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                lualine_y = { 'progress' },
+                lualine_y = {},
                 lualine_z = {}
             },
             inactive_sections = {

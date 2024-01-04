@@ -13,7 +13,7 @@ return {
                             -- Sometimes you may simply want to rebind the Neorg action something is bound to
                             -- versus remapping the entire keybind. This remap is essentially the same as if you
                             -- did `keybinds.remap("norg", "n", "<C-Space>, "<cmd>Neorg keybind norg core.qol.todo_items.todo.task_done<CR>")
-                            keybinds.remap_event("norg", "n", "<C-Space>", "core.qol.todo_items.todo.task_done")
+                            -- keybinds.remap_event("norg", "n", "<C-Space>", "core.qol.todo_items.todo.task_done")
                         end,
                     }
                 },

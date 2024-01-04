@@ -15,7 +15,7 @@ return {
                 },
                 ignore_focus = {},
                 always_divide_middle = false,
-                globalstatus = true,
+                globalstatus = false,
                 refresh = {
                     statusline = 1000,
                     tabline = 1000,
@@ -25,7 +25,7 @@ return {
             sections = {
                 lualine_a = {},
                 lualine_b = { 'mode' },
-                lualine_c = { '%=', 'filename' }, -- using '%=' makes the module go into the middle of the statusline
+                lualine_c = { '%=', '%f %m' }, -- using '%=' makes the module go into the middle of the statusline
                 lualine_x = { 'encoding', 'fileformat', 'filetype' },
                 lualine_y = {},
                 lualine_z = {}

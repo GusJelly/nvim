@@ -24,8 +24,8 @@ return {
             },
             sections = {
                 lualine_a = {},
-                lualine_b = { 'mode' },
-                lualine_c = { '%=', '%f %m' }, -- using '%=' makes the module go into the middle of the statusline
+                lualine_b = {},
+                lualine_c = { 'mode', '%=', '%f %m' }, -- using '%=' makes the module go into the middle of the statusline atleast on lualine
                 lualine_x = { 'encoding', 'fileformat', 'filetype' },
                 lualine_y = {},
                 lualine_z = {}

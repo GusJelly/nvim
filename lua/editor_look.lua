@@ -28,14 +28,9 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
--- -- Concealing for org-mode
--- vim.opt.conceallevel = 2
---
--- -- Markdown settings:
--- vim.cmd [[set nocompatible]]
--- vim.cmd [[filetype plugin on]]
--- vim.cmd [[syntax on]]
---
+-- Concealing for org-mode
+vim.opt.conceallevel = 2
+
 -- toggle line wrap:
 vim.opt.wrap = false
 

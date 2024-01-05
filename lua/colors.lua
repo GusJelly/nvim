@@ -15,7 +15,7 @@ local groups = {
     "ZenBg",
     "@neorg.tags.ranged_verbatim.code_block",
     "WinBarNC",
-    "TabLineFill"
+    "TabLineFill",
 }
 
 function ColorMyPencils()

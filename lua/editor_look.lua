@@ -18,7 +18,7 @@ vim.opt.cursorline = false
 -- vim.opt.laststatus = 3
 
 -- top bar
-vim.opt.winbar = "%f %m"
+-- vim.opt.winbar = "%f %m"
 
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = '80'

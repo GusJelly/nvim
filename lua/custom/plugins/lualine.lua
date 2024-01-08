@@ -24,11 +24,11 @@ return {
             },
             sections = {
                 lualine_a = { 'mode' },
-                lualine_b = { 'branch' },
-                lualine_c = { 'filename' }, -- using '%=' makes the module go into the middle of the statusline atleast on lualine
+                lualine_b = { 'branch', 'diff', 'diagnostics' },
+                lualine_c = { 'filename' },
                 lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                lualine_y = {},
-                lualine_z = {}
+                lualine_y = { 'progress' },
+                lualine_z = { 'location' }
             },
             inactive_sections = {
                 lualine_a = {},

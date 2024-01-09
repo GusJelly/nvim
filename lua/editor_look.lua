@@ -12,7 +12,7 @@ vim.cmd [[highlight WinSeparator guibg=none]]
 vim.opt.relativenumber = true
 vim.opt.number = true
 
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- global status
 -- vim.opt.laststatus = 3

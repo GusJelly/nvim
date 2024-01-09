@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme rose-pine]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.o.bg = "dark"
 
@@ -12,7 +12,7 @@ vim.cmd [[highlight WinSeparator guibg=none]]
 vim.opt.relativenumber = true
 vim.opt.number = true
 
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- global status
 -- vim.opt.laststatus = 3

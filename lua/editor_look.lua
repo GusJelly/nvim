@@ -1,7 +1,7 @@
 -- Colorscheme
 vim.cmd [[colorscheme rose-pine]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
-vim.o.bg = "light"
+vim.o.bg = "dark"
 
 -- Highlight changes needs to come after the background and color scheme
 vim.cmd [[highlight WinSeparator guibg=none]]

@@ -24,7 +24,14 @@ function ColorMyPencils()
         vim.api.nvim_set_hl(0, i, { bg = 'none' })
     end
 
-    vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2f2f2f" })
+    -- Getting colorscheme for checking some stuff,
+    -- we are basically making sure rose-pine does not use
+    -- the shitty pink ColorColumn
+    local colorscheme = vim.api.nvim_exec("colorscheme", true)
+    if colorscheme == 'rose-pine' then
+        print("Current colorscheme: " .. colorscheme)
+        vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#1F1F1F" })
+    end
 end
 
 ColorMyPencils()

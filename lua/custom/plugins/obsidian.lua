@@ -263,13 +263,4 @@ return {
         -- case you can temporarily switch to the "yq" parser until the bug is fixed.
         yaml_parser = "native",
     },
-
-    mappings = {
-        ["fo"] = {
-            action = function()
-                return require("obsidian").util.gf_passthrough()
-            end,
-            opts = { noremap = false, expr = true, buffer = true },
-        },
-    },
 }

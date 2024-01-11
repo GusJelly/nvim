@@ -29,8 +29,8 @@ return {
         -- the first workspace is opened by default.
         detect_cwd = false,
 
-        -- Optional, if you keep notes in a specific subdirectory of your vault.
-        notes_subdir = "notes",
+        -- -- Optional, if you keep notes in a specific subdirectory of your vault.
+        -- notes_subdir = "notes",
 
         -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
         -- levels defined by "vim.log.levels.*".
@@ -65,7 +65,7 @@ return {
             -- 1. Whether to add the note ID during completion.
             -- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.
             -- Mutually exclusive with 'prepend_note_path' and 'use_path_only'.
-            prepend_note_id = true,
+            prepend_note_id = false,
             -- 2. Whether to add the note path during completion.
             -- E.g. "[[Foo" completes to "[[notes/foo|Foo]]" assuming "notes/foo.md" is the path of the note.
             -- Mutually exclusive with 'prepend_note_id' and 'use_path_only'.

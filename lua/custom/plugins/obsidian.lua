@@ -65,7 +65,7 @@ return {
             -- 1. Whether to add the note ID during completion.
             -- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.
             -- Mutually exclusive with 'prepend_note_path' and 'use_path_only'.
-            prepend_note_id = false,
+            prepend_note_id = true,
             -- 2. Whether to add the note path during completion.
             -- E.g. "[[Foo" completes to "[[notes/foo|Foo]]" assuming "notes/foo.md" is the path of the note.
             -- Mutually exclusive with 'prepend_note_id' and 'use_path_only'.

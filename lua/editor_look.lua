@@ -32,7 +32,7 @@ vim.opt.expandtab = true
 vim.opt.conceallevel = 2
 
 -- toggle line wrap:
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 -- NetRW configuration
 -- vim.g.netrw_liststyle = 3

@@ -16,6 +16,7 @@ local groups = {
     "@neorg.tags.ranged_verbatim.code_block",
     "WinBarNC",
     "WinBar",
+    "WinSeparator",
     "TabLineFill",
     "TabLine",
     "CursorLine"

@@ -113,7 +113,7 @@ return {
     {
         'ellisonleao/gruvbox.nvim',
         opts = {
-            contrast = "hard", -- can be "hard", "soft" or empty string
+            -- contrast = "hard", -- can be "hard", "soft" or empty string
             italic = {
                 strings = true,
                 emphasis = true,

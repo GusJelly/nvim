@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme gruvbox]]
 -- require('colorbuddy').colorscheme('gruvbuddy')
 vim.o.bg = "dark"
 

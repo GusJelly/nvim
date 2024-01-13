@@ -15,6 +15,7 @@ local groups = {
     "ZenBg",
     "@neorg.tags.ranged_verbatim.code_block",
     "WinBarNC",
+    "WinBar",
     "TabLineFill",
     "TabLine",
     "CursorLine"

@@ -1,5 +1,5 @@
 -- Make visual block mode cool
-vim.opt.virtualedit = "block"
+-- vim.opt.virtualedit = "block"
 
 -- make indent 4 spaces
 vim.opt.tabstop = 4
@@ -8,7 +8,7 @@ vim.opt.expandtab = true
 
 
 -- toggle line wrap:
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 -- NetRW configuration
 -- vim.g.netrw_liststyle = 3

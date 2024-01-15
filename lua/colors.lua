@@ -5,7 +5,7 @@ local groups = {
     "SignColumn",
     "NormalFloat",
     "FloatBorder",
-    "Pmenu",
+    -- "Pmenu",
     "TelescopeNormal",
     "TelescopePromptNormal",
     "TelescopeBorder",
@@ -19,9 +19,12 @@ local groups = {
     "WinSeparator",
     "TabLineFill",
     "TabLine",
-    "CursorLine"
+    "CursorLine",
+    "CursorLineNr"
 }
 
+-- Method that actually makes the stuff above transparent.
+-- It simply removes the "bg" highlight from each element
 function ColorMyPencils()
     for _, i in pairs(groups) do
         vim.api.nvim_set_hl(0, i, { bg = 'none' })
@@ -33,8 +36,10 @@ function ColorMyPencils()
     local colorscheme = vim.api.nvim_exec("colorscheme", true)
     if colorscheme == 'rose-pine' then
         print("Current colorscheme: " .. colorscheme)
-        vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#1F1F1F" })
+        vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2F2F2F" })
     end
+
+    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = 'none' })
 end
 
 ColorMyPencils()

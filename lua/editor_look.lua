@@ -1,10 +1,6 @@
 -- Colorscheme
-vim.cmd [[colorscheme gruvbox]]
--- require('colorbuddy').colorscheme('gruvbuddy')
+vim.cmd [[colorscheme catppuccin]]
 vim.o.bg = "dark"
-
--- Highlight changes needs to come after the background and color scheme
-vim.cmd [[highlight WinSeparator guibg=none]]
 
 vim.opt.guicursor = ""
 
@@ -12,6 +8,7 @@ vim.opt.guicursor = ""
 vim.opt.relativenumber = true
 vim.opt.number = true
 
+vim.opt.cursorline = true
 
 -- global status
 vim.opt.laststatus = 3

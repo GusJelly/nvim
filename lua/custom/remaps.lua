@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>pv", "<cmd>:Oil<CR>")
 vim.keymap.set("n", "<leader>lg", "<cmd>:LazyGit<CR>", { desc = 'spawn lazygit' })
 
 -- Terminal mode keymaps
-vim.keymap.set("t", "<C-w>N", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
+vim.keymap.set("t", "<C-n>", "<C-\\><C-n>") -- Makes is so that Ctrl + \ goes into normal mode when in :term mode
 
 -- half page jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

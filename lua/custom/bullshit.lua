@@ -1,15 +1,11 @@
 -- Testing some nvim apis
 
--- Lets me look inside of a given table
-function P(table)
-    print(vim.inspect(table))
-end
 
 -- Using autocommands to change the statusline:
 -- autmocmd for the mode changing:
 -- 'ModeChanged'
 function ChangeStatusline()
-    vim.opt.statusline = "[Normal] %= [%f]%m %= %h%r%-14.(%l,%c%V%) %P"
+    vim.opt.statusline = "[Normal] %= [%f]%m %= %h%r %l,%c [%P]"
 
     vim.api.nvim_create_autocmd("ModeChanged", {
         group = vim.api.nvim_create_augroup("Gustavo's barChanger", { clear = true }),
@@ -32,7 +28,7 @@ function ChangeStatusline()
                 modeName = vim.api.nvim_eval('mode()')
             end
 
-            local statusline = "[" .. modeName .. "] %= [%f]%m %= %h%r%-14.(%l,%c%V%) %P"
+            local statusline = "[" .. modeName .. "] %= [%f]%m %= %h%r %l,%c [%P]"
             vim.opt.statusline = statusline
         end
     })

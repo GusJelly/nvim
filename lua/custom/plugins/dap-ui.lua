@@ -4,6 +4,11 @@ return {
     opts = {},
     config = function()
         require('dapui').setup()
-        vim.keymap.set("n", "<leader>dui", "<cmd>lua require('dapui').toggle()<CR>", { desc = "Toggle dapui" })
+        vim.keymap.set(
+            "n",
+            "<leader>dui",
+            "<cmd>lua require('dapui').toggle()<CR>",
+            { desc = "Toggle dapui" }
+        )
     end
 }

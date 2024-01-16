@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme gruvbox]]
 vim.o.bg = "dark"
 
 vim.opt.guicursor = ""
@@ -29,9 +29,3 @@ vim.opt.conceallevel = 2
 
 -- toggle line wrap:
 vim.opt.wrap = true
-
--- NetRW configuration
--- vim.g.netrw_liststyle = 3
-vim.g.netrw_cursor = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_bufsettings="rnu number"

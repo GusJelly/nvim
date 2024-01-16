@@ -238,7 +238,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 ---@diagnostic disable-next-line: missing-fields
 require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'go', 'lua', 'python' },
+    ensure_installed = { 'c', 'go', 'lua', 'python', 'markdown', 'markdown_inline' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = true,
@@ -253,7 +253,7 @@ require('nvim-treesitter.configs').setup {
             -- init_selection = '<c-space>',
             -- node_incremental = '<c-space>',
             scope_incremental = '<c-s>',
-            node_decremental = '<M-space>',
+            node_decremental = '<C-space>',
         },
     },
     textobjects = {

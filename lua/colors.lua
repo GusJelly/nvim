@@ -5,7 +5,7 @@ local groups = {
     "SignColumn",
     "NormalFloat",
     "FloatBorder",
-    -- "Pmenu",
+    "Pmenu",
     "TelescopeNormal",
     "TelescopePromptNormal",
     "TelescopeBorder",

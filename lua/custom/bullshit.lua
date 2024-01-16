@@ -24,6 +24,8 @@ function ChangeStatusline()
                 modeName = "Visual Line"
             elseif mode == 'c' then
                 modeName = "Command"
+            elseif mode == 't' then
+                modeName = "Terminal"
             else
                 modeName = vim.api.nvim_eval('mode()')
             end

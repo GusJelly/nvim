@@ -1,26 +1,12 @@
 -- Groups supposed to be transparent
 local groups = {
-    "Normal",
-    "NormalNC",
-    "SignColumn",
-    "NormalFloat",
-    "FloatBorder",
-    "Pmenu",
-    "TelescopeNormal",
-    "TelescopePromptNormal",
-    "TelescopeBorder",
-    "LineNr",
-    "EndOfBuffer",
-    "FloatTitle",
-    "ZenBg",
-    "@neorg.tags.ranged_verbatim.code_block",
-    "WinBarNC",
-    "WinBar",
-    "WinSeparator",
-    "TabLineFill",
-    "TabLine",
-    "CursorLine",
-    "CursorLineNr"
+    "Normal", "NormalNC", "SignColumn",
+    "NormalFloat", "FloatBorder", "Pmenu",
+    "TelescopeNormal", "TelescopePromptNormal", "TelescopeBorder",
+    "LineNr", "EndOfBuffer", "FloatTitle",
+    "ZenBg", "WinBarNC", "WinBar",
+    "WinSeparator", "TabLineFill", "TabLine",
+    "CursorLine", "CursorLineNr"
 }
 
 -- Method that actually makes the stuff above transparent.
@@ -32,10 +18,9 @@ function ColorMyPencils()
 
     -- Getting colorscheme for checking some stuff,
     -- we are basically making sure rose-pine does not use
-    -- the shitty pink ColorColumn
+    -- the pink ColorColumn
     local colorscheme = vim.api.nvim_exec("colorscheme", true)
     if colorscheme == 'rose-pine' then
-        print("Current colorscheme: " .. colorscheme)
         vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2F2F2F" })
     end
 

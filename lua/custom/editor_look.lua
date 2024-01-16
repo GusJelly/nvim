@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colorscheme rose-pine]]
 vim.o.bg = "dark"
 
 vim.opt.guicursor = ""

@@ -8,10 +8,10 @@ vim.opt.guicursor = ""
 vim.opt.relativenumber = true
 vim.opt.number = true
 
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- global status
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
 
 -- top bar
 vim.opt.winbar = "%f %m"
@@ -28,4 +28,4 @@ vim.opt.expandtab = true
 vim.opt.conceallevel = 2
 
 -- toggle line wrap:
-vim.opt.wrap = true
+vim.opt.wrap = false

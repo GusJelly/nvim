@@ -9,7 +9,7 @@ end
 -- autmocmd for the mode changing:
 -- 'ModeChanged'
 function ChangeStatusline()
-    vim.opt.statusline = "[Normal] %= [%f] %m %= %y%w%r%h %p%%"
+    vim.opt.statusline = "[Normal] %= [%f]%m %= %h%r%-14.(%l,%c%V%) %P"
 
     vim.api.nvim_create_autocmd("ModeChanged", {
         group = vim.api.nvim_create_augroup("Gustavo's barChanger", { clear = true }),
@@ -32,7 +32,7 @@ function ChangeStatusline()
                 modeName = vim.api.nvim_eval('mode()')
             end
 
-            local statusline = "[" .. modeName .. "] %= [%f] %m %= %y%w%r%h %p%%"
+            local statusline = "[" .. modeName .. "] %= [%f]%m %= %h%r%-14.(%l,%c%V%) %P"
             vim.opt.statusline = statusline
         end
     })

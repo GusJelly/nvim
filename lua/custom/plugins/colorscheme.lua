@@ -153,9 +153,9 @@ return {
         }
     },
 
-    -- Tokyonight
+    -- VsCode
     {
-        'folke/tokyonight.nvim',
+        'Mofiqul/vscode.nvim',
         opts = {}
-    }
+    },
 }

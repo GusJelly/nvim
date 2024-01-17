@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[colorscheme vscode]]
 vim.o.bg = "dark"
 
 vim.opt.guicursor = ""
@@ -14,7 +14,7 @@ vim.opt.cursorline = false
 -- vim.opt.laststatus = 3
 
 -- top bar
-vim.opt.winbar = "%f %m"
+-- vim.opt.winbar = "%f %m"
 
 vim.opt.colorcolumn = '80'
 

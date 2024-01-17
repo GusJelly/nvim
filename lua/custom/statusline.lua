@@ -4,8 +4,10 @@
 -- Using autocommands to change the statusline:
 -- autmocmd for the mode changing:
 -- 'ModeChanged'
-function ChangeStatusline()
-    vim.opt.statusline = "[Normal] %= [%f]%m %= %h%r %l,%c [%P]"
+local function changeStatusline()
+    -- use 'opt_local' to prevent all statuslines from updating
+
+    vim.opt_local.statusline = "[Normal] %= [%f]%m %= %h%r [%l,%c] [%P]"
 
     vim.api.nvim_create_autocmd("ModeChanged", {
         group = vim.api.nvim_create_augroup("Gustavo's barChanger", { clear = true }),
@@ -30,10 +32,10 @@ function ChangeStatusline()
                 modeName = vim.api.nvim_eval('mode()')
             end
 
-            local statusline = "[" .. modeName .. "] %= [%f]%m %= %h%r %l,%c [%P]"
-            vim.opt.statusline = statusline
+            local statusline = "[" .. modeName .. "] %= [%f]%m %= %h%r [%l,%c] [%P]"
+            vim.opt_local.statusline = statusline
         end
     })
 end
 
-ChangeStatusline()
+changeStatusline()

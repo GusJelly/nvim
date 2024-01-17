@@ -5,4 +5,3 @@ require('custom.remaps')
 require('custom.colors')
 require('custom.statusline')
 require('custom.snippets')
-

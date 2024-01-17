@@ -1,4 +1,4 @@
--- html5
+-- html
 vim.keymap.set(
     "n",
     ",html",

@@ -8,4 +8,4 @@ vim.opt.expandtab = true
 
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 4
+vim.opt.sidescrolloff = 8

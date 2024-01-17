@@ -10,10 +10,11 @@ local groups = {
 }
 
 -- Method that actually makes the stuff above transparent.
--- It simply removes the "bg" highlight from each element
-function ColorMyPencils()
-    for _, i in pairs(groups) do
-        vim.api.nvim_set_hl(0, i, { bg = 'none' })
+--- @param list table
+--- @param color string
+local function ColorMyPencils(list, color)
+    for _, i in pairs(list) do
+        vim.api.nvim_set_hl(0, i, { bg = color })
     end
 
     -- Getting colorscheme for checking some stuff,
@@ -24,7 +25,7 @@ function ColorMyPencils()
         vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2F2F2F" })
     end
 
-    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = 'none' })
+    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = color })
 end
 
-ColorMyPencils()
+ColorMyPencils(groups, "none")

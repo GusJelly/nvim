@@ -4,7 +4,7 @@ return {
         "catppuccin/nvim",
         name = "catppuccin",
         opts = {
-            flavour = "mocha", -- latte, frappe, macchiato, mocha
+            flavour = "frappe", -- latte, frappe, macchiato, mocha
             background = {     -- :h background
                 light = "latte",
                 dark = "mocha",
@@ -156,6 +156,12 @@ return {
     -- VsCode
     {
         'Mofiqul/vscode.nvim',
+        opts = {}
+    },
+
+    -- Monokai
+    {
+        'GusJelly/monokai.nvim',
         opts = {}
     },
 }

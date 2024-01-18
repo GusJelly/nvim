@@ -1,13 +1,10 @@
--- Testing some nvim apis
-
-
 -- Using autocommands to change the statusline:
 -- autmocmd for the mode changing:
 -- 'ModeChanged'
 local function changeStatusline()
-    -- use 'opt_local' to prevent all statuslines from updating
+    local git_branch = vim.fn.system("git branch --show-current | tr -d '\n'")
 
-    vim.opt_local.statusline = "[Normal] %= [%f]%m %= %h%r [%l,%c] [%P]"
+    vim.opt.statusline = "[Normal] " .. git_branch .. " %= [%f]%m %= %h%r [%l,%c] [%P]"
 
     vim.api.nvim_create_autocmd("ModeChanged", {
         group = vim.api.nvim_create_augroup("ChangeStatusLine", { clear = true }),
@@ -32,8 +29,8 @@ local function changeStatusline()
                 modeName = vim.api.nvim_eval('mode()')
             end
 
-            local statusline = "[" .. modeName .. "] %= [%f]%m %= %h%r [%l,%c] [%P]"
-            vim.opt_local.statusline = statusline
+            local statusline = "[" .. modeName .. "] " .. git_branch .. " %= [%f]%m %= %h%r [%l,%c] [%P]"
+            vim.opt.statusline = statusline
         end
     })
 end

@@ -10,7 +10,7 @@ local function changeStatusline()
     vim.opt_local.statusline = "[Normal] %= [%f]%m %= %h%r [%l,%c] [%P]"
 
     vim.api.nvim_create_autocmd("ModeChanged", {
-        group = vim.api.nvim_create_augroup("Gustavo's barChanger", { clear = true }),
+        group = vim.api.nvim_create_augroup("ChangeStatusLine", { clear = true }),
 
         callback = function()
             local mode = vim.api.nvim_eval('mode()')

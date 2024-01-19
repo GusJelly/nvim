@@ -50,11 +50,11 @@ end
 
 -- Actually redraws the statusline
 local function changeStatusline()
+    local branch = getCurrentBranch()
     -- Set statusline every time the mode changes
     vim.api.nvim_create_autocmd("ModeChanged", {
         callback = function()
             local modeName = getCurrentMode()
-            local branch = getCurrentBranch()
 
             vim.opt_local.statusline = createStatuslineString(modeName, branch)
         end
@@ -64,7 +64,6 @@ local function changeStatusline()
     vim.api.nvim_create_autocmd("BufEnter", {
         callback = function()
             local modeName = getCurrentMode()
-            local branch = getCurrentBranch()
 
             vim.opt_local.statusline = createStatuslineString(modeName, branch)
         end

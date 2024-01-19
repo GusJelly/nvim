@@ -167,5 +167,5 @@ return {
                 cmp = true,
             })
         end
-    }
+    },
 }

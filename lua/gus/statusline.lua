@@ -29,14 +29,14 @@ end
 
 -- Gets the current git branch
 ---@return string
-local function getCurrentBranch()
-    local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
-    if branch == nil then
-        return ""
-    end
-
-    return branch
-end
+-- local function getCurrentBranch()
+--     local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
+--     if branch == nil then
+--         return ""
+--     end
+--
+--     return branch
+-- end
 
 -- Creates the statusline string
 ---@param modeName string
@@ -50,13 +50,13 @@ end
 
 -- Actually redraws the statusline
 local function changeStatusline()
-    local branch = getCurrentBranch()
+    -- local branch = getCurrentBranch()
     -- Set statusline every time the mode changes
     vim.api.nvim_create_autocmd("ModeChanged", {
         callback = function()
             local modeName = getCurrentMode()
 
-            vim.opt_local.statusline = createStatuslineString(modeName, branch)
+            vim.opt_local.statusline = createStatuslineString(modeName, "")
         end
     })
 
@@ -64,18 +64,9 @@ local function changeStatusline()
     vim.api.nvim_create_autocmd("BufEnter", {
         callback = function()
             local modeName = getCurrentMode()
+            -- local newBranch = getCurrentBranch()
 
-            vim.opt_local.statusline = createStatuslineString(modeName, branch)
-        end
-    })
-
-    -- Change git branch every time we change the working directory
-    vim.api.nvim_create_autocmd("DirChanged", {
-        callback = function()
-            local modeName = getCurrentMode()
-            local newBranch = getCurrentBranch()
-
-            vim.opt_local.statusline = createStatuslineString(modeName, newBranch)
+            vim.opt_local.statusline = createStatuslineString(modeName, "")
         end
     })
 end

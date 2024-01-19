@@ -27,21 +27,46 @@ local function getCurrentMode()
     return modeName
 end
 
+-- Gets the current git branch
+---@return string
+local function getCurrentBranch()
+    local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
+    if branch == nil then
+        return ""
+    end
+
+    return branch
+end
+
+-- Creates the statusline string
+---@param modeName string
+---@param branch string
+---@return string
+local function createStatuslineString(modeName, branch)
+    local statusline = "[" .. modeName .. "] " .. branch .. " %= [%f]%m %= %h%r [%l,%c] [%P]"
+
+    return statusline
+end
+
 -- Actually redraws the statusline
 local function changeStatusline()
-    local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
-
-    vim.opt_local.statusline = "[Normal] " .. branch .. " %= [%f]%m %= %h%r [%l,%c] [%P]"
-
+    -- Set statusline every time the mode changes
     vim.api.nvim_create_autocmd("ModeChanged", {
-        group = vim.api.nvim_create_augroup("ChangeStatusLine", { clear = true }),
-
         callback = function()
             local modeName = getCurrentMode()
+            local branch = getCurrentBranch()
 
-            local statusline = "[" .. modeName .. "] " .. branch .. " %= [%f]%m %= %h%r [%l,%c] [%P]"
+            vim.opt_local.statusline = createStatuslineString(modeName, branch)
+        end
+    })
 
-            vim.opt_local.statusline = statusline
+    -- Change statusline every time we open a buffer
+    vim.api.nvim_create_autocmd("BufEnter", {
+        callback = function()
+            local modeName = getCurrentMode()
+            local branch = getCurrentBranch()
+
+            vim.opt_local.statusline = createStatuslineString(modeName, branch)
         end
     })
 end

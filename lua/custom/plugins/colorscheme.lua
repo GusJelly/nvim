@@ -3,6 +3,7 @@ return {
     {
         "catppuccin/nvim",
         name = "catppuccin",
+        lazy = true,
         opts = {
             flavour = "frappe", -- latte, frappe, macchiato, mocha
             background = {     -- :h background
@@ -53,6 +54,7 @@ return {
     {
         'rose-pine/neovim',
         name = 'rose-pine',
+        lazy = true,
         opts = {
             --- @usage 'auto'|'main'|'moon'|'dawn'
             variant = 'auto',
@@ -112,6 +114,7 @@ return {
     -- Gruvbox
     {
         'ellisonleao/gruvbox.nvim',
+        lazy = true,
         opts = {
             -- contrast = "hard", -- can be "hard", "soft" or empty string
             italic = {
@@ -127,6 +130,7 @@ return {
     -- Kanagawa
     {
         'rebelot/kanagawa.nvim',
+        lazy = true,
         opts = {
             compile = false,  -- enable compiling the colorscheme
             undercurl = true, -- enable undercurls
@@ -151,17 +155,5 @@ return {
                 light = "lotus"
             },
         }
-    },
-
-    -- VsCode
-    {
-        'Mofiqul/vscode.nvim',
-        opts = {}
-    },
-
-    -- Monokai
-    {
-        'GusJelly/monokai.nvim',
-        opts = {}
     },
 }

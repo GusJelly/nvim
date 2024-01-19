@@ -68,6 +68,16 @@ local function changeStatusline()
             vim.opt_local.statusline = createStatuslineString(modeName, branch)
         end
     })
+
+    -- Change git branch every time we change the working directory
+    vim.api.nvim_create_autocmd("DirChanged", {
+        callback = function()
+            local modeName = getCurrentMode()
+            local newBranch = getCurrentBranch()
+
+            vim.opt_local.statusline = createStatuslineString(modeName, newBranch)
+        end
+    })
 end
 
 changeStatusline()

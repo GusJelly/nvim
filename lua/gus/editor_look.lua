@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme base16-ayu-dark]]
 vim.o.bg = "dark"
 
 vim.opt.guicursor = ""

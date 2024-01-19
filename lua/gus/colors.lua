@@ -1,12 +1,30 @@
 -- Groups supposed to be transparent
 local groups = {
-    "Normal", "NormalNC", "SignColumn",
-    "NormalFloat", "FloatBorder", "Pmenu",
-    "TelescopeNormal", "TelescopePromptNormal", "TelescopeBorder",
-    "LineNr", "EndOfBuffer", "FloatTitle",
-    "ZenBg", "WinBarNC", "WinBar",
-    "WinSeparator", "TabLineFill", "TabLine",
-    "CursorLine", "CursorLineNr"
+    "Normal",
+    "NormalNC",
+    "SignColumn",
+    "NormalFloat",
+    "FloatBorder",
+    "Pmenu",
+    "TelescopeNormal",
+    "TelescopePromptNormal",
+    "TelescopeBorder",
+    "LineNr",
+    "EndOfBuffer",
+    "FloatTitle",
+    "ZenBg",
+    "WinBarNC",
+    "WinBar",
+    "WinSeparator",
+    "TabLineFill",
+    "TabLine",
+    "CursorLine",
+    "CursorLineNr",
+    "TelescopePreviewTitle",
+    "TelescopePromptTitle",
+    "TelescopeResultsTitle",
+    "TelescopePromptBorder",
+    "TelescopePromptPrefix",
 }
 
 -- Method that actually makes the stuff above transparent.

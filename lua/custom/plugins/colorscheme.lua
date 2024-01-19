@@ -6,7 +6,7 @@ return {
         lazy = true,
         opts = {
             flavour = "frappe", -- latte, frappe, macchiato, mocha
-            background = {     -- :h background
+            background = {      -- :h background
                 light = "latte",
                 dark = "mocha",
             },
@@ -157,9 +157,15 @@ return {
         }
     },
 
-    -- Edge
+    -- Base16
     {
-        'GusJelly/edge',
-        lazy = true
-    },
+        'RRethy/nvim-base16',
+        config = function()
+            require('base16-colorscheme').with_config({
+                telescope = true,
+                notify = true,
+                cmp = true,
+            })
+        end
+    }
 }

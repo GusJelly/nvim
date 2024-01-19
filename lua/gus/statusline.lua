@@ -27,19 +27,6 @@ local function getCurrentMode()
     return modeName
 end
 
--- Gets the current git branch
--- Don't use!!!
--- Causes a lot of lag by calling a shell command constantly!
----@return string
--- local function getCurrentBranch()
---     local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
---     if branch == nil then
---         return ""
---     end
---
---     return branch
--- end
-
 -- Creates the statusline string
 ---@param modeName string
 ---@param branch string

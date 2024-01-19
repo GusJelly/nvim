@@ -156,4 +156,10 @@ return {
             },
         }
     },
+
+    -- Edge
+    {
+        'GusJelly/edge',
+        lazy = true
+    },
 }

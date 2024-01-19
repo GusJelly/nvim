@@ -28,6 +28,8 @@ local function getCurrentMode()
 end
 
 -- Gets the current git branch
+-- Don't use!!!
+-- Causes a lot of lag by calling a shell command constantly!
 ---@return string
 -- local function getCurrentBranch()
 --     local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
@@ -43,20 +45,21 @@ end
 ---@param branch string
 ---@return string
 local function createStatuslineString(modeName, branch)
-    local statusline = "[" .. modeName .. "] " .. branch .. " %= [%f]%m %= %h%r [%l,%c] [%P]"
+    local statusline = "[" .. modeName .. "] " .. branch .. " %= [%f]%m %= %h%r [%l,%c] [%P %L]"
 
     return statusline
 end
 
--- Actually redraws the statusline
+-- Redraws the statusline
 local function changeStatusline()
-    -- local branch = getCurrentBranch()
+    local branch = ""
+
     -- Set statusline every time the mode changes
     vim.api.nvim_create_autocmd("ModeChanged", {
         callback = function()
             local modeName = getCurrentMode()
 
-            vim.opt_local.statusline = createStatuslineString(modeName, "")
+            vim.opt_local.statusline = createStatuslineString(modeName, branch)
         end
     })
 
@@ -64,9 +67,8 @@ local function changeStatusline()
     vim.api.nvim_create_autocmd("BufEnter", {
         callback = function()
             local modeName = getCurrentMode()
-            -- local newBranch = getCurrentBranch()
 
-            vim.opt_local.statusline = createStatuslineString(modeName, "")
+            vim.opt_local.statusline = createStatuslineString(modeName, branch)
         end
     })
 end

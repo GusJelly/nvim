@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd [[colorscheme base16-catppuccin-frappe]]
+vim.cmd [[colorscheme rose-pine]]
 vim.o.bg = "dark"
 
 -- base16-doom-one

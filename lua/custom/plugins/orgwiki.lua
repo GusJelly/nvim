@@ -1,0 +1,3 @@
+return {
+    'GusJelly/orgWiki.nvim'
+}

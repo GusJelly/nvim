@@ -9,5 +9,5 @@ vim.keymap.set(
 vim.keymap.set(
     "n",
     ",err",
-    ":-1read ~/.config/nvim/lua/custom/snippets/go.txt<CR>3jdd1kcc"
+    ":-1read ~/.config/nvim/lua/custom/snippets/go.go<CR>3jdd1kcc"
 )

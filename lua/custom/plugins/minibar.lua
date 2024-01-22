@@ -1,0 +1,3 @@
+return {
+    'GusJelly/nvim-minibar'
+}

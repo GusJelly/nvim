@@ -1,6 +1,7 @@
--- Custom requires
-require('gus.editor')
-
+vim.cmd([[
+    nnoremap <SPACE> <Nop>
+    let mapleader=" "
+]])
 
 -- Lazy.nvim package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -17,3 +18,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+
+-- My custom stuff needs to setup before the package manager loads stuff
+require('gus.editor')
+require('gus.remaps')
+require('gus.colors')

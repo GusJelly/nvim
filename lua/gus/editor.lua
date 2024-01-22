@@ -15,17 +15,10 @@ vim.opt.sidescrolloff = 8
 -- Line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
-
+-- Color lines
+vim.opt.signcolumn = 'yes'
 vim.opt.cursorline = false
-
--- global status
--- vim.opt.laststatus = 3
-
--- top bar
--- vim.opt.winbar = "%f %m"
-
 vim.opt.colorcolumn = '80'
-
 -- Concealing for org-mode
 vim.opt.conceallevel = 2
 

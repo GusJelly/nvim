@@ -1,3 +1,0 @@
-return {
-    'GusJelly/orgWiki.nvim'
-}

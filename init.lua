@@ -1,6 +1,0 @@
-require('gus.kickstart')
-require('gus.editor')
-require('gus.editor_look')
-require('gus.remaps')
-require('gus.colors')
-require('gus.snippets')

@@ -14,6 +14,7 @@ return {
             },
         }
         lspconfig.lua_ls.setup {}
+        lspconfig.clangd.setup {}
 
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions

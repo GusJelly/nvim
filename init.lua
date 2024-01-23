@@ -1,7 +1,7 @@
 vim.cmd([[
-nnoremap <SPACE> <Nop>
-let mapleader=" "
-let localleader=","
+  nnoremap <SPACE> <Nop>
+  let mapleader=" "
+  let localleader=","
 ]])
 
 -- Lazy.nvim package manager

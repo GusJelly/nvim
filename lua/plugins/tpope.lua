@@ -1,5 +1,5 @@
 return {
-    'tpope/vim-sensible',
-    'tpope/vim-fugitive',
-    'tpope/vim-vinegar',
+  'tpope/vim-sensible',
+  'tpope/vim-fugitive',
+  'tpope/vim-vinegar',
 }

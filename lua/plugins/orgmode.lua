@@ -34,6 +34,7 @@ return {
   -- Org Bullets
   {
     'GusJelly/org-bullets.nvim',
+    opts = {}
   },
 
   -- Org wiki

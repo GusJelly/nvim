@@ -1,4 +1,4 @@
 return {
     'GusJelly/nvim-minibar',
-    opt = {}
+    opts = {}
 }

@@ -1,3 +1,4 @@
 return {
-    'GusJelly/nvim-minibar'
+    'GusJelly/nvim-minibar',
+    opt = {}
 }

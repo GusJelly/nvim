@@ -28,7 +28,8 @@ return {
         org_hide_leading_stars = true,
         org_hide_emphasis_markers = true,
       })
-    end
+    end,
+    opts = {}
   },
 
   -- Org Bullets
@@ -40,6 +41,7 @@ return {
   -- Org wiki
   {
     "ranjithshegde/orgWiki.nvim",
+    opts = {},
     config = function()
       require("orgWiki").setup {
         wiki_path = { "~/orgfiles/wiki/" },

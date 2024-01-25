@@ -1,10 +1,9 @@
-vim.cmd([[
-  nnoremap <SPACE> <Nop>
-  let mapleader=" "
-  let localleader=","
-]])
+-- Must happen before plugins otherwise they use the wrong leaders
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+vim.o.termguicolors = true
 
--- Lazy.nvim package manager
+-- Installing package manager lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -18,9 +17,40 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+-- Installing plugins
+require("lazy").setup({
+  -- Tpope amazing plugins
+  {
+    'tpope/vim-fugitive',
+    'tpope/vim-rhubarb',
+    'tpope/vim-surround',
+    'tpope/vim-sleuth'
+  },
 
--- My custom stuff needs to setup before the package manager loads stuff
-require('gus.editor')
-require('gus.remaps')
-require('gus.colors')
+  -- Must-have plugins
+  {
+    {
+      'stevearc/oil.nvim', 
+      config = function()
+        require('oil').setup()
+      end
+    },
+    {
+      'windwp/nvim-autopairs',
+      opts = {}
+    }
+  },
+
+  -- Colorscheme
+  {
+    'rose-pine/neovim',
+    opts = {},
+    config = function()
+      vim.cmd([[colorscheme rose-pine]])
+    end
+  }
+})
+
+-- My custom lua code and files to load:
+require('remaps')
+require('defaults')

@@ -19,6 +19,12 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Installing plugins
 require("lazy").setup({
+  -- My GusJelly plugins
+  {
+    'GusJelly/nvim-minibar',
+    opts = {}
+  },
+
   -- Tpope amazing plugins
   {
     'tpope/vim-fugitive',

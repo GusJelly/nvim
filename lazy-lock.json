@@ -10,13 +10,12 @@
   "nvim-lspconfig": { "branch": "master", "commit": "8917d2c830e04bf944a699b8c41f097621283828" },
   "nvim-minibar": { "branch": "main", "commit": "5efc6adf3c8493d01fec0af9ab627bedfb52545c" },
   "nvim-treesitter": { "branch": "master", "commit": "1d83fc08d4711077501d91deb4f0b2ae528e8b34" },
+  "oil.nvim": { "branch": "master", "commit": "bf753c3e3f8736939ad5597f92329dfe7b1df4f5" },
   "org-bullets.nvim": { "branch": "main", "commit": "6e0d60e901bb939eb526139cb1f8d59065132fd9" },
   "orgWiki.nvim": { "branch": "main", "commit": "ea3e467bef7a2c17998bc471844bbd7bd3438f84" },
   "orgmode": { "branch": "master", "commit": "bd2a65179c814b40ca3073a282507a6a4f2355c1" },
   "plenary.nvim": { "branch": "master", "commit": "663246936325062427597964d81d30eaa42ab1e4" },
   "rose-pine": { "branch": "main", "commit": "2a4aad89a803c84d7d1555d136639cd48ade1d64" },
-  "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
-  "vim-fugitive": { "branch": "master", "commit": "854a8df0d06b8d3fcb30fa7f2b08c62b553eee3b" },
-  "vim-sensible": { "branch": "master", "commit": "3e878abfd6ddc6fb5dba48b41f2b72c3a2f8249f" },
-  "vim-vinegar": { "branch": "master", "commit": "bb1bcddf43cfebe05eb565a84ab069b357d0b3d6" }
+  "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
+  "vim-fugitive": { "branch": "master", "commit": "854a8df0d06b8d3fcb30fa7f2b08c62b553eee3b" }
 }

@@ -9,5 +9,6 @@ call plug#begin()
 " Tpope
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
 
 call plug#end()

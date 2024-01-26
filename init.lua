@@ -49,6 +49,12 @@ require("lazy").setup({
             "windwp/nvim-autopairs",
             opts = {}
         },
+        -- Harpoon
+        {
+            "ThePrimeagen/harpoon",
+            dependencies = { "nvim-lua/plenary.nvim" },
+            branch = "harpoon2",
+        },
         -- Vimwiki
         {
             "vimwiki/vimwiki",
@@ -69,11 +75,6 @@ require("lazy").setup({
     -- Colorscheme
     {
         "rose-pine/neovim",
-        opts = {},
-        config = function()
-            vim.cmd([[colorscheme rose-pine]])
-            ColorMyPencils()
-        end
     },
 
     -- Fuzzy finding
@@ -120,3 +121,9 @@ require("treesitter")
 -- custom lua code and files to load:
 require("remaps")
 require("defaults")
+
+-- Colorscheme
+vim.cmd([[
+    colorscheme rose-pine
+    lua ColorMyPencils()
+]])

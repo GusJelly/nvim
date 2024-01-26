@@ -1,12 +1,9 @@
--- Settings these defaults in vimscript since it's easier to do
-vim.cmd([[
-    set rnu
-    set nu
-    set nohlsearch
-    set nocursorline
-    set colorcolumn=80
-    set termguicolors
-    set signcolumn=yes
-    set scrolloff=8
-    set sidescrolloff=8
-]])
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.hlsearch = false
+vim.opt.cursorline = false
+vim.opt.colorcolumn = '80'
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8

@@ -39,16 +39,20 @@ require("lazy").setup({
 
     -- Must-have plugins
     {
+        -- Oil
         {
             "stevearc/oil.nvim",
             config = function()
                 require('oil').setup()
             end
         },
+
+        -- Auto pairs
         {
             "windwp/nvim-autopairs",
             opts = {}
         },
+
         -- Harpoon
         {
             "ThePrimeagen/harpoon",
@@ -68,6 +72,7 @@ require("lazy").setup({
                 vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
             end
         },
+
         -- Vimwiki
         {
             "vimwiki/vimwiki",
@@ -121,7 +126,6 @@ require("lazy").setup({
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        -- For luasnip users.
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
     },
@@ -131,13 +135,7 @@ require("lazy").setup({
         'lervag/vimtex',
         config = function()
             vim.cmd([[
-                " This is necessary for VimTeX to load properly. The "indent" is optional.
-                " Note that most plugin managers will do this automatically.
                 filetype plugin indent on
-
-                " This enables Vim's and neovim's syntax-related features. Without this, some
-                " VimTeX features will not work (see ":help vimtex-requirements" for more
-                " info).
                 syntax enable
             ]])
         end

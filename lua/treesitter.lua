@@ -26,10 +26,11 @@ require 'nvim-treesitter.configs'.setup {
             disable = {
                 "c",
                 "vimdoc",
+            },
+            additional_vim_regex_highlighting = {
                 "markdown",
                 "markdown_inline"
-            },
-            additional_vim_regex_highlighting = false,
+            }
         },
 
         ---@diagnostic disable-next-line: missing-fields

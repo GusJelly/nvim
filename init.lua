@@ -58,8 +58,7 @@ require("lazy").setup({
         {
             'numToStr/Comment.nvim',
             opts = {},
-            lazy = false
-        },
+            lazy = false },
 
         -- Harpoon
         {
@@ -103,6 +102,7 @@ require("lazy").setup({
         "rose-pine/neovim",
         "projekt0n/github-nvim-theme",
         "catppuccin/nvim",
+        "Mofiqul/vscode.nvim",
     },
 
     -- Fuzzy finding
@@ -162,7 +162,7 @@ require("defaults")
 
 -- Colorscheme
 vim.cmd([[
-    colorscheme catppuccin
+    colorscheme vscode
     set background=light
     lua ColorMyPencils()
 ]])

@@ -29,5 +29,6 @@
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-vividchalk": { "branch": "master", "commit": "be5c6251279bfcfa55cdea8c9a8ccd7a56c8a642" },
   "vimtex": { "branch": "master", "commit": "fe20ab1bd82a23441ac55054afefcd60001947a2" },
-  "vimwiki": { "branch": "dev", "commit": "fde35bb87e45abe930eebef5ab99a16289e53789" }
+  "vimwiki": { "branch": "dev", "commit": "fde35bb87e45abe930eebef5ab99a16289e53789" },
+  "vscode.nvim": { "branch": "main", "commit": "826102511b9b689a16e3e55c30f2eb65eedc99f6" }
 }

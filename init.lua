@@ -74,20 +74,21 @@ require("lazy").setup({
             init = function()
                 -- Vimwiki configuration
                 vim.cmd([[
-                set nocompatible
-                filetype plugin on
-                syntax on
+                    set nocompatible
+                    filetype plugin on
+                    syntax on
 
-                let g:vimwiki_list = [{'path': '~/vimwiki/',
-                                        \ 'syntax': 'markdown', 'ext': 'md'}]
+                    let g:vimwiki_list = [{'path': '~/vimwiki/',
+                                            \ 'syntax': 'markdown', 'ext': 'md'}]
                 ]])
             end
         },
     },
 
-    -- Colorscheme
+    -- Colorschemes
     {
         "rose-pine/neovim",
+        "projekt0n/github-nvim-theme",
     },
 
     -- Fuzzy finding
@@ -154,6 +155,7 @@ require("defaults")
 
 -- Colorscheme
 vim.cmd([[
-    colorscheme rose-pine
+    colorscheme github_light_default
+    set background=light
     lua ColorMyPencils()
 ]])

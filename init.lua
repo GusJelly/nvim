@@ -72,6 +72,7 @@ require("lazy").setup({
         opts = {},
         config = function()
             vim.cmd([[colorscheme rose-pine]])
+            ColorMyPencils()
         end
     },
 
@@ -119,4 +120,3 @@ require("treesitter")
 -- custom lua code and files to load:
 require("remaps")
 require("defaults")
-require("colors")

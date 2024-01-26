@@ -5,4 +5,5 @@ vim.cmd([[
   set nocursorline
   set colorcolumn=80
   set termguicolors
+  set signcolumn=yes
 ]])

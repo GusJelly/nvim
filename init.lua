@@ -95,7 +95,6 @@ require("lazy").setup({
 require("lsp")
 require("treesitter")
 
-
 -- custom lua code and files to load:
 require("remaps")
 require("defaults")

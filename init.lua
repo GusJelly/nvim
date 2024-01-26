@@ -94,6 +94,7 @@ require("lazy").setup({
     {
         "rose-pine/neovim",
         "projekt0n/github-nvim-theme",
+        "catppuccin/nvim",
     },
 
     -- Fuzzy finding
@@ -153,7 +154,7 @@ require("defaults")
 
 -- Colorscheme
 vim.cmd([[
-    colorscheme github_light_default
+    colorscheme catppuccin
     set background=light
     lua ColorMyPencils()
 ]])

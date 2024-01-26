@@ -34,7 +34,8 @@ require("lazy").setup({
         "tpope/vim-fugitive",
         "tpope/vim-rhubarb",
         "tpope/vim-surround",
-        "tpope/vim-sleuth"
+        "tpope/vim-sleuth",
+        "tpope/vim-vividchalk"
     },
 
     -- Must-have plugins
@@ -51,6 +52,13 @@ require("lazy").setup({
         {
             "windwp/nvim-autopairs",
             opts = {}
+        },
+
+        -- Comment.nvim
+        {
+            'numToStr/Comment.nvim',
+            opts = {},
+            lazy = false
         },
 
         -- Harpoon

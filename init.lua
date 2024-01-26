@@ -20,8 +20,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- My GusJelly plugins
     {
-        "GusJelly/nvim-minibar",
-        opts = {}
+        {
+            "GusJelly/nvim-minibar",
+            opts = {}
+        },
+        {
+            "GusJelly/transparent.nvim",
+            opts = {}
+        },
     },
 
     -- Tpope amazing plugins

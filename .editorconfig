@@ -13,4 +13,4 @@ indent_style = tab
 # Use 2 space indentation for markdown and json
 [*.{md,lua}]
 indent_style = space
-indent_size = 2
+indent_size = 4

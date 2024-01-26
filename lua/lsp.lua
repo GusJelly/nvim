@@ -2,7 +2,7 @@ require('neodev').setup()
 
 -- Autocompletion
 -- Set up nvim-cmp.
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 cmp.setup({
   snippet = {
@@ -66,21 +66,21 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- IMPORTANT: we need to setup mason before lspconfig
 require("mason").setup()
-require("mason-lspconfig").setup{
-  ensure_installed = {"lua_ls", "tsserver"},
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls", "tsserver" },
 }
 
 require("mason-lspconfig").setup_handlers {
   -- The first entry (without a key) will be the default handler
   -- and will be called for each installed server that doesn't have
   -- a dedicated handler.
-  function (server_name) -- default handler (optional)
+  function(server_name) -- default handler (optional)
     require("lspconfig")[server_name].setup {
       capabilities = capabilities,
     }
   end,
 
-  ["lua_ls"] = function ()
+  ["lua_ls"] = function()
     local lspconfig = require("lspconfig")
     lspconfig.lua_ls.setup {
       settings = {

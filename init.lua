@@ -26,7 +26,6 @@ require("lazy").setup({
         },
         {
             "GusJelly/transparent.nvim",
-            opts = {}
         },
     },
 

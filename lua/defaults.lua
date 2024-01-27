@@ -7,6 +7,9 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
+vim.opt.wrap = false
+vim.opt.guicursor = ""
+vim.opt.conceallevel = 2
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true

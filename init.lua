@@ -58,7 +58,8 @@ require("lazy").setup({
         {
             'numToStr/Comment.nvim',
             opts = {},
-            lazy = false },
+            lazy = false
+        },
 
         -- Harpoon
         {
@@ -77,22 +78,6 @@ require("lazy").setup({
                 vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
                 vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
                 vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
-            end
-        },
-
-        -- Vimwiki
-        {
-            "vimwiki/vimwiki",
-            init = function()
-                -- Vimwiki configuration
-                vim.cmd([[
-                    set nocompatible
-                    filetype plugin on
-                    syntax on
-
-                    let g:vimwiki_list = [{'path': '~/vimwiki/',
-                                            \ 'syntax': 'markdown', 'ext': 'md'}]
-                ]])
             end
         },
     },
@@ -149,6 +134,15 @@ require("lazy").setup({
             ]])
         end
     },
+
+    -- Note taking with obsidian
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",
+        lazy = true,
+        ft = "markdown",
+        dependencies = {"nvim-lua/plenary.nvim"}
+    },
 })
 
 
@@ -159,6 +153,7 @@ require("treesitter")
 -- custom lua code and files to load:
 require("remaps")
 require("defaults")
+require("notes")
 
 -- Colorscheme
 vim.cmd([[

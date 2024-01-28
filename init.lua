@@ -156,7 +156,7 @@ require("notes")
 
 -- Colorscheme
 vim.cmd([[
-    colorscheme vscode
+    colorscheme catppuccin-latte
     set background=light
     lua ColorMyPencils()
 ]])

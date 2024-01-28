@@ -35,7 +35,6 @@ require("lazy").setup({
         "tpope/vim-rhubarb",
         "tpope/vim-surround",
         "tpope/vim-sleuth",
-        "tpope/vim-vividchalk"
     },
 
     -- Must-have plugins
@@ -157,7 +156,7 @@ require("notes")
 
 -- Colorscheme
 vim.cmd([[
-    colorscheme catppuccin
+    colorscheme vscode
     set background=light
     lua ColorMyPencils()
 ]])

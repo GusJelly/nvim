@@ -65,7 +65,7 @@ require('obsidian').setup({
                 suffix = suffix .. string.char(math.random(65, 90))
             end
         end
-        return tostring(os.time()) .. "-" .. suffix
+        return suffix
     end,
 
     -- Optional, boolean or a function that takes a filename and returns a boolean.

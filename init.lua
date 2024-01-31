@@ -68,6 +68,7 @@ require("lazy").setup({
             config = function()
                 local harpoon = require("harpoon")
 
+                ---@diagnostic disable-next-line: missing-parameter
                 harpoon:setup()
 
                 vim.keymap.set("n", "<leader>ha", function() harpoon:list():append() end)
@@ -156,7 +157,7 @@ require("notes")
 
 -- Colorscheme
 vim.cmd([[
-    colorscheme rose-pine
+    colorscheme vscode
     set background=dark
     lua ColorMyPencils()
 ]])

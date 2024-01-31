@@ -1,6 +1,6 @@
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { "c", "lua", "vim", "query", "javascript", "awk", "rust", "markdown", "markdown_inline" },
+    ensure_installed = { "markdown", "markdown_inline" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -30,3 +30,13 @@ require 'nvim-treesitter.configs'.setup {
         },
     }
 }
+
+local function growTrees()
+    vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+            vim.cmd([[TSEnable highlight]])
+        end
+    })
+end
+
+growTrees()

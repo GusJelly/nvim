@@ -18,30 +18,15 @@ require 'nvim-treesitter.configs'.setup {
         ---@diagnostic disable-next-line: missing-fields
         highlight = {
             enable = true,
+            additional_vim_regex_highlighting = { "markdown", "markdown_inline" },
 
             -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
             -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
             -- the name of the parser)
             -- list of language that will be disabled
             disable = {
-                "c",
                 "vimdoc",
             },
-            additional_vim_regex_highlighting = true
-        },
-
-        ---@diagnostic disable-next-line: missing-fields
-        incremental_selection = {
-            enable = true,
-        },
-        ---@diagnostic disable-next-line: missing-fields
-        indent = {
-            enable = true
-        },
-
-        ---@diagnostic disable-next-line: missing-fields
-        textobjects = {
-            enable = true
         },
     }
 }

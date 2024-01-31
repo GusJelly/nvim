@@ -10,7 +10,7 @@ require 'nvim-treesitter.configs'.setup {
     auto_install = true,
 
     -- List of parsers to ignore installing (or "all")
-    ignore_install = { "javascript" },
+    ignore_install = {},
 
     modules = {
         ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
@@ -27,10 +27,7 @@ require 'nvim-treesitter.configs'.setup {
                 "c",
                 "vimdoc",
             },
-            additional_vim_regex_highlighting = {
-                "markdown",
-                "markdown_inline"
-            }
+            additional_vim_regex_highlighting = true
         },
 
         ---@diagnostic disable-next-line: missing-fields

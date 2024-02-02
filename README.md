@@ -1,4 +1,4 @@
-# Minimalist Neovim configuration for grub brain developers
+# Minimalist Neovim configuration for grug brain developers
 
 This configuration was created so that I could understand neovim with
 my small grug developer brain.

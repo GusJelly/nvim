@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Installing plugins
 require("lazy").setup({
-    -- My GusJelly plugins
+    -- My plugins
     {
         {
             "GusJelly/nvim-minibar",
@@ -44,6 +44,14 @@ require("lazy").setup({
             "stevearc/oil.nvim",
             config = function()
                 require('oil').setup()
+            end
+        },
+
+        -- Vim undo-tree
+        {
+            'mbbill/undotree',
+            config = function()
+                vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
             end
         },
 
@@ -85,9 +93,6 @@ require("lazy").setup({
     -- Colorschemes
     {
         "rose-pine/neovim",
-        "projekt0n/github-nvim-theme",
-        "catppuccin/nvim",
-        "Mofiqul/vscode.nvim",
     },
 
     -- Fuzzy finding

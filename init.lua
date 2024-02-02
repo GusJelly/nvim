@@ -131,7 +131,7 @@ require("lazy").setup({
             vim.cmd([[
                 filetype plugin indent on
                 syntax enable
-            ]])
+                ]])
         end
     },
 

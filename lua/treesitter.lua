@@ -31,12 +31,12 @@ require 'nvim-treesitter.configs'.setup {
     }
 }
 
-local function growTrees()
-    vim.api.nvim_create_autocmd("VimEnter", {
-        callback = function()
-            vim.cmd([[TSEnable highlight]])
-        end
-    })
-end
-
-growTrees()
+-- function that enables Treesitter highlight after opening neovim
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.cmd([[
+            TSEnable highlight
+            TSEnable indent
+        ]])
+    end
+})
